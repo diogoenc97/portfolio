@@ -1,0 +1,946 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Portefólio Diogo Encarnação</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Diogo Encarnação, designer gráfico e gestor de marketing em Vila Nova de Gaia. Design gráfico, branding, marketing e gestão de projetos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Layout: página inicial com apresentação, botões coloridos e uma faixa por projeto.
+     Página de projeto no estilo de galeria do Behance: título, coluna principal com os módulos
+     (imagem + texto) e painel lateral fixo com contacto, informação, ferramentas e índice.
+     Para formatar: altere as cores e fontes abaixo e os dados na lista PROJECTS no fim do ficheiro. */
+  :root {
+    --bg: #f3f4f5;
+    --surface: #ffffff;
+    --fg: #0b0c0e;
+    --muted: #59636d;
+    --accent: #0a6fb0;
+    --accent-ink: #ffffff;
+    --line: #d7dbde;
+    --shadow: 0 1px 2px rgba(13, 34, 55, .10), 0 14px 36px rgba(13, 34, 55, .16);
+
+    --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+
+    --maxw: 1240px;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b0c0e; --surface: #16181b; --fg: #f3f4f5; --muted: #9aa4ad;
+      --accent: #4cc3e0; --accent-ink: #06202b; --line: #26292d;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 36px rgba(0, 0, 0, .45);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b0c0e; --surface: #16181b; --fg: #f3f4f5; --muted: #9aa4ad;
+    --accent: #4cc3e0; --accent-ink: #06202b; --line: #26292d;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 14px 36px rgba(0, 0, 0, .45);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.55; margin: 0; padding: 0; }
+  a { color: inherit; }
+  button { font: inherit; }
+  :focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: 4px; }
+
+  .in { max-width: var(--maxw); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+  /* Topo (fixo ao fazer scroll) */
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: inherit; }
+  .hdr { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid color-mix(in srgb, currentColor 14%, transparent); }
+  .stage .hdr { background: var(--c2); }
+  .nav { display: flex; gap: 6px; }
+  .nav button { background: transparent; border: 0; color: inherit; cursor: pointer; font-weight: 500; padding: 8px 10px; border-radius: 8px; }
+  .nav button:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 18px; }
+  .brand { font-family: var(--font-display); font-weight: 800; letter-spacing: .01em; text-decoration: none; font-size: 1.05rem; }
+  .top-right { display: flex; align-items: center; gap: 18px; }
+  .lang { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border-radius: 999px; border: 1px solid color-mix(in srgb, currentColor 28%, transparent); }
+  .lang button { background: transparent; border: 0; color: inherit; cursor: pointer; font: inherit; font-size: .78rem; font-weight: 600; letter-spacing: .08em; padding: 5px 10px; border-radius: 999px; opacity: .65; }
+  .lang button:hover { opacity: 1; }
+  .lang button[aria-pressed="true"] { opacity: 1; background: color-mix(in srgb, currentColor 16%, transparent); }
+  .top-right .tag { opacity: .7; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+
+  /* Botões */
+  .cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; cursor: pointer; text-decoration: none;
+    font-weight: 600; font-size: .95rem; padding: 11px 20px; border-radius: 999px;
+    background: var(--accent); color: var(--accent-ink); transition: transform .15s ease, filter .15s ease;
+  }
+  .cta:hover { transform: translateY(-2px); filter: brightness(1.1); }
+  .cta.block { width: 100%; }
+
+  /* Cor de cada projeto: --c1/--c2 (fundo), --ink (texto) */
+  .tinted { background: linear-gradient(135deg, var(--c1), var(--c2)); color: var(--ink); }
+  .tinted .btn, .btn {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: .95rem;
+    padding: 12px 20px; border-radius: 999px; background: var(--ink); color: var(--c1); transition: transform .15s ease, filter .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.12); }
+
+  /* Página inicial: tipografia enorme, base neutra, a cor vem só dos projetos */
+  :root { --font-poster: "Anton", "Impact", "Arial Narrow", sans-serif; }
+  .wide { max-width: 1680px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .hm-k { margin: 0; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .hm-h { font-family: var(--font-poster); font-weight: 400; text-transform: uppercase; font-size: clamp(3.2rem, 11vw, 9.5rem); line-height: .92; letter-spacing: -.005em; margin: 0; }
+  .hm-sec { padding-block: clamp(64px, 9vw, 120px); scroll-margin-top: 70px; }
+
+  /* Entrada */
+  .hm-hero { padding-block: 26px 48px; }
+  .hm-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; }
+  .hm-name { font-family: var(--font-poster); font-weight: 400; text-transform: uppercase; font-size: clamp(2.8rem, 13.6vw, 14.4rem); line-height: .92; letter-spacing: -.01em; margin: clamp(20px, 4vw, 48px) 0 0; white-space: nowrap; }
+  .hm-name .n { display: inline-block; }
+  .hm-name .n + .n { margin-left: .22em; }
+  .hm-name .ch { display: inline-block; animation: rise .9s cubic-bezier(.2, .7, .2, 1) backwards; animation-delay: calc(var(--i) * 45ms); }
+  @keyframes rise { from { transform: translateY(.28em); } }
+  .hm-bot { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; margin-top: clamp(24px, 4vw, 44px); }
+  .hm-lead { margin: 0; max-width: 44ch; font-size: clamp(1.1rem, 1.9vw, 1.4rem); line-height: 1.45; text-wrap: pretty; }
+  .hm-badge { flex: none; position: relative; width: clamp(104px, 11vw, 136px); aspect-ratio: 1; border: 0; border-radius: 50%; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; cursor: pointer; }
+  .hm-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
+  .hm-badge text { fill: currentColor; font: 600 10.5px var(--font-body); letter-spacing: .06em; }
+  .hm-badge i { font-style: normal; font-size: 1.7rem; line-height: 1; transition: transform .3s ease; }
+  .hm-badge:hover svg { transform: rotate(140deg); }
+  .hm-badge:hover i { transform: translateY(5px); }
+
+  /* Tira de capas */
+  .hm-strip { overflow: hidden; padding-block: 8px 24px; }
+  .hm-track { display: flex; gap: 16px; width: max-content; animation: slide 80s linear infinite; }
+  .hm-strip:hover .hm-track { animation-play-state: paused; }
+  .hm-cv { display: block; flex: none; }
+  .hm-cv img { display: block; width: auto; height: clamp(140px, 19vw, 240px); }
+  @keyframes slide { to { transform: translateX(calc(-50% - 8px)); } }
+
+  /* Palavras-chave */
+  .hm-kw { overflow: hidden; border-block: 1px solid var(--line); padding-block: clamp(10px, 1.6vw, 20px); margin-block: 8px clamp(20px, 3vw, 36px); }
+  .hm-kwt { display: flex; width: max-content; animation: slide2 50s linear infinite; }
+  .hm-kwt span { flex: none; display: inline-flex; align-items: center; gap: clamp(18px, 3vw, 44px); padding-right: clamp(18px, 3vw, 44px); font-family: var(--font-poster); text-transform: uppercase; font-size: clamp(2.2rem, 6.4vw, 6rem); line-height: 1.05; white-space: nowrap; }
+  .hm-kwt b { font-weight: 400; }
+  .hm-kwt b:nth-child(even) { color: transparent; -webkit-text-stroke: 1.5px var(--fg); }
+  .hm-kwt i { font-style: normal; color: var(--accent); font-size: .6em; }
+  @keyframes slide2 { to { transform: translateX(-50%); } }
+
+  /* Animações simples nas páginas de projeto */
+  .pw { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .12em; margin-bottom: -.12em; }
+  .pw > span { display: inline-block; animation: wordup .8s cubic-bezier(.2, .7, .2, 1) backwards; animation-delay: calc(.1s + var(--i) * 90ms); }
+  @keyframes wordup { from { transform: translateY(108%); } }
+  @keyframes wipe { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(-40px); } }
+  @keyframes zoomout { from { transform: scale(1.12); } }
+  .hero-img .shot-btn { animation: wipe 1.1s .25s cubic-bezier(.2, .7, .2, 1) backwards; }
+  .hero-img .shot-btn img { animation: zoomout 1.6s .25s cubic-bezier(.2, .7, .2, 1) backwards; }
+  .module .shot-btn.rv { opacity: 1; transform: none; clip-path: inset(0 0 100% 0); transition: clip-path 1s cubic-bezier(.2, .7, .2, 1); }
+  .module .shot-btn.rv.vis { clip-path: inset(-40px); }
+  .module .shot-btn.rv img { transform: scale(1.12); }
+  .module .shot-btn.rv.vis img { transform: scale(1); transition: transform 1.4s cubic-bezier(.2, .7, .2, 1); }
+  .module .shot-btn.rv.vis:hover img { transform: scale(1.025); transition-duration: .6s; }
+  .module h2.rv { transform: translateX(-28px); }
+  .module h2.rv.vis { transform: none; }
+  .module h2::after { content: ""; display: block; height: 3px; width: 0; margin-top: 12px; background: currentColor; opacity: .85; transition: width .9s .3s cubic-bezier(.2, .7, .2, 1); }
+  .module h2.vis::after { width: 56px; }
+  @keyframes up { from { opacity: 0; transform: translateY(18px); } }
+  @keyframes fadein { from { opacity: 0; } }
+  .back, .proj-head .sub, .aside { animation: up .6s cubic-bezier(.2, .7, .2, 1) backwards; }
+  .proj-head .sub { animation-delay: .16s; }
+  .aside { animation-delay: .25s; }
+  .tools li { animation: fadein .5s backwards; animation-delay: calc(.35s + var(--i, 0) * 50ms); }
+  .rv { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+  .rv.vis { opacity: 1; transform: none; }
+  .shot-btn img { transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+  .shot-btn:hover img { transform: scale(1.025); }
+  .pager a { transition: background-color .25s ease, color .25s ease, transform .25s ease; }
+  .pager a:hover { transform: translateY(-3px); }
+  .prog { position: fixed; left: 0; right: 0; top: env(safe-area-inset-top, 0px); height: 3px; z-index: 30; background: var(--ink, var(--fg)); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none; }
+
+  /* Lista de trabalho: ao passar o rato a página muda para a cor do projeto */
+  .hm-works { --fl: var(--bg); --fi: var(--fg); background: var(--bg); color: var(--fg); padding-block: clamp(56px, 8vw, 104px); scroll-margin-top: 60px; transition: background-color .5s ease, color .5s ease; }
+  .hm-works.on { background: var(--fl); color: var(--fi); }
+  .hm-whead { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: clamp(20px, 3vw, 40px); }
+  .hm-hint { margin: 0; font-size: .85rem; opacity: .7; text-align: right; max-width: 24ch; }
+  .hm-hint .t { display: none; }
+  .hm-list { border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+  .hm-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "t y" "m m"; align-items: baseline; gap: 2px 24px; padding-block: clamp(14px, 2vw, 24px); border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent); color: inherit; text-decoration: none; transition: opacity .3s ease; }
+  .hm-rt { grid-area: t; font-family: var(--font-poster); font-weight: 400; text-transform: uppercase; font-size: clamp(2.6rem, 9.4vw, 8.6rem); line-height: .98; letter-spacing: -.005em; transition: transform .4s cubic-bezier(.2, .7, .2, 1); }
+  .hm-ry { grid-area: y; font-size: .95rem; font-variant-numeric: tabular-nums; opacity: .8; }
+  .hm-rm { grid-area: m; font-size: .95rem; opacity: .75; }
+  .hm-th { display: none; grid-area: i; }
+  .hm-works.on .hm-row:not(.act) { opacity: .55; }
+  .hm-row.act .hm-rt { transform: translateX(clamp(8px, 1.6vw, 28px)); }
+  .hm-peek { position: fixed; left: 0; top: 0; z-index: 25; width: clamp(240px, 28vw, 420px); aspect-ratio: 16 / 10; overflow: hidden; pointer-events: none; opacity: 0; transition: opacity .2s ease; will-change: transform; box-shadow: 0 22px 50px rgba(0, 0, 0, .35); }
+  .hm-peek.vis { opacity: 1; }
+  .hm-peek img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .25s ease; }
+  .hm-peek img.show { opacity: 1; }
+
+  /* O que faço */
+  .hm-srv-list { margin-top: clamp(24px, 3vw, 40px); border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+  .hm-srv { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 12px 48px; padding-block: 28px; border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+  .hm-srv h3 { font-family: var(--font-poster); font-weight: 400; text-transform: uppercase; font-size: clamp(1.9rem, 3.8vw, 3rem); line-height: 1; margin: 0; }
+  .hm-srv p { margin: 0 0 12px; max-width: 52ch; font-size: 1.05rem; color: var(--muted); }
+  .hm-srv .lk { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+  .hm-srv .lk a { font-weight: 600; font-size: .95rem; color: var(--accent); text-underline-offset: 3px; }
+
+  /* Sobre */
+  .hm-st { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.7rem, 4.3vw, 3.4rem); line-height: 1.12; letter-spacing: -.015em; margin: 22px 0 0; max-width: 24em; }
+  .hm-st .w { color: var(--muted); transition: color .3s ease; }
+  .hm-st .w.on { color: var(--fg); }
+  .hm-two { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px; margin-top: clamp(40px, 6vw, 72px); align-items: start; }
+  .hm-two p { margin: 0 0 16px; max-width: 60ch; font-size: 1.1rem; line-height: 1.75; }
+  .hm-exp { margin: 0; padding: 0; list-style: none; border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+  .hm-exp li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 16px; padding-block: 14px; border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+  .hm-exp b { font-weight: 600; }
+  .hm-exp span { color: var(--muted); font-size: .92rem; }
+  .hm-exp .yr { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .hm-nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: clamp(48px, 7vw, 96px); }
+  .hm-num { display: block; font-family: var(--font-poster); font-weight: 400; font-size: clamp(3.2rem, 7.4vw, 6.4rem); line-height: 1; color: var(--accent); font-variant-numeric: tabular-nums; }
+  .hm-nl { display: block; margin-top: 8px; max-width: 22ch; font-size: .9rem; color: var(--muted); }
+  .hm-facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: clamp(48px, 7vw, 96px); }
+  .hm-facts .label { font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+  .hm-facts .tools li { border-color: var(--line); }
+
+  /* Contacto */
+  .hm-contact { background: var(--fg); color: var(--bg); padding-block: clamp(72px, 10vw, 140px) 36px; }
+  .hm-contact .hm-k { color: color-mix(in srgb, var(--bg) 62%, transparent); }
+  .hm-big { font-family: var(--font-poster); font-weight: 400; text-transform: uppercase; font-size: clamp(4.4rem, 20vw, 20rem); line-height: .86; letter-spacing: -.01em; margin: 18px 0 0; }
+  .hm-mail { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: clamp(28px, 4vw, 48px); }
+  .hm-mail .v { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.3rem, 4.2vw, 2.6rem); letter-spacing: -.01em; overflow-wrap: anywhere; user-select: all; }
+  .hm-contact .mini { color: var(--bg); border-color: var(--bg); }
+  .hm-contact .mini:hover { background: var(--bg); color: var(--fg); }
+  .hm-contact .cta { background: var(--bg); color: var(--fg); margin-top: 22px; }
+  .hm-phone { margin: 10px 0 0; font-size: 1.1rem; opacity: .8; }
+  .hm-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; margin-top: clamp(56px, 8vw, 110px); font-size: .88rem; opacity: .65; }
+
+  /* Página de projeto (estrutura de galeria do Behance) */
+  .stage { min-height: 100vh; background: var(--c2); color: var(--ink); }
+  .stage .cta { background: var(--ink); color: var(--c2); }
+  .back { display: inline-flex; align-items: center; gap: 8px; margin: 8px 0 0; padding: 9px 16px; border-radius: 999px; border: 2px solid var(--ink); color: var(--ink); font-weight: 600; text-decoration: none; font-size: .9rem; }
+  .back:hover { background: var(--ink); color: var(--c2); }
+  .proj-head { padding-block: 28px 32px; }
+  .proj-head h1 { font-size: clamp(2.2rem, 6vw, 4rem); margin-bottom: 10px; }
+  .sub { margin: 0; font-size: 1.1rem; opacity: .85; max-width: 60ch; }
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 40px; align-items: start; padding-bottom: 24px; }
+  .main { min-width: 0; }
+  .hero-img { margin: 0 0 40px; }
+  .about { margin: 0 0 56px; max-width: 68ch; }
+  .about h2, .label { font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; opacity: .7; margin: 0 0 10px; }
+  .about p { margin: 0; font-size: 1.12rem; line-height: 1.75; }
+  .module { margin: 0 0 64px; scroll-margin-top: 90px; }
+  .group-label { display: block; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; opacity: .7; margin: 0 0 6px; }
+  .module h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.6rem, 3.2vw, 2.4rem); line-height: 1.08; margin: 0 0 18px; letter-spacing: -.01em; text-wrap: balance; }
+  .shots { display: flex; flex-direction: column; gap: 18px; }
+  .shot-btn { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, .22); }
+  .shot-btn img { display: block; width: 100%; height: auto; }
+  .module p.txt { margin: 20px 0 0; font-size: 1.08rem; line-height: 1.75; max-width: 66ch; }
+  .module.split .body { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: center; }
+  .module.split p.txt { margin: 0; }
+  .module p.txt.solo { margin-top: 0; }
+
+  .aside { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 18px; padding: 22px; border-radius: 14px; background: color-mix(in srgb, var(--ink) 15%, var(--c2)); border: 1px solid color-mix(in srgb, var(--ink) 30%, transparent); box-shadow: 0 12px 32px rgba(0, 0, 0, .25); }
+  .aside .who strong { display: block; font-family: var(--font-display); font-weight: 800; font-size: 1.25rem; line-height: 1.15; }
+  .aside .who span { opacity: .75; font-size: .92rem; }
+  .info-list { margin: 0; display: grid; gap: 12px; }
+  .info-list div { display: grid; gap: 2px; }
+  .info-list dt { font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; opacity: .65; }
+  .info-list dd { margin: 0; font-weight: 500; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .tools li { padding: 5px 12px; border-radius: 999px; font-size: .86rem; font-weight: 500; border: 1.5px solid color-mix(in srgb, var(--ink) 45%, transparent); }
+  .toc { display: flex; flex-direction: column; gap: 2px; }
+  .toc .grp { font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; opacity: .6; margin: 8px 0 2px; }
+  .toc button { text-align: left; background: transparent; border: 0; color: inherit; cursor: pointer; padding: 5px 0; font-size: .95rem; }
+  .toc button:hover { text-decoration: underline; }
+
+  .pager { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; padding-block: 24px 8px; }
+  .pager a { display: flex; flex-direction: column; gap: 4px; padding: 16px 20px; text-decoration: none; border: 2px solid var(--ink); border-radius: var(--radius); }
+  .pager a:hover { background: var(--ink); color: var(--c2); }
+  .pager small { opacity: .75; letter-spacing: .08em; text-transform: uppercase; font-size: .75rem; }
+  .pager strong { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; }
+  .pager .next { text-align: right; }
+
+  footer .in { padding-block: 40px; font-size: .88rem; opacity: .75; }
+  .plain-foot { background: var(--bg); color: var(--muted); }
+
+  /* Ampliação e contacto */
+  .lightbox, .modal {
+    position: fixed; inset: 0; z-index: 50; display: flex; align-items: center; justify-content: center;
+    padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+    background: rgba(4, 10, 16, .93);
+  }
+  .lightbox { cursor: zoom-out; }
+  .lightbox[hidden], .modal[hidden] { display: none; }
+  .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
+  .x { position: absolute; top: max(12px, env(safe-area-inset-top, 0px)); right: max(12px, env(safe-area-inset-right, 0px)); width: 44px; height: 44px; border-radius: 50%; border: 0; background: #fff; color: #0d2237; font-size: 1.4rem; line-height: 1; cursor: pointer; }
+  .modal { background: rgba(4, 10, 16, .72); }
+  .sheet { position: relative; width: min(100%, 460px); background: var(--surface); color: var(--fg); border-radius: 16px; padding: 28px 24px 24px; box-shadow: var(--shadow); }
+  .sheet .x { top: 12px; right: 12px; width: 38px; height: 38px; background: var(--line); color: var(--fg); font-size: 1.2rem; }
+  .sheet h2 { font-family: var(--font-display); font-weight: 800; font-size: 1.7rem; margin: 0 0 6px; }
+  .sheet p.lead { margin: 0 0 18px; color: var(--muted); }
+  .crow { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .crow .k { font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .crow .v { font-weight: 600; font-size: 1.05rem; overflow-wrap: anywhere; user-select: all; }
+  .crow .act { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  .mini { border: 1.5px solid var(--accent); background: transparent; color: var(--accent); font-weight: 600; font-size: .85rem; padding: 7px 14px; border-radius: 999px; cursor: pointer; text-decoration: none; }
+  .mini:hover { background: var(--accent); color: var(--accent-ink); }
+
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+    .aside { position: static; order: -1; }
+    .toc-box { display: none; }
+    .module.split .body { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    .hm-two, .hm-srv { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    .hm-nums, .hm-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) {
+    .nav, .top-right .tag { display: none; }
+    .top .brand, .top .cta { white-space: nowrap; }
+    .top .brand { font-size: .92rem; }
+    .top-right { gap: 8px; }
+    .lang button { padding: 4px 8px; font-size: .72rem; }
+    .top .cta { padding-inline: 14px; }
+    .hm-name { white-space: nowrap; font-size: clamp(2.6rem, 17.4vw, 9rem); }
+    .hm-name .n { display: block; }
+    .hm-name .n + .n { margin-left: 0; }
+    .hm-bot { flex-direction: column-reverse; align-items: flex-start; }
+  }
+  @media (hover: none), (max-width: 700px) {
+    .hm-peek { display: none; }
+    .hm-hint .h { display: none; }
+    .hm-hint .t { display: inline; }
+    .hm-row { grid-template-areas: "t y" "m m" "i i"; row-gap: 6px; padding-block: 22px 26px; }
+    .hm-th { display: block; margin-top: 12px; }
+    .hm-th img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+    .hm-row.act .hm-rt { transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cta, .cta:hover, .btn, .btn:hover { transition: none; }
+    .hm-name .ch, .hm-track, .hm-kwt, .hm-lead strong, .back, .proj-head .sub, .aside, .tools li, .pw > span, .hero-img .shot-btn, .hero-img .shot-btn img { animation: none; }
+    .module .shot-btn.rv { clip-path: none; transition: none; }
+    .module .shot-btn.rv img { transform: none; }
+    .rv { opacity: 1; transform: none; transition: none; }
+    .prog { display: none; }
+    .hm-works, .hm-row, .hm-rt, .hm-badge svg, .hm-st .w { transition: none; }
+    .hm-strip { overflow-x: auto; }
+  }
+</style>
+
+
+<div id="app"></div>
+<div class="lightbox" id="lightbox" hidden>
+  <button class="x" id="lb-close" aria-label="Fechar">×</button>
+  <img id="lb-img" alt="">
+</div>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="sheet">
+    <button class="x" id="modal-close" aria-label="Fechar">×</button>
+    <h2 id="modal-title">Vamos conversar</h2>
+    <p class="lead" id="modal-lead">Para projetos, colaborações ou oportunidades, fala comigo por aqui.</p>
+    <div id="contact-rows"></div>
+  </div>
+</div>
+
+<script>
+  // ---- Contactos (preencha linkedin e phone para aparecerem no botão Contactar) ----
+  var CONTACT = { email: "diogo.alexandre.braga@gmail.com", linkedin: "", phone: "+351 918 060 580" };
+
+  // ---- Idioma ----
+  var LANG = "pt";
+  try { var sv = localStorage.getItem("lang"); if (sv === "en" || sv === "pt") LANG = sv; } catch (e) {}
+  var UI = {
+    pt: {
+      proj: "Projetos", about: "Sobre", contact: "Contactar", tag: "Design gráfico &amp; marketing", sections: "Secções",
+      metaK: "Design gráfico · Branding · Marketing · Gestão de projetos",
+      lead: "Gestor de projetos e de marketing, designer gráfico. Há mais de 8 anos que uno estratégia e criatividade, do branding ao design gráfico, para dar às marcas uma comunicação coerente e com resultados que se medem.",
+      seeProj: "Ver projetos", badge: "VER PROJETOS • VER PROJETOS • ", covers: "Capas dos projetos", viewProj: "Ver projeto ",
+      kws: ["Design gráfico", "Branding", "Marketing", "Gestão de projetos"],
+      hHover: "Passa o rato por cima de um projeto", hTouch: "Desliza para ver os projetos",
+      srvK: "Serviços", srvH: "Design, branding, marketing e projetos",
+      aboutK: "Sobre mim",
+      p1: "Trabalho na junção entre estratégia e criatividade: do branding e do design gráfico à gestão de redes sociais, do marketing digital ao UX/UI. Como gestor de projetos, o que me move é transformar uma ideia em execução estruturada e em resultados que se conseguem medir.",
+      p2: "Sou Responsável de Marketing na FalconTech, onde criei o departamento de raiz: defini processos, ferramentas e estratégia, desenvolvi a identidade visual e as brand guidelines e implementei o CRM (HubSpot) e a gestão de projetos (Asana e Trello).",
+      p3: "Antes disso, na Arfit Climatização, geri a comunicação visual da marca e criei materiais comerciais e a interface de um software interno. Como freelancer, durante mais de seis anos, criei identidades visuais de branding e geri redes sociais para vários clientes. Na SPR Auto, como técnico de marketing, o conteúdo visual que criei para as redes sociais ajudou a aumentar o número de seguidores em 35%.",
+      expK: "Experiência", toolsK: "Ferramentas", skillsK: "Competências", eduK: "Formação", langsK: "Línguas",
+      skills: ["Branding", "Marketing digital", "UX/UI", "Gestão de projetos", "Liderança de equipa", "Pensamento criativo"],
+      edu: [["Técnico de Multimédia", "Gaia Nascente"], ["Google UX Design", "Coursera, 2024"], ["Fundamentals of Digital Marketing", "Google, 2023"]],
+      langs: [["Português", "nativo"], ["Inglês", "avançado (C2)"], ["Espanhol", "básico (A1)"], ["Francês", "básico (A2)"]],
+      contactK: "Contacto", talk: "Vamos<br>falar.", copy: "Copiar", copied: "Copiado",
+      foot1: "Portefólio · Diogo Encarnação", foot2: "Design gráfico · Branding · Marketing · Gestão de projetos",
+      back: "← Todos os projetos", aboutProj: "Sobre o projeto", company: "Empresa", project: "Projeto", role: "Cargo", skillsDt: "Competências", date: "Data",
+      inProj: "Neste projeto", prev: "← Anterior", next: "Seguinte →", others: "Outros projetos", toc: "Índice do projeto", zoom: "Ampliar imagem", close: "Fechar",
+      mTitle: "Vamos conversar", mLead: "Para projetos, colaborações ou oportunidades, fala comigo por aqui.", phone: "Telemóvel", write: "Escrever", open: "Abrir",
+      docHome: "Diogo Encarnação · Design gráfico, branding, marketing e gestão de projetos"
+    },
+    en: {
+      proj: "Projects", about: "About", contact: "Contact me", tag: "Graphic design &amp; marketing", sections: "Sections",
+      metaK: "Graphic design · Branding · Marketing · Project management",
+      lead: "Project and marketing manager, graphic designer. For over 8 years I have combined strategy and creativity, from branding to graphic design, to give brands coherent communication with results you can measure.",
+      seeProj: "View projects", badge: "VIEW PROJECTS • VIEW PROJECTS • ", covers: "Project covers", viewProj: "View project ",
+      kws: ["Graphic design", "Branding", "Marketing", "Project management"],
+      hHover: "Hover over a project", hTouch: "Scroll to see the projects",
+      srvK: "Services", srvH: "Design, branding, marketing and projects",
+      aboutK: "About me",
+      p1: "I work where strategy meets creativity: from branding and graphic design to social media management, from digital marketing to UX/UI. As a project manager, what drives me is turning an idea into structured execution and results you can measure.",
+      p2: "I am the Marketing Manager at FalconTech, where I built the department from scratch: I defined processes, tools and strategy, developed the visual identity and brand guidelines, and implemented the CRM (HubSpot) and project management (Asana and Trello).",
+      p3: "Before that, at Arfit Climatização, I managed the brand's visual communication and created sales materials and the interface of an internal software tool. As a freelancer, for more than six years, I created brand identities and managed social media for a range of clients. At SPR Auto, as a marketing technician, the visual content I created for social media helped grow the follower count by 35%.",
+      expK: "Experience", toolsK: "Tools", skillsK: "Skills", eduK: "Education", langsK: "Languages",
+      skills: ["Branding", "Digital marketing", "UX/UI", "Project management", "Team leadership", "Creative thinking"],
+      edu: [["Multimedia Technician", "Gaia Nascente"], ["Google UX Design", "Coursera, 2024"], ["Fundamentals of Digital Marketing", "Google, 2023"]],
+      langs: [["Portuguese", "native"], ["English", "advanced (C2)"], ["Spanish", "basic (A1)"], ["French", "basic (A2)"]],
+      contactK: "Contact", talk: "Let's<br>talk.", copy: "Copy", copied: "Copied",
+      foot1: "Portfolio · Diogo Encarnação", foot2: "Graphic design · Branding · Marketing · Project management",
+      back: "← All projects", aboutProj: "About the project", company: "Company", project: "Project", role: "Role", skillsDt: "Skills", date: "Date",
+      inProj: "In this project", prev: "← Previous", next: "Next →", others: "Other projects", toc: "Project index", zoom: "Enlarge image", close: "Close",
+      mTitle: "Let's talk", mLead: "For projects, collaborations or opportunities, get in touch here.", phone: "Phone", write: "Write", open: "Open",
+      docHome: "Diogo Encarnação · Graphic design, branding, marketing and project management"
+    }
+  };
+  function t(k) { return UI[LANG][k]; }
+
+  // ---- Projetos ----
+  // c1/c2 = cores do fundo do projeto (tiradas dos slides); ink = cor do texto; cover = imagem de capa.
+  // modules: title, imgs (ficheiros c-NN), text (texto do slide), split (imagem ao lado do texto), group (rótulo do índice).
+  var D = "#12202c", L = "#ffffff";
+  var INTRO = "Sou o Diogo, designer gráfico e profissional de marketing. Aqui reúno o trabalho que fiz para marcas reais, de campanhas, banners e flyers a identidades visuais e gestão de redes sociais. Passa pela SPR Auto, pela RAR, pela Special Casa, pelo Studio 33 e por outros projetos, e vê como o meu olhar criativo foi evoluindo.";
+  var AI = "Adobe Illustrator", PS = "Adobe Photoshop";
+
+  // pg / pgInk = fundo e texto da página do projeto; c1 / c2 / ink = cores da faixa na página inicial.
+  var PROJECTS = [
+    { id: "special-casa", name: "Special Casa", empresa: "Special Casa", kind: "Gestão de redes sociais & design gráfico", year: "2023/24",
+      c1: "#df8b31", c2: "#ca672c", ink: D, pg: "#ffffff", pgInk: D, cover: 3, tools: [AI, PS, "Meta Business Suite"],
+      desc: "Para a Special Casa, uma imobiliária, desenvolvi uma estratégia de comunicação visual coerente para as redes sociais, com o objetivo de aumentar a interação orgânica com o público. As publicações foram criadas em Adobe Illustrator e Photoshop e pensadas para aproximar a marca de quem procura casa.",
+      modules: [
+        { title: "Design gráfico", imgs: [5, 6],
+          text: "Publicações para as redes sociais da Special Casa: dicas para quem quer comprar ou vender casa, anúncios de imóveis, recrutamento de consultores e comunicação sazonal, como o São João." },
+        { title: "Gestão de redes sociais", imgs: [],
+          text: "Planeei e agendei as publicações no Meta Business Suite, onde também acompanhei os resultados de cada uma. Esta rotina deu-me uma gestão eficiente e resultados mensuráveis. O resultado foi uma presença digital mais alinhada com a marca e um crescimento significativo da interação orgânica." } ] },
+
+    { id: "btbc", name: "BTBC – be true, be creative", short: "BTBC", empresa: "BTBC - be true, be creative", kind: "Branding & gestão de redes sociais", year: "2023/24",
+      c1: "#17386e", c2: "#1e2e62", ink: L, pg: "#0a1630", pgInk: L, cover: 7, tools: [AI, PS],
+      desc: "Para a BTBC criei uma identidade visual assente em duas ideias, união e criatividade, representadas por um cérebro estilizado. As cores foram escolhidas para despertar emoções positivas e reforçar a mensagem da marca. Apliquei-a de forma coerente no logótipo, nos flyers, nas newsletters, nas publicações para redes sociais e nos cartões de visita, sempre com Adobe Illustrator e Photoshop, para uma imagem profissional e memorável.",
+      modules: [
+        { title: "Logo design", imgs: [9],
+          text: "O cérebro funciona como uma tela, as pessoas representam a colaboração e a sobreposição de formas define a criatividade e os seus caminhos. Quatro cores traduzem paixão, energia, confiança e criatividade, e duas tipografias completam o conjunto: Nugo Sans Light, leve e clara, e Salma Pro, imponente e simples." },
+        { title: "Newsletter", imgs: [10],
+          text: "Uma newsletter para dar a conhecer os serviços de gestão de redes sociais da BTBC, na mesma linguagem visual da marca." },
+        { title: "Gestão de redes sociais", imgs: [11], split: true,
+          text: "Dei voz visual à BTBC nas redes sociais. Criei publicações, stories e campanhas que seguem o conceito de criatividade e união, com cores escolhidas para provocar emoção e uma identidade aplicada de forma consistente, tudo desenvolvido com as ferramentas da Adobe." },
+        { title: "Design gráfico", imgs: [12, 13, 14, 15],
+          text: "Séries de publicações que apresentam os serviços da BTBC: gestão de redes sociais, design gráfico e branding." },
+        { title: "Cartão da empresa", imgs: [16],
+          text: "O cartão de visita resume a marca em três palavras, marketing digital, design gráfico e branding, e leva o contacto e as redes da BTBC." } ] },
+
+    { id: "spr-auto", name: "SPR Auto", empresa: "SPR Auto", kind: "Técnico de marketing: campanhas, banners, flyers e design gráfico", year: "2022/23",
+      cargo: "Técnico de marketing", skills: "Design gráfico, gestão de redes sociais, marketing digital, criação de conteúdo",
+      c1: "#1894d2", c2: "#015f9c", ink: L, pg: "#0c2338", pgInk: L, cover: 17, tools: [AI, PS, "After Effects", "Premiere", "Meta Business Suite", "Google Analytics"],
+      desc: "Na SPR Auto, como técnico de marketing, desenvolvi a presença da marca no Facebook, Instagram e LinkedIn com o objetivo de aumentar a interação orgânica. Produzi conteúdos visuais, incluindo stories e reels, e fotografei e editei imagens e vídeos para falar de forma direta com o cliente final. Trabalhei com Adobe Illustrator, Photoshop, After Effects e Premiere, e usei o Meta Business Suite e o Google Analytics para acompanhar e otimizar o desempenho das campanhas.",
+      modules: [
+        { group: "Campanhas", title: "Blue Monday", imgs: [19], split: true,
+          text: "Criei e executei a campanha Blue Monday para trazer clientes de forma regular: de 15 em 15 dias, uma seleção rotativa de produtos exclusivos online. O resultado foi mais clientes assíduos e maior visibilidade do site e das redes sociais da SPR Auto, cumprindo os objetivos definidos." },
+        { group: "Campanhas", title: "Halloween", imgs: [20],
+          text: "Planeei e lancei uma campanha de Halloween com cupões online, pensada para levar novos clientes exclusivamente ao site. Foi um teste e o resultado foi um sucesso moderado: mais adesão e mais tráfego no site." },
+        { group: "Campanhas", title: "Black Friday", imgs: [21], split: true,
+          text: "Na Black Friday, o objetivo era chegar a mais clientes. Juntei produtos muito procurados com outros de menor procura, o que fez subir de forma significativa as vendas dos artigos menos populares. O êxito veio de uma análise cuidada do mercado e de uma execução rigorosa." },
+        { group: "Campanhas", title: "Inverno", imgs: [22],
+          text: "A campanha de Inverno foi uma promoção de um só dia, pensada para causar impacto imediato. Funcionou como teaser: captou a atenção do público para as ações seguintes e criou expectativa para as campanhas que se seguiram." },
+        { group: "Campanhas", title: "Natal", imgs: [23], split: true,
+          text: "A campanha de Natal assentou no teaser lançado antes e ampliou a seleção de produtos com descontos atrativos. As vendas subiram de forma exponencial, aproveitando o balanço criado pela campanha anterior." },
+        { group: "Campanhas", title: "Carnaval", imgs: [24],
+          text: "A campanha de Carnaval foi em formato flash: durou apenas um dia e foi antecedida por uma série de teasers nas semanas anteriores. A expectativa criada traduziu-se num aumento significativo da procura e das vendas online." },
+        { group: "Campanhas", title: "Aniversário", imgs: [25], split: true,
+          text: "Na campanha de Aniversário, cada dia da semana desbloqueava uma seleção de produtos, até ao dia do aniversário, quando todos ficaram disponíveis, com celebração na loja física. Teve grande sucesso e atraiu muita procura, tanto online como na loja." },
+        { title: "Banners", imgs: [26],
+          text: "Banners para o site da SPR Auto, a destacar produtos e marcas como Valvoline, Mannol e Ecotec." },
+        { title: "Flyers", imgs: [27],
+          text: "Flyers de promoção de produtos: baterias ZAP, lubrificantes, escovas e lâmpadas e carros de ferramentas." },
+        { title: "Design gráfico", imgs: [28, 29, 30, 31],
+          text: "Publicações para as redes sociais com conteúdo útil para automobilistas, de datas comemorativas a conselhos de manutenção." },
+        { title: "Design de etiqueta", imgs: [32],
+          text: "Etiqueta de próxima revisão e cartão de revisão, com data, quilómetros, tipo de óleo e a lista de filtros a verificar." } ] },
+
+    { id: "studio-33", name: "Studio 33", empresa: "Studio33", kind: "Cartão da empresa", year: "2023",
+      c1: "#6f973f", c2: "#708f54", ink: D, pg: "#2f4524", pgInk: L, cover: 33, tools: [AI, PS],
+      desc: "Para o Studio 33 desenhei um cartão de visita simples e elegante, em linha com o branding que a empresa já tinha. O minimalismo foi a escolha para manter uma identidade coesa e profissional, desenvolvida em Adobe Illustrator e Photoshop.",
+      modules: [ { title: "Cartão da empresa", imgs: [34] } ] },
+
+    { id: "eletro-avintes", name: "Eletro Avintes", empresa: "Eletro Avintes", kind: "Logo & post design", year: "2023",
+      c1: "#3c9694", c2: "#3c9694", ink: D, pg: "#123b3a", pgInk: L, cover: 35, tools: [AI, PS],
+      desc: "Peguei na ideia inicial do logótipo da Eletro Avintes e dei-lhe forma, ajustada à identidade da marca. Criei também publicações informativas para reforçar a presença da EletroAvintes nas redes sociais, com Adobe Illustrator e Photoshop e uma estética visual consistente.",
+      modules: [ { title: "Posts design", imgs: [36] } ] },
+
+    { id: "rar-acucar", name: "RAR Açúcar", empresa: "RAR Açúcar", kind: "Flyer", year: "2023",
+      c1: "#90cade", c2: "#90cade", ink: D, pg: "#1d465a", pgInk: L, cover: 37, tools: [AI, PS],
+      desc: "Para o Dia Mundial da Criança, desenhei um flyer da RAR que alia criatividade e utilidade. Por dentro é um mapa interativo da visita à fábrica, com descrições cativantes; por fora, uma linha gráfica simples mas apelativa, que apresenta as regras de visita de forma clara.",
+      modules: [ { title: "Flyer", imgs: [38] } ] },
+
+    { id: "eva-explica", name: "Eva Explica", empresa: "Eva Explica", kind: "Logo design & design exterior", year: "2019/20",
+      c1: "#fcb912", c2: "#fcbd5c", ink: D, pg: "#3a2a0c", pgInk: L, cover: 39, tools: [PS, AI, "Branding"],
+      desc: "Criei um logótipo simples e marcante para o centro de estudos Eva Explica, em preto e amarelo. Os óculos, que lembram o Harry Potter, remetem para o estudo e a educação, e surgem acompanhados de padrões minimalistas e da informação essencial do centro. O resultado é uma imagem única e fácil de recordar.",
+      modules: [ { title: "Design exterior", imgs: [40] } ] },
+
+    { id: "essence-beauty", name: "Essence Beauty", empresa: "Essence Beauty", kind: "Branding & flyer design", year: "2018/20",
+      c1: "#c0aed4", c2: "#d5b6d6", ink: D, pg: "#3b2845", pgInk: L, cover: 41, tools: [AI, PS],
+      modules: [
+        { title: "Branding", imgs: [42],
+          text: "Para a Sofia Vasconçelos criei um logótipo sofisticado que junta as iniciais dela às da empresa e deu origem a uma marca com personalidade. O cartão de visita usa uma paleta de tons rosa que reflete a elegância e a simplicidade do centro de estética e atrai o olhar com suavidade." },
+        { title: "Flyers", imgs: [43],
+          text: "Desenvolvi dois flyers distintos, ambos fiéis ao branding existente: o primeiro destaca os serviços do centro de estética e o segundo explica as regras de segurança adotadas por causa da COVID-19, com uma comunicação clara e eficaz para as clientes." } ] }
+  ];
+
+  // Versão em inglês: texto de cada projeto (módulos pela mesma ordem: [título, texto, grupo]).
+  var ENP = {
+    "special-casa": { kind: "Social media management & graphic design",
+      desc: "For Special Casa, a real estate agency, I developed a coherent visual communication strategy for social media, aimed at increasing organic engagement with the audience. The posts were created in Adobe Illustrator and Photoshop and designed to bring the brand closer to people looking for a home.",
+      m: [["Graphic design", "Social media posts for Special Casa: tips for those who want to buy or sell a home, property listings, recruitment of consultants and seasonal communication, such as São João."],
+          ["Social media management", "I planned and scheduled the posts in Meta Business Suite, where I also tracked the results of each one. This routine gave me efficient management and measurable results. The outcome was a digital presence more aligned with the brand and significant growth in organic engagement."]] },
+    "btbc": { kind: "Branding & social media management",
+      desc: "For BTBC I created a visual identity built on two ideas, unity and creativity, represented by a stylised brain. The colours were chosen to evoke positive emotions and reinforce the brand's message. I applied it consistently across the logo, flyers, newsletters, social media posts and business cards, always with Adobe Illustrator and Photoshop, for a professional and memorable image.",
+      m: [["Logo design", "The brain works as a canvas, the people represent collaboration, and the overlapping shapes define creativity and its paths. Four colours convey passion, energy, trust and creativity, and two typefaces complete the set: Nugo Sans Light, light and clear, and Salma Pro, strong and simple."],
+          ["Newsletter", "A newsletter to present BTBC's social media management services, in the same visual language as the brand."],
+          ["Social media management", "I gave BTBC a visual voice on social media. I created posts, stories and campaigns that follow the concept of creativity and unity, with colours chosen to evoke emotion and an identity applied consistently, all developed with Adobe tools."],
+          ["Graphic design", "Series of posts presenting BTBC's services: social media management, graphic design and branding."],
+          ["Company card", "The business card sums up the brand in three words, digital marketing, graphic design and branding, and carries BTBC's contact details and social networks."]] },
+    "spr-auto": { kind: "Marketing technician: campaigns, banners, flyers and graphic design",
+      cargo: "Marketing technician", skills: "Graphic design, social media management, digital marketing, content creation",
+      desc: "At SPR Auto, as a marketing technician, I developed the brand's presence on Facebook, Instagram and LinkedIn with the goal of increasing organic engagement. I produced visual content, including stories and reels, and photographed and edited images and videos to speak directly to the end customer. I worked with Adobe Illustrator, Photoshop, After Effects and Premiere, and used Meta Business Suite and Google Analytics to track and optimise campaign performance.",
+      m: [["Blue Monday", "I created and ran the Blue Monday campaign to bring in customers on a regular basis: every two weeks, a rotating selection of online-exclusive products. The result was more repeat customers and greater visibility for SPR Auto's website and social media, meeting the goals set.", "Campaigns"],
+          ["Halloween", "I planned and launched a Halloween campaign with online coupons, designed to bring new customers exclusively to the website. It was a test and the result was a moderate success: more uptake and more website traffic.", "Campaigns"],
+          ["Black Friday", "On Black Friday, the goal was to reach more customers. I paired highly sought-after products with less popular ones, which significantly boosted sales of the less popular items. The success came from careful market analysis and rigorous execution.", "Campaigns"],
+          ["Winter", "The Winter campaign was a one-day promotion, designed for immediate impact. It worked as a teaser: it caught the audience's attention for the following actions and built anticipation for the campaigns that followed.", "Campaigns"],
+          ["Christmas", "The Christmas campaign built on the teaser launched earlier and expanded the product selection with attractive discounts. Sales rose exponentially, building on the momentum of the previous campaign.", "Campaigns"],
+          ["Carnival", "The Carnival campaign was in flash format: it lasted just one day and was preceded by a series of teasers in the previous weeks. The anticipation it created translated into a significant increase in demand and online sales.", "Campaigns"],
+          ["Anniversary", "In the Anniversary campaign, each day of the week unlocked a selection of products, until the anniversary day, when all became available, with a celebration at the physical store. It was a great success and drew strong demand, both online and in store.", "Campaigns"],
+          ["Banners", "Banners for the SPR Auto website, highlighting products and brands such as Valvoline, Mannol and Ecotec."],
+          ["Flyers", "Product promotion flyers: ZAP batteries, lubricants, wipers and bulbs, and tool trolleys."],
+          ["Graphic design", "Social media posts with useful content for drivers, from commemorative dates to maintenance tips."],
+          ["Label design", "Next-service sticker and service card, with the date, mileage, oil type and a list of filters to check."]] },
+    "studio-33": { kind: "Company card",
+      desc: "For Studio 33 I designed a simple, elegant business card, in line with the branding the company already had. Minimalism was the choice to keep a cohesive and professional identity, developed in Adobe Illustrator and Photoshop.",
+      m: [["Company card"]] },
+    "eletro-avintes": { kind: "Logo & post design",
+      desc: "I took Eletro Avintes' initial logo idea and gave it shape, adjusted to the brand's identity. I also created informative posts to strengthen EletroAvintes' presence on social media, with Adobe Illustrator and Photoshop and a consistent visual aesthetic.",
+      m: [["Post design"]] },
+    "rar-acucar": { kind: "Flyer",
+      desc: "For World Children's Day, I designed a flyer for RAR that combines creativity and usefulness. Inside is an interactive map of the factory visit, with engaging descriptions; outside, a simple but appealing graphic line that presents the visiting rules clearly.",
+      m: [["Flyer"]] },
+    "eva-explica": { kind: "Logo design & exterior design",
+      desc: "I created a simple, striking logo for the study centre Eva Explica, in black and yellow. The glasses, reminiscent of Harry Potter, point to study and education, and appear alongside minimalist patterns and the centre's essential information. The result is a unique, easy-to-remember image.",
+      m: [["Exterior design"]] },
+    "essence-beauty": { kind: "Branding & flyer design",
+      m: [["Branding", "For Sofia Vasconçelos I created a sophisticated logo that joins her initials with those of the company and gave rise to a brand with personality. The business card uses a palette of pink tones that reflects the elegance and simplicity of the beauty centre and draws the eye gently."],
+          ["Flyers", "I developed two distinct flyers, both faithful to the existing branding: the first highlights the beauty centre's services and the second explains the safety rules adopted because of COVID-19, with clear and effective communication for clients."]] }
+  };
+  function loc(p) {
+    var e = LANG === "en" ? ENP[p.id] : null;
+    if (!e) return p;
+    var q = {}; for (var k in p) q[k] = p[k];
+    ["kind", "desc", "cargo", "skills"].forEach(function (f) { if (e[f] != null) q[f] = e[f]; });
+    q.modules = p.modules.map(function (m, n) {
+      var x = e.m && e.m[n]; if (!x) return m;
+      var r = {}; for (var k in m) r[k] = m[k];
+      if (x[0]) r.title = x[0]; if (x[1]) r.text = x[1]; if (x[2]) r.group = x[2];
+      return r;
+    });
+    return q;
+  }
+
+  var DIMS = {"3": [1920, 859], "5": [1920, 915], "6": [1920, 915], "7": [1920, 861], "9": [1920, 940], "10": [1920, 940], "11": [1000, 860], "12": [1920, 940], "13": [1920, 940], "14": [1920, 940], "15": [1920, 940], "16": [1920, 940], "17": [1920, 894], "19": [968, 785], "20": [1920, 554], "21": [968, 785], "22": [1920, 541], "23": [991, 785], "24": [1920, 538], "25": [961, 785], "26": [1920, 875], "27": [1920, 875], "28": [1920, 875], "29": [1920, 875], "30": [1920, 875], "31": [1920, 875], "32": [1920, 875], "33": [1920, 894], "34": [1920, 792], "35": [1920, 894], "36": [1920, 791], "37": [1920, 894], "38": [1920, 792], "39": [1920, 895], "40": [1920, 793], "41": [1920, 894], "42": [1920, 790], "43": [1920, 790]};
+  function src(n) { return "img/" + (n === 1 ? "p-01" : "c-" + (n < 10 ? "0" + n : n)) + ".jpg"; }
+  function imgTag(n, alt, eager) {
+    var d = DIMS[n] || [1920, 1080];
+    return '<img src="' + src(n) + '" width="' + d[0] + '" height="' + d[1] + '" alt="' + esc(alt) + '" loading="' + (eager ? "eager" : "lazy") + '">';
+  }
+  function hl(s) { return esc(s); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function stageVars(p) { return "--c1:" + p.pg + ";--c2:" + p.pg + ";--ink:" + p.pgInk + ";"; }
+  function vars(p) { return "--c1:" + p.c1 + ";--c2:" + p.c2 + ";--ink:" + p.ink + ";"; }
+  function pageCount(p) { return p.modules.reduce(function (a, m) { return a + m.imgs.length; }, 1); }
+
+  var app = document.getElementById("app");
+  function setBg(c) { try { document.body.style.background = c || ""; } catch (e) {} }
+
+  function topbar(isHome) {
+    return '<div class="hdr"><header class="' + (isHome ? 'wide' : 'in') + ' top"><a class="brand" href="#inicio">Diogo Encarnação</a>' +
+      '<div class="top-right">' +
+      (isHome ? '<nav class="nav" aria-label="' + t("sections") + '"><button type="button" data-jump="projetos">' + t("proj") + '</button><button type="button" data-jump="sobre">' + t("about") + '</button></nav>' : '<span class="tag">' + t("tag") + '</span>') +
+      '<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="pt" aria-pressed="' + (LANG === "pt") + '">PT</button><button type="button" data-lang="en" aria-pressed="' + (LANG === "en") + '">EN</button></div>' +
+      '<button class="cta" type="button" data-contact>' + t("contact") + '</button></div></header></div>';
+  }
+
+  var cleanups = [];
+  function on(t, ev, fn, o) { t.addEventListener(ev, fn, o); cleanups.push(function () { t.removeEventListener(ev, fn, o); }); }
+
+  var SERVICES = {
+    pt: [
+      { t: "Design gráfico", d: "Campanhas, banners, flyers, cartazes e publicações desenhados para comunicar com clareza e vender.", p: ["spr-auto", "special-casa", "rar-acucar", "studio-33"] },
+      { t: "Branding", d: "Logótipos, paletas e tipografia que dão à marca uma cara reconhecível e coerente em todos os pontos de contacto.", p: ["btbc", "essence-beauty", "eva-explica", "eletro-avintes"] },
+      { t: "Marketing", d: "Estratégia, redes sociais, campanhas e CRM com objetivos claros e resultados que se medem.", p: ["special-casa", "btbc", "spr-auto"] },
+      { t: "Gestão de projetos", d: "Planeamento, prazos e ferramentas como Asana e Trello para que cada projeto de design e marketing chegue ao fim no tempo combinado.", p: [] }
+    ],
+    en: [
+      { t: "Graphic design", d: "Campaigns, banners, flyers, posters and posts designed to communicate clearly and sell.", p: ["spr-auto", "special-casa", "rar-acucar", "studio-33"] },
+      { t: "Branding", d: "Logos, palettes and typography that give a brand a recognisable, coherent face at every touchpoint.", p: ["btbc", "essence-beauty", "eva-explica", "eletro-avintes"] },
+      { t: "Marketing", d: "Strategy, social media, campaigns and CRM with clear goals and measurable results.", p: ["special-casa", "btbc", "spr-auto"] },
+      { t: "Project management", d: "Planning, deadlines and tools such as Asana and Trello, so every design and marketing project is delivered on the agreed date.", p: [] }
+    ]
+  };
+  var STATEMENT = {
+    pt: "Gestor de projetos e de marketing, designer gráfico com mais de 8 anos a construir marcas: branding, design gráfico e marketing digital, da estratégia à execução.",
+    en: "Project and marketing manager, graphic designer with over 8 years of building brands: branding, graphic design and digital marketing, from strategy to execution."
+  };
+  var EXP = {
+    pt: [
+      ["Responsável de Marketing", "FalconTech", "2025 – presente"],
+      ["Técnico de Multimédia", "Arfit Climatização", "2024 – 2025"],
+      ["Designer gráfico e gestor de redes sociais", "Freelancer", "2018 – 2024"],
+      ["Técnico de Marketing", "SPR Auto, Porto", "2022 – 2023"]
+    ],
+    en: [
+      ["Marketing Manager", "FalconTech", "2025 – present"],
+      ["Multimedia Technician", "Arfit Climatização", "2024 – 2025"],
+      ["Graphic designer and social media manager", "Freelancer", "2018 – 2024"],
+      ["Marketing Technician", "SPR Auto, Porto", "2022 – 2023"]
+    ]
+  };
+  var NUMS = {
+    pt: [
+      { to: 40, pre: "+", suf: "%", l: "notoriedade digital, FalconTech" },
+      { to: 30, pre: "+", suf: "%", l: "leads qualificadas, FalconTech" },
+      { to: 35, pre: "+", suf: "%", l: "engagement digital, Arfit Climatização" },
+      { to: 35, pre: "+", suf: "%", l: "seguidores, SPR Auto" }
+    ],
+    en: [
+      { to: 40, pre: "+", suf: "%", l: "digital awareness, FalconTech" },
+      { to: 30, pre: "+", suf: "%", l: "qualified leads, FalconTech" },
+      { to: 35, pre: "+", suf: "%", l: "digital engagement, Arfit Climatização" },
+      { to: 35, pre: "+", suf: "%", l: "followers, SPR Auto" }
+    ]
+  };
+  function byId(id) { return PROJECTS.filter(function (p) { return p.id === id; })[0]; }
+  function li(t) { return '<li>' + esc(t) + '</li>'; }
+
+  function home() {
+    document.title = t("docHome");
+    setBg("");
+    var k = 0;
+    function letters(s) { return s.split("").map(function (c) { return '<span class="ch" style="--i:' + (k++) + '">' + c + '</span>'; }).join(""); }
+    var rows = PROJECTS.map(function (p0) {
+      var p = loc(p0);
+      return '<a class="hm-row" href="#' + p.id + '" data-fl="' + p.c1 + '" data-fi="' + p.ink + '">' +
+        '<span class="hm-rt">' + esc(p.short || p.name) + '</span><span class="hm-ry">' + esc(p.year) + '</span>' +
+        '<span class="hm-rm">' + esc(p.kind) + '</span><span class="hm-th">' + imgTag(p.cover, "", false) + '</span></a>';
+    }).join("");
+    var peek = PROJECTS.map(function (p) { return imgTag(p.cover, "", false); }).join("");
+    var strip1 = PROJECTS.map(function (p, i) {
+      return '<a class="hm-cv" href="#' + p.id + '" aria-label="' + t("viewProj") + esc(p.short || p.name) + '">' + imgTag(p.cover, "", i < 3) + '</a>';
+    }).join("");
+    var strip2 = PROJECTS.map(function (p) {
+      return '<a class="hm-cv" href="#' + p.id + '" tabindex="-1" aria-hidden="true">' + imgTag(p.cover, "", false) + '</a>';
+    }).join("");
+    var svcs = SERVICES[LANG].map(function (s) {
+      return '<div class="hm-srv"><h3>' + esc(s.t) + '</h3><div><p>' + esc(s.d) + '</p><div class="lk">' +
+        s.p.map(function (id) { var q = byId(id); return '<a href="#' + id + '">' + esc(q.short || q.name) + '</a>'; }).join("") + '</div></div></div>';
+    }).join("");
+    var st = STATEMENT[LANG].split(" ").map(function (w) { return '<span class="w">' + esc(w) + '</span>'; }).join(" ");
+    var exp = EXP[LANG].map(function (e) { return '<li><b>' + esc(e[0]) + '</b><span class="yr">' + esc(e[2]) + '</span><span>' + esc(e[1]) + '</span></li>'; }).join("");
+    var nums = NUMS[LANG].map(function (n) { return '<div><span class="hm-num" data-to="' + n.to + '" data-pre="' + n.pre + '" data-suf="' + n.suf + '">' + n.pre + n.to + n.suf + '</span><span class="hm-nl">' + esc(n.l) + '</span></div>'; }).join("");
+    var tools = ["Illustrator", "Photoshop", "After Effects", "Premiere", "Figma", "HubSpot CRM", "Meta Business Suite", "Meta Ads", "Google Analytics", "Buffer", "Asana", "Trello"].map(li).join("");
+    var skills = t("skills").map(li).join("");
+    var edu = t("edu").map(function (e) { return '<li><b>' + esc(e[0]) + '</b> <span>' + esc(e[1]) + '</span></li>'; }).join("");
+    var langs = t("langs").map(function (e) { return '<li><b>' + esc(e[0]) + '</b> <span>' + esc(e[1]) + '</span></li>'; }).join("");
+    var kwItems = t("kws").map(function (w) { return '<b>' + esc(w) + '</b><i>✦</i>'; }).join("");
+    var kw = '<span>' + kwItems + '</span>';
+
+    app.innerHTML = topbar(true) +
+      '<section class="wide hm-hero"><div class="hm-meta hm-k"><span>' + esc(t("metaK")) + '</span><span>Vila Nova de Gaia, Portugal</span></div>' +
+      '<h1 class="hm-name" aria-label="Diogo Encarnação"><span class="n" aria-hidden="true">' + letters("DIOGO") + '</span><span class="n" aria-hidden="true">' + letters("ENCARNAÇÃO") + '</span></h1>' +
+      '<div class="hm-bot"><p class="hm-lead">' + esc(t("lead")) + '</p>' +
+      '<button class="hm-badge" type="button" data-jump="projetos" aria-label="' + t("seeProj") + '"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="bp" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><text><textPath href="#bp" textLength="272" lengthAdjust="spacing">' + esc(t("badge")) + '</textPath></text></svg><i>↓</i></button></div></section>' +
+      '<div class="hm-kw" aria-hidden="true"><div class="hm-kwt">' + kw + kw + '</div></div>' +
+      '<div class="hm-strip" aria-label="' + t("covers") + '"><div class="hm-track">' + strip1 + strip2 + '</div></div>' +
+      '<section class="hm-works" id="projetos"><div class="wide"><div class="hm-whead"><h2 class="hm-h">' + t("proj") + '</h2>' +
+      '<p class="hm-hint"><span class="h">' + t("hHover") + '</span><span class="t">' + t("hTouch") + '</span></p></div>' +
+      '<div class="hm-list">' + rows + '</div></div><div class="hm-peek" aria-hidden="true">' + peek + '</div></section>' +
+      '<section class="wide hm-sec" id="servicos"><p class="hm-k">' + t("srvK") + '</p><h2 class="hm-h" style="margin-top:14px">' + t("srvH") + '</h2><div class="hm-srv-list">' + svcs + '</div></section>' +
+      '<section class="wide hm-sec" id="sobre"><p class="hm-k">' + t("aboutK") + '</p><p class="hm-st">' + st + '</p>' +
+      '<div class="hm-two"><div><p>' + esc(t("p1")) + '</p><p>' + esc(t("p2")) + '</p><p>' + esc(t("p3")) + '</p></div>' +
+      '<div><p class="hm-k" style="margin-bottom:10px">' + t("expK") + '</p><ul class="hm-exp">' + exp + '</ul></div></div>' +
+      '<div class="hm-nums">' + nums + '</div>' +
+      '<div class="hm-facts"><div><p class="label">' + t("toolsK") + '</p><ul class="tools">' + tools + '</ul></div><div><p class="label">' + t("skillsK") + '</p><ul class="tools">' + skills + '</ul></div>' +
+      '<div><p class="label">' + t("eduK") + '</p><ul class="plain-list">' + edu + '</ul></div>' +
+      '<div><p class="label">' + t("langsK") + '</p><ul class="plain-list">' + langs + '</ul></div></div></section>' +
+      '<section class="hm-contact" id="contacto"><div class="wide"><p class="hm-k">' + t("contactK") + '</p><h2 class="hm-big">' + t("talk") + '</h2>' +
+      '<div class="hm-mail copy-wrap"><span class="v">' + esc(CONTACT.email) + '</span><button class="mini" type="button" data-copy="' + esc(CONTACT.email) + '">' + t("copy") + '</button></div>' +
+      (CONTACT.phone ? '<p class="hm-phone">' + esc(CONTACT.phone) + '</p>' : '') +
+      '<button class="cta" type="button" data-contact>' + t("contact") + '</button>' +
+      '<div class="hm-foot"><span>' + t("foot1") + '</span><span>' + t("foot2") + '</span></div></div></section>';
+  }
+
+  function initHome() {
+    var works = document.querySelector(".hm-works");
+    if (!works) return;
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var fine = matchMedia("(hover: hover) and (pointer: fine)").matches && innerWidth > 700;
+    var rows = [].slice.call(works.querySelectorAll(".hm-row"));
+    var list = works.querySelector(".hm-list");
+    var peek = works.querySelector(".hm-peek");
+    var pimgs = [].slice.call(peek.querySelectorAll("img"));
+    var cur = -1;
+
+    function activate(i) {
+      if (i === cur) return;
+      cur = i;
+      works.style.setProperty("--fl", rows[i].dataset.fl);
+      works.style.setProperty("--fi", rows[i].dataset.fi);
+      works.classList.add("on");
+      rows.forEach(function (r, k) { r.classList.toggle("act", k === i); });
+      pimgs.forEach(function (m, k) { m.classList.toggle("show", k === i); });
+    }
+    function clear() {
+      cur = -1;
+      works.classList.remove("on");
+      rows.forEach(function (r) { r.classList.remove("act"); });
+      pimgs.forEach(function (m) { m.classList.remove("show"); });
+      peek.classList.remove("vis");
+    }
+
+    if (fine) {
+      var tx = 0, ty = 0, x = 0, y = 0, raf = 0, running = false;
+      var tick = function () {
+        x += (tx - x) * 0.2; y += (ty - y) * 0.2;
+        peek.style.transform = "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0)";
+        if (running) raf = requestAnimationFrame(tick);
+      };
+      var start = function () { if (!running) { running = true; raf = requestAnimationFrame(tick); } };
+      cleanups.push(function () { running = false; cancelAnimationFrame(raf); });
+      on(list, "mousemove", function (e) {
+        var w = peek.offsetWidth, h = peek.offsetHeight;
+        var px = e.clientX + 36;
+        if (px + w > innerWidth - 16) px = e.clientX - 36 - w;
+        tx = px; ty = Math.max(76, Math.min(e.clientY - h / 2, innerHeight - h - 16));
+      });
+      rows.forEach(function (r, i) {
+        on(r, "mouseenter", function (e) {
+          if (!peek.classList.contains("vis")) {
+            var w = peek.offsetWidth, h = peek.offsetHeight, px = e.clientX + 36;
+            if (px + w > innerWidth - 16) px = e.clientX - 36 - w;
+            tx = x = px; ty = y = Math.max(76, Math.min(e.clientY - h / 2, innerHeight - h - 16));
+            peek.style.transform = "translate3d(" + x + "px," + y + "px,0)";
+          }
+          activate(i); peek.classList.add("vis"); start();
+        });
+        on(r, "focus", function () { activate(i); });
+      });
+      on(list, "mouseleave", function () { clear(); running = false; });
+      on(list, "focusout", function () { setTimeout(function () { if (!list.contains(document.activeElement)) clear(); }, 0); });
+    } else {
+      var pending = false;
+      var pick = function () {
+        pending = false;
+        var wr = works.getBoundingClientRect();
+        if (wr.bottom < 0 || wr.top > innerHeight) { if (cur > -1) clear(); return; }
+        var lr = list.getBoundingClientRect(), mid = innerHeight * 0.5;
+        if (lr.top > mid || lr.bottom < mid) { if (cur > -1) clear(); return; }
+        var best = 0, bd = 1e9;
+        rows.forEach(function (r, k) {
+          var b = r.getBoundingClientRect(), d = Math.abs((b.top + b.bottom) / 2 - mid);
+          if (d < bd) { bd = d; best = k; }
+        });
+        activate(best);
+      };
+      var sched = function () { if (!pending) { pending = true; requestAnimationFrame(pick); } };
+      on(window, "scroll", sched, { passive: true });
+      on(window, "resize", sched);
+      sched();
+    }
+
+    // Frase de apresentação: as palavras acendem ao fazer scroll
+    var st = document.querySelector(".hm-st");
+    if (st) {
+      var ws = [].slice.call(st.querySelectorAll(".w"));
+      if (reduce) { ws.forEach(function (w) { w.classList.add("on"); }); }
+      else {
+        var pend2 = false;
+        var upd = function () {
+          pend2 = false;
+          var r = st.getBoundingClientRect(), vh = innerHeight;
+          var p = Math.max(0, Math.min(1, (vh * 0.85 - r.top) / (r.height + vh * 0.3)));
+          var n = Math.round(p * ws.length);
+          ws.forEach(function (w, k) { w.classList.toggle("on", k < n); });
+        };
+        var s2 = function () { if (!pend2) { pend2 = true; requestAnimationFrame(upd); } };
+        on(window, "scroll", s2, { passive: true });
+        on(window, "resize", s2);
+        upd();
+      }
+    }
+
+    // Números: contam até ao valor quando entram no ecrã
+    var nums = [].slice.call(document.querySelectorAll(".hm-num"));
+    if (!reduce && "IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          io.unobserve(e.target);
+          var el = e.target, to = +el.dataset.to, pre = el.dataset.pre || "", suf = el.dataset.suf || "", t0 = performance.now();
+          var f = function (t) {
+            var p = Math.min(1, (t - t0) / 1100), ease = 1 - Math.pow(1 - p, 3);
+            el.textContent = pre + Math.round(to * ease) + suf;
+            if (p < 1) requestAnimationFrame(f);
+          };
+          requestAnimationFrame(f);
+        });
+      }, { threshold: 0.6 });
+      nums.forEach(function (n) { io.observe(n); });
+      cleanups.push(function () { io.disconnect(); });
+    }
+  }
+
+  var current = [];
+  function project(i) {
+    var p = loc(PROJECTS[i]);
+    document.title = p.name + " · Diogo Encarnação";
+    setBg(p.pg);
+    current = [p.cover];
+    var mods = p.modules.map(function (m, k) {
+      var shots = m.imgs.map(function (n, j) {
+        current.push(n);
+        return '<button class="shot-btn" type="button" data-n="' + n + '" aria-label="' + t("zoom") + '">' + imgTag(n, p.name + " · " + m.title + (m.imgs.length > 1 ? " (" + (j + 1) + ")" : "")) + '</button>';
+      }).join("");
+      var inner = shots ? '<div class="shots">' + shots + '</div>' : '';
+      var txt = m.text ? '<p class="txt' + (shots ? '' : ' solo') + '">' + hl(m.text) + '</p>' : '';
+      var body = m.split ? '<div class="body"><div class="shots">' + shots + '</div>' + txt + '</div>' : inner + txt;
+      return '<section class="module' + (m.split ? ' split' : '') + '" id="m' + k + '">' +
+        (m.group ? '<span class="group-label">' + esc(m.group) + '</span>' : '') +
+        '<h2>' + esc(m.title) + '</h2>' + body + '</section>';
+    }).join("");
+
+    var info = '<div><dt>' + t("company") + '</dt><dd>' + esc(p.empresa) + '</dd></div>' +
+      '<div><dt>' + t("project") + '</dt><dd>' + esc(p.kind) + '</dd></div>' +
+      (p.cargo ? '<div><dt>' + t("role") + '</dt><dd>' + esc(p.cargo) + '</dd></div>' : '') +
+      (p.skills ? '<div><dt>' + t("skillsDt") + '</dt><dd>' + esc(p.skills) + '</dd></div>' : '') +
+      '<div><dt>' + t("date") + '</dt><dd>' + esc(p.year) + '</dd></div>';
+    var tools = p.tools.length ? '<div><p class="label">' + t("toolsK") + '</p><ul class="tools">' + p.tools.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join("") + '</ul></div>' : '';
+    var lastGroup = "";
+    var toc = p.modules.map(function (m, k) {
+      var g = "";
+      if (m.group && m.group !== lastGroup) g = '<span class="grp">' + esc(m.group) + '</span>';
+      lastGroup = m.group || "";
+      return g + '<button type="button" data-jump="m' + k + '">' + esc(m.title) + '</button>';
+    }).join("");
+
+    var prev = PROJECTS[i - 1], next = PROJECTS[i + 1];
+    app.innerHTML = '<div class="stage" style="' + stageVars(p) + '">' + topbar(false) +
+      '<div class="in"><a class="back" href="#inicio">' + t("back") + '</a>' +
+      '<section class="proj-head"><h1 aria-label="' + esc(p.name) + '">' + p.name.split(" ").map(function (w, n) { return '<span class="pw" aria-hidden="true"><span style="--i:' + n + '">' + esc(w) + '</span></span>'; }).join(" ") + '</h1><p class="sub">' + hl(p.kind) + '</p></section>' +
+      '<div class="layout"><main class="main">' +
+        '<div class="hero-img"><button class="shot-btn" type="button" data-n="' + p.cover + '" aria-label="' + t("zoom") + '">' + imgTag(p.cover, p.name, true) + '</button></div>' +
+        (p.desc ? '<section class="about"><h2>' + t("aboutProj") + '</h2><p>' + hl(p.desc) + '</p></section>' : '') +
+        mods +
+        '<nav class="pager" aria-label="' + t("others") + '">' +
+          (prev ? '<a href="#' + prev.id + '"><small>' + t("prev") + '</small><strong>' + esc(prev.short || prev.name) + '</strong></a>' : '<span></span>') +
+          (next ? '<a class="next" href="#' + next.id + '"><small>' + t("next") + '</small><strong>' + esc(next.short || next.name) + '</strong></a>' : '') +
+        '</nav></main>' +
+        '<aside class="aside"><div class="who"><strong>Diogo Encarnação</strong><span>' + t("tag") + '</span></div>' +
+          '<button class="cta block" type="button" data-contact>' + t("contact") + '</button>' +
+          '<dl class="info-list">' + info + '</dl>' + tools +
+          '<div class="toc-box"><p class="label">' + t("inProj") + '</p><nav class="toc" aria-label="' + t("toc") + '">' + toc + '</nav></div>' +
+        '</aside></div></div>' +
+      '<footer><div class="in">' + t("foot1") + '</div></footer></div>';
+  }
+
+  function initProject() {
+    var stage = document.querySelector(".stage");
+    var bar = document.createElement("div"); bar.className = "prog"; stage.appendChild(bar);
+    var tick = false;
+    function upd() { tick = false; var m = document.documentElement.scrollHeight - innerHeight; bar.style.transform = "scaleX(" + (m > 0 ? Math.min(1, scrollY / m) : 0) + ")"; }
+    on(window, "scroll", function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+    [].forEach.call(stage.querySelectorAll(".tools li"), function (el, n) { el.style.setProperty("--i", n % 12); });
+    var els = [].slice.call(stage.querySelectorAll(".about, .module h2, .group-label, .module .shot-btn, .module p.txt, .pager"));
+    if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("vis"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0 });
+    els.forEach(function (el) { el.classList.add("rv"); io.observe(el); });
+    cleanups.push(function () { io.disconnect(); });
+  }
+
+  function route() {
+    cleanups.forEach(function (f) { f(); }); cleanups = [];
+    var id = (location.hash || "").replace("#", "");
+    var i = PROJECTS.findIndex(function (p) { return p.id === id; });
+    if (i >= 0) { project(i); initProject(); } else { home(); initHome(); }
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route);
+  applyStatic();
+  route();
+
+  // Ampliação
+  var lb = document.getElementById("lightbox"), lbImg = document.getElementById("lb-img");
+  function openLb(n) { lbImg.src = src(n); lb.hidden = false; lb.dataset.n = n; document.getElementById("lb-close").focus(); }
+  function closeLb() { lb.hidden = true; lbImg.removeAttribute("src"); }
+  lb.addEventListener("click", closeLb);
+
+  // Contacto
+  var modal = document.getElementById("modal");
+  function copy(text, btn) {
+    var done = function () { var old = btn.textContent; btn.textContent = t("copied"); setTimeout(function () { btn.textContent = old; }, 1600); };
+    try { navigator.clipboard.writeText(text).then(done, function () { selectText(btn); }); } catch (e) { selectText(btn); }
+  }
+  function selectText(btn) {
+    var v = (btn.closest(".crow") || btn.closest(".copy-wrap")).querySelector(".v"), r = document.createRange();
+    r.selectNodeContents(v); var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  function row(label, value, actions) {
+    return '<div class="crow"><span class="k">' + label + '</span><span class="v">' + esc(value) + '</span><span class="act">' + actions + '</span></div>';
+  }
+  function applyStatic() {
+    document.documentElement.lang = LANG === "en" ? "en" : "pt-PT";
+    document.getElementById("lb-close").setAttribute("aria-label", t("close"));
+    document.getElementById("modal-close").setAttribute("aria-label", t("close"));
+    document.getElementById("modal-title").textContent = t("mTitle");
+    document.getElementById("modal-lead").textContent = t("mLead");
+    var md = document.querySelector('meta[name="description"]');
+    if (md) md.setAttribute("content", LANG === "en" ? "Diogo Encarnação, graphic designer and marketing manager in Vila Nova de Gaia. Graphic design, branding, marketing and project management." : "Diogo Encarnação, designer gráfico e gestor de marketing em Vila Nova de Gaia. Design gráfico, branding, marketing e gestão de projetos.");
+  }
+  function setLang(l) {
+    if (l === LANG) return;
+    LANG = l;
+    try { localStorage.setItem("lang", l); } catch (e) {}
+    applyStatic();
+    var y = window.scrollY;
+    route();
+    window.scrollTo(0, y);
+  }
+  function openModal() {
+    var rows = "";
+    if (CONTACT.email) rows += row("Email", CONTACT.email, '<button class="mini" type="button" data-copy="' + esc(CONTACT.email) + '">' + t("copy") + '</button><a class="mini" href="mailto:' + esc(CONTACT.email) + '">' + t("write") + '</a>');
+    if (CONTACT.phone) rows += row(t("phone"), CONTACT.phone, '<button class="mini" type="button" data-copy="' + esc(CONTACT.phone) + '">' + t("copy") + '</button>');
+    if (CONTACT.linkedin) rows += row("LinkedIn", CONTACT.linkedin.replace(/^https?:\/\/(www\.)?/, ""), '<a class="mini" href="' + esc(CONTACT.linkedin) + '" target="_blank" rel="noopener">' + t("open") + '</a>');
+    document.getElementById("contact-rows").innerHTML = rows;
+    modal.hidden = false;
+    document.getElementById("modal-close").focus();
+  }
+  function closeModal() { modal.hidden = true; }
+  modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+  document.getElementById("modal-close").addEventListener("click", closeModal);
+
+  document.addEventListener("click", function (e) {
+    var t = e.target;
+    var lg = t.closest("[data-lang]"); if (lg) { setLang(lg.dataset.lang); return; }
+    if (t.closest("[data-contact]")) { openModal(); return; }
+    if (t.closest(".brand") && (location.hash === "#inicio" || location.hash === "")) { window.scrollTo({ top: 0, behavior: "smooth" }); }
+    var c = t.closest("[data-copy]"); if (c) { copy(c.dataset.copy, c); return; }
+    var j = t.closest("[data-jump]");
+    if (j) { var el = document.getElementById(j.dataset.jump); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+    var b = t.closest(".shot-btn"); if (b) openLb(+b.dataset.n);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { if (!modal.hidden) closeModal(); else if (!lb.hidden) closeLb(); return; }
+    if (lb.hidden) return;
+    var k = current.indexOf(+lb.dataset.n);
+    if (e.key === "ArrowRight" && k < current.length - 1) openLb(current[k + 1]);
+    if (e.key === "ArrowLeft" && k > 0) openLb(current[k - 1]);
+  });
+</script>
+
+</body></html>
