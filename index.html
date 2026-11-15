@@ -656,7 +656,7 @@
 
 <script>
   // ---- Contactos (preencha linkedin e phone para aparecerem no botão Contactar) ----
-  var CONTACT = { email: "diogo.alexandre.braga@gmail.com", linkedin: "https://www.linkedin.com/in/diogoenc/", phone: "+351 918 060 580" };
+  var CONTACT = { email: "diogo.alexandre.braga@gmail.com", linkedin: "https://www.linkedin.com/in/diogoenc/", site: "https://diogoenc97.github.io/portfolio/", phone: "+351 918 060 580" };
 
   // ---- Idioma ----
   var LANG = "pt";
@@ -1539,7 +1539,7 @@
       '<main class="wide cv-wrap"><div class="cv-actions"><a class="back" href="#inicio">← ' + esc(d.back) + '</a><button class="cta" type="button" data-print>' + esc(d.pdf) + '</button></div><p class="cv-hint">' + esc(d.pdfHint) + '</p>' +
       '<article class="cv" lang="' + LANG + '">' +
         '<header class="cv-head"><h1>Diogo Encarnação</h1><p class="cv-role">' + esc(d.role) + '</p>' +
-          '<ul class="cv-contact" aria-label="' + esc(d.contact) + '"><li>' + esc(d.wh) + '</li><li><a href="mailto:' + esc(CONTACT.email) + '">' + esc(CONTACT.email) + '</a></li><li><a href="tel:' + esc(CONTACT.phone.replace(/\s/g, "")) + '">' + esc(CONTACT.phone) + '</a></li><li><a href="' + esc(CONTACT.linkedin) + '" target="_blank" rel="noopener">linkedin.com/in/diogoenc</a></li><li>' + esc(d.lic) + ': ' + esc(d.licv) + '</li></ul></header>' +
+          '<ul class="cv-contact" aria-label="' + esc(d.contact) + '"><li>' + esc(d.wh) + '</li><li><a href="mailto:' + esc(CONTACT.email) + '">' + esc(CONTACT.email) + '</a></li><li><a href="tel:' + esc(CONTACT.phone.replace(/\s/g, "")) + '">' + esc(CONTACT.phone) + '</a></li><li><a href="' + esc(CONTACT.linkedin) + '" target="_blank" rel="noopener">linkedin.com/in/diogoenc</a></li><li><a href="' + esc(CONTACT.site) + '">' + esc(CONTACT.site.replace(/^https?:\/\//, "").replace(/\/$/, "")) + '</a></li><li>' + esc(d.lic) + ': ' + esc(d.licv) + '</li></ul></header>' +
         '<section><h2>' + esc(d.sumK) + '</h2><p>' + esc(d.sum) + '</p></section>' +
         '<section><h2>' + esc(d.numK) + '</h2><ul class="cv-nums">' + nums + '</ul></section>' +
         '<section><h2>' + esc(d.expK) + '</h2>' + exp + '</section>' +
