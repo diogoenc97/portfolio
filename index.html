@@ -1346,11 +1346,11 @@
     var srv = '<a href="#inicio" data-goto="servicos">' + t("srvK") + '</a>';
     return '<div class="hdr"><header class="wide top"><a class="brand" href="#inicio" aria-label="' + t("brandA") + ' ' + t("brandB") + '"><span class="b1">' + t("brandA") + ' </span><span class="b2">' + t("brandB") + '</span></a>' +
       '<div class="top-right">' +
-      '<nav class="nav" aria-label="' + t("sections") + '"><div class="dd"><button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false" data-dd>' + t("proj") + '</button><div class="dd-m" role="menu"><div class="dd-in">' + plist + all + '</div></div></div>' + srv + about + cvl + '</nav>' +
+      '<nav class="nav" aria-label="' + t("sections") + '"><div class="dd"><button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false" data-dd>' + t("proj") + '</button><div class="dd-m" role="menu"><div class="dd-in">' + plist + all + '</div></div></div>' + srv + about + rec + cvl + '</nav>' +
       '<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="pt" aria-pressed="' + (LANG === "pt") + '">PT</button><button type="button" data-lang="en" aria-pressed="' + (LANG === "en") + '">EN</button></div>' +
       '<button class="cta" type="button" data-contact>' + t("contact") + '</button>' +
       '<button class="menu-b" type="button" data-menu aria-expanded="false" aria-label="' + t("menuL") + '"><span></span></button></div></header>' +
-      '<div class="mpanel" hidden><p class="mk">' + t("proj") + '</p>' + plist + all + '<hr>' + srv + about + cvl + '</div></div>';
+      '<div class="mpanel" hidden><p class="mk">' + t("proj") + '</p>' + plist + all + '<hr>' + srv + about + rec + cvl + '</div></div>';
   }
 
   var cleanups = [];
@@ -1891,7 +1891,7 @@
 
   var REC = {
     pt: {
-      nav: "Recomendação", k: "Recomendação", h: "O que dizem do meu trabalho",
+      nav: "Recomendações", k: "Recomendação", h: "O que dizem do meu trabalho",
       sub: "Carta de recomendação escrita por Teresa Teixeira, Responsável de Marketing na Arfit, onde trabalhei como Técnico de Multimédia.",
       byK: "Escrita por", by: "Teresa Teixeira", role: "Responsável de Marketing, Arfit", where: "Porto, 20 de maio de 2025", ln: "LinkedIn de Teresa Teixeira ↗",
       lnUrl: "http://www.linkedin.com/in/teresa-teixeira-80b427240",
@@ -1910,7 +1910,7 @@
       docK: "Documento original", docH: "Documento original", docNote: "A carta em PDF, tal como foi escrita e assinada. Clica numa página para ampliar.", page: "Página"
     },
     en: {
-      nav: "Recommendation", k: "Recommendation", h: "What they say about my work",
+      nav: "Recommendations", k: "Recommendation", h: "What they say about my work",
       sub: "Recommendation letter written by Teresa Teixeira, Marketing Manager at Arfit, where I worked as a Multimedia Technician.",
       byK: "Written by", by: "Teresa Teixeira", role: "Marketing Manager, Arfit", where: "Porto, 20 May 2025", ln: "Teresa Teixeira on LinkedIn ↗",
       lnUrl: "http://www.linkedin.com/in/teresa-teixeira-80b427240",
