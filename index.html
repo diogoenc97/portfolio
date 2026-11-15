@@ -778,6 +778,56 @@
 .sh-toast.on{opacity:1;transform:translate(-50%,0)}
 .sh-app :focus-visible{outline:3px solid #91DF36;outline-offset:2px}
 .sh-head :focus-visible{outline-color:#fff}
+.sh-page{padding-bottom:32px}
+.sh-ph2{font-size:30px!important;margin:6px 0 8px!important}
+.sh-info{list-style:none;margin:18px 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sh-info li{border:1.5px solid #dfe6dc;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.sh-info b{font-size:16px}.sh-info p{margin:0;color:#3a4a3b;font-size:14px;line-height:1.5}
+.sh-info .sh-cic{width:52px;height:52px}.sh-info .sh-cic .ic{width:28px;height:28px}
+.sh-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.sh-add.alt{background:#fff;border:1.5px solid #162918;color:#162918}.sh-add.alt:hover{background:#162918;color:#91DF36}
+.sh-row .sh-add{padding:11px 18px;font-size:14px}
+.sh-h3{font-size:20px;margin:26px 0 12px!important}
+.sh-faq{display:flex;flex-direction:column;gap:8px;max-width:50em}
+.sh-faq details{border:1.5px solid #dfe6dc;border-radius:12px;padding:0 16px}
+.sh-faq summary{cursor:pointer;font-weight:700;padding:14px 0;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.sh-faq summary::-webkit-details-marker{display:none}.sh-faq summary::after{content:"+";font-size:22px;line-height:1;color:#1f7a2b}
+.sh-faq details[open] summary::after{content:"−"}.sh-faq p{margin:0;padding:0 0 14px;color:#3a4a3b;line-height:1.55;font-size:14.5px}
+.sh-two{display:grid;grid-template-columns:1fr 1.3fr;gap:24px;margin-top:16px;align-items:start}
+.sh-two.ck{grid-template-columns:1.4fr 1fr}
+.sh-ci2{list-style:none;margin:0;padding:20px;background:#eef7e3;border-radius:14px;display:flex;flex-direction:column;gap:12px}
+.sh-ci2 li{display:flex;flex-direction:column;gap:2px}.sh-ci2 b{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#3f6b2a}
+.sh-form{display:flex;flex-direction:column;gap:14px}
+.sh-form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700}
+.sh-form input:not([type=radio]),.sh-form select,.sh-form textarea{font:500 15px "Exo 2",system-ui,sans-serif;border:1.5px solid #cfd9cb;border-radius:10px;padding:11px 12px;background:#fff;color:#0F1A10;width:100%;resize:vertical}
+.sh-form fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.sh-form legend{font-size:13px;font-weight:700;margin-bottom:8px;padding:0}
+.sh-form small{color:#4a5a4b;font-size:12.5px}
+.sh-rd{flex-direction:row!important;align-items:center;gap:10px!important;font-weight:600!important;font-size:14px!important}
+.sh-rd input{accent-color:#162918;width:18px;height:18px}
+.sh-f2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sh-err{margin:0;color:#a4161a;font-weight:700;font-size:14px}
+.sh-form .sh-add.big{max-width:340px}
+.sh-form.wide{max-width:640px;margin-top:18px}
+.sh-stp{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sh-stp li{display:flex;gap:12px;align-items:flex-start;background:#eef7e3;border-radius:14px;padding:16px}
+.sh-stp b{width:30px;height:30px;border-radius:50%;background:#162918;color:#91DF36;display:grid;place-items:center;flex:none}
+.sh-stp span{font-size:13.5px;line-height:1.4;color:#3a4a3b}.sh-stp strong{display:block;color:#0F1A10;font-size:15px}
+.sh-sum{background:#eef7e3;border-radius:14px;padding:20px}
+.sh-sum h3{font-size:18px;margin-bottom:10px}.sh-sum ul{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-direction:column;gap:8px}
+.sh-sum li,.sh-sum p{display:flex;justify-content:space-between;gap:12px;font-size:14px;margin:0}
+.sh-sum p{border-top:1px solid #c7dcb0;padding-top:10px;margin-top:8px}.sh-sum p.t{font-size:17px}
+.sh-okb{max-width:520px;margin:30px auto;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+.sh-oki{width:60px;height:60px;border-radius:50%;background:#162918;color:#91DF36;display:grid;place-items:center}.sh-oki .ic{width:32px;height:32px}
+.sh-okb p{margin:0;color:#3a4a3b}
+.sh-abt{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start;margin:14px 0 20px}
+.sh-abt p{margin:0 0 12px;line-height:1.6;color:#2c3d2d}
+.sh-abt .sh-info{grid-template-columns:1fr;margin:0}
+.sh-slg{display:inline-block;background:#162918;color:#91DF36;font-weight:800;padding:8px 16px;border-radius:999px}
+.sh-old{color:#6b7a6c;font-weight:500;font-size:13px;margin-right:4px}
+@container (max-width:900px){.sh-nav>button,.sh-dd>button{padding:8px 7px;font-size:13px}.sh-se{flex:0 1 160px;min-width:120px}.sh-head{gap:8px;padding:12px 16px}}
+@container (max-width:760px){.sh-info,.sh-stp{grid-template-columns:1fr}.sh-two,.sh-two.ck,.sh-abt{grid-template-columns:1fr}.sh-nav>button,.sh-dd>button{padding:8px 8px;font-size:13px}.sh-head{gap:8px;padding:12px 16px}}
+@container (max-width:560px){.sh-f2{grid-template-columns:1fr}.sh-ph2{font-size:24px!important}}
 @container (max-width:760px){
  .sh-grid{grid-template-columns:repeat(2,1fr)}
  .sh-cats{grid-template-columns:repeat(3,1fr)}
@@ -1279,7 +1329,7 @@
         did: "Desenvolvi a identidade gráfica completa e o manual, ainda em desenvolvimento, em cinco capítulos: logótipo, tipografia, gama cromática, aplicações gráficas e estacionário. Defini o logótipo principal, a versão sem slogan e o símbolo (uma andorinha com a asa pixelizada), a área de proteção, a dimensão mínima (69 px de altura e 204 px de comprimento), as versões positiva, negativa, escala de cinza e duas simplificadas, as regras de aplicação sobre fundos cromáticos, fotográficos e gradientes e seis utilizações indevidas. Fixei a tipografia (Exo 2 e Garet) e nove cores com equivalência em Pantone, CMYK, RGB, HEX e RAL, e criei os wallpapers e o modelo de assinatura de email. Em paralelo, estou a desenvolver o website da loja em Shopify e a planear o projeto e as tarefas no Asana.",
         out: "Projeto em desenvolvimento desde 2026. O manual ainda está em desenvolvimento e já cobre logótipo, tipografia, cor, wallpapers e assinatura de email; as redes sociais e a newsletter estão em revisão e o cartão de visita, os templates de documentação, os envelopes e os dossiês estão por fazer. O website em Shopify está em desenvolvimento.",
         facts: [["5", "capítulos do manual"], ["9", "cores com códigos Pantone, CMYK, RGB, HEX e RAL"], ["2", "famílias tipográficas: Exo 2 e Garet"], ["2026", "início do projeto, em desenvolvimento"]],
-        m: ["Este mockup interativo é apenas um exemplo, ainda em desenvolvimento, de como poderá ficar a loja online da SwifTech, de videovigilância, videoporteiros, alarmes, domótica e controlos de acesso. Parte da estrutura da LojaTech e aplica a identidade da SwifTech. Os produtos, preços e textos são ilustrativos. É possível navegar, pesquisar, filtrar por categoria, abrir um produto e adicionar ao carrinho; não há pagamento.",
+        m: ["Este mockup interativo é apenas um exemplo, ainda em desenvolvimento, de como poderá ficar a loja online da SwifTech, de videovigilância, videoporteiros, alarmes, domótica e controlos de acesso. Parte da estrutura da LojaTech e aplica a identidade da SwifTech. Os produtos, preços e textos são ilustrativos. É possível navegar, pesquisar, filtrar por categoria, abrir um produto, adicionar ao carrinho e passar pelas restantes páginas (apoio técnico, contactos, reparações, outlet, sobre nós e finalizar compra); não há pagamento.",
             "O logótipo junta o símbolo, uma andorinha (swift) com a asa pixelizada que une o mundo natural à estética digital, ao lettering SwifTech e ao slogan «Click & Done». A versão principal serve os pontos de contacto, o digital, o comercial e o editorial e não deve ser reconstituída a partir de elementos separados. A versão sem slogan e o símbolo isolado são alternativas simplificadas, a usar com critério.",
             "Sobre fundos cromáticos, o logótipo aplica-se diretamente desde que haja contraste (testei doze fundos). Sobre fotografia dispensa caixa de isolamento e, sem contraste, clareia-se ou escurece-se a área de aplicação. Sobre gradientes, ajusta-se a orientação, a intensidade ou o tom se a leitura ficar comprometida.",
             "Além da versão a cores, há a versão positiva (a preto, para fundos claros), a negativa (a branco, para fundos escuros) e a escala de cinza, só quando a cor não é tecnicamente viável. Existem ainda duas versões simplificadas, de uma só cor: a verde principal, para fundos no tom secundário mais escuro, e a verde secundária, para fundos no tom principal.",
@@ -1444,7 +1494,7 @@
         did: "I developed the full graphic identity and the manual, still in development, in five chapters: logo, typography, colour palette, graphic applications and stationery. I defined the main logo, the version without the slogan and the symbol (a swift with a pixelated wing), the clear space, the minimum size (69 px high and 204 px wide), the positive, negative, greyscale and two simplified versions, the rules for use on colour, photographic and gradient backgrounds and six examples of incorrect use. I set the typography (Exo 2 and Garet) and nine colours with Pantone, CMYK, RGB, HEX and RAL equivalents, and created the wallpapers and the email signature template. In parallel, I am developing the store's website in Shopify and planning the project and its tasks in Asana.",
         out: "A project in development since 2026. The manual is still in development and already covers logo, typography, colour, wallpapers and email signature; social media and newsletter are under review, and the business card, document templates, envelopes and folders are still to be done. The Shopify website is in development.",
         facts: [["5", "chapters in the manual"], ["9", "colours with Pantone, CMYK, RGB, HEX and RAL codes"], ["2", "typeface families: Exo 2 and Garet"], ["2026", "project start, in development"]],
-        m: ["This interactive mockup is only an example, still in development, of how the SwifTech online store could look, selling video surveillance, video door phones, alarms, home automation and access control. It starts from the LojaTech structure and applies the SwifTech identity. Products, prices and texts are illustrative. You can browse, search, filter by category, open a product and add it to the cart; there is no payment.",
+        m: ["This interactive mockup is only an example, still in development, of how the SwifTech online store could look, selling video surveillance, video door phones, alarms, home automation and access control. It starts from the LojaTech structure and applies the SwifTech identity. Products, prices and texts are illustrative. You can browse, search, filter by category, open a product, add it to the cart and visit the other pages (technical support, contact, repairs, outlet, about us and checkout); there is no payment.",
             "The logo combines the symbol, a swift with a pixelated wing that blends the natural world with a digital aesthetic, the SwifTech lettering and the slogan «Click & Done». The main version serves contact points, digital, commercial and editorial use and must not be rebuilt from separate elements. The version without the slogan and the symbol on its own are simplified alternatives, to be used with care.",
             "On colour backgrounds the logo can be applied directly as long as there is contrast (I tested twelve backgrounds). On photographs no isolation box is needed and, without contrast, the application area is lightened or darkened. On gradients, the direction, intensity or tone is adjusted if legibility suffers.",
             "Besides the colour version, there are the positive version (black, for light backgrounds), the negative (white, for dark backgrounds) and the greyscale version, only when colour is technically not viable. There are also two single-colour simplified versions: main green, for backgrounds in the darker secondary tone, and secondary green, for backgrounds in the main tone.",
@@ -2432,6 +2482,22 @@
     pt: { notice: "Em desenvolvimento · apenas um exemplo · produtos e preços ilustrativos", home: "Início", cats: "Categorias", sup: "Apoio técnico", con: "Contactos", search: "Pesquisar produtos", cart: "Carrinho", menu: "Menu", all: "Todos os produtos", feat: "Mais vendidos", browse: "Explorar por categoria", seeAll: "Ver todos", add: "Adicionar ao carrinho", added: "Adicionado ao carrinho", empty: "O carrinho está vazio.", sub: "Subtotal", checkout: "Finalizar compra", keep: "Continuar a comprar", remove: "Remover", qty: "Quantidade", sort: "Ordenar", sortA: "Mais relevantes", sortP: "Preço: do mais baixo", sortD: "Preço: do mais alto", res: "resultados para", none: "Sem resultados.", back: "Voltar", ex: "Preço de exemplo", related: "Também te pode interessar", specs: "Características", chk: "Exemplo: a loja ainda está em desenvolvimento, por isso não há pagamento.", soon: "Página por desenvolver (exemplo).", d48: "Entrega em 48 h", d48s: "Escolhe, compra, recebe", sup2: "Apoio ao cliente", sup2s: "Dúvidas e instalação", rep: "Reparações", repS: "Faz o teu pedido", pay: "Pagamento seguro", payS: "Várias formas de pagar", foot: "SwifTech · mockup de exemplo, loja em desenvolvimento", about: "Sobre nós", prod: "produtos", item: "artigo", items: "artigos", desc: "Descrição de exemplo. O texto final será escrito com a ficha técnica do produto.", frame: "Computador", phone: "Telemóvel", urlx: "swiftech · exemplo", prev: "Banner anterior", next: "Banner seguinte", slide: "Banner", total: "Total" },
     en: { notice: "In development · just an example · illustrative products and prices", home: "Home", cats: "Categories", sup: "Technical support", con: "Contact", search: "Search products", cart: "Cart", menu: "Menu", all: "All products", feat: "Best sellers", browse: "Browse by category", seeAll: "See all", add: "Add to cart", added: "Added to cart", empty: "Your cart is empty.", sub: "Subtotal", checkout: "Checkout", keep: "Keep shopping", remove: "Remove", qty: "Quantity", sort: "Sort", sortA: "Most relevant", sortP: "Price: low to high", sortD: "Price: high to low", res: "results for", none: "No results.", back: "Back", ex: "Example price", related: "You may also like", specs: "Features", chk: "Example: the store is still in development, so there is no payment.", soon: "Page to be developed (example).", d48: "Delivery in 48 h", d48s: "Choose, buy, receive", sup2: "Customer support", sup2s: "Questions and installation", rep: "Repairs", repS: "Make your request", pay: "Secure payment", payS: "Several ways to pay", foot: "SwifTech · example mockup, store in development", about: "About us", prod: "products", item: "item", items: "items", desc: "Example description. The final text will be written from the product data sheet.", frame: "Desktop", phone: "Mobile", urlx: "swiftech · example", prev: "Previous banner", next: "Next banner", slide: "Banner", total: "Total" }
   };
+  var SHX = {
+    pt: { pgBack: "Voltar", supH: "Apoio técnico", supS: "Ajuda para escolher, instalar e resolver dúvidas. Textos de exemplo.", supC: [["truck", "Entrega em 48 h", "Escolhe, compra, recebe: o prazo anunciado na loja."], ["help", "Ajuda na instalação", "Dúvidas sobre instalação ou compatibilidade? Fala com a equipa."], ["shield", "Reparações", "Pede a reparação do teu equipamento num formulário simples."]], supTalk: "Falar com a equipa", supRep: "Pedir reparação",
+      faqH: "Perguntas frequentes", faq: [["Como escolho o equipamento certo?", "Parte do espaço que queres proteger (casa, loja, garagem) e do que precisas: ver, avisar ou controlar entradas. Se tiveres dúvidas, fala com a equipa."], ["Quanto demora a entrega?", "O prazo anunciado é de 48 h depois de escolheres e comprares."], ["Posso devolver um produto?", "Texto de exemplo: as condições de devolução serão indicadas aqui, de acordo com a lei em vigor."], ["Preciso de ajuda para instalar?", "Podes pedir ajuda pelo formulário de contacto e descrever o que queres instalar."], ["E se o equipamento avariar?", "Usa o pedido de reparação e a equipa entra em contacto."]],
+      conH: "Contactos", conS: "Escreve-nos e respondemos assim que possível. Dados de contacto a definir.", conI: [["Email", "a definir"], ["Telefone", "a definir"], ["Horário", "a definir"]], fName: "Nome", fMail: "Email", fSubj: "Assunto", fMsg: "Mensagem", subj: ["Dúvida sobre um produto", "Encomenda", "Apoio técnico", "Outro assunto"], send: "Enviar mensagem", errF: "Preenche o nome e um email válido.", errM: "Escreve uma mensagem.",
+      repH: "Reparações", repS: "Faz o pedido de reparação do teu equipamento.", repSt: [["1", "Pede", "Preenche o formulário."], ["2", "Diagnóstico", "A equipa analisa o problema."], ["3", "Reparação", "Recebes o equipamento resolvido."]], fProd: "Tipo de equipamento", fModel: "Marca e modelo", fProb: "O que se passa?", repSend: "Enviar pedido",
+      okH: "Pedido de exemplo recebido", okT: "Nada foi enviado: esta loja é só um mockup em desenvolvimento.", okBack: "Voltar ao início", outH: "Outlet", outS: "Preços reduzidos, de exemplo, em equipamentos selecionados.", outTag: "−20%",
+      abtH: "Sobre a SwifTech", abtP: ["A SwifTech é uma loja online do GroupTech, em desenvolvimento, de videovigilância, videoporteiros, alarmes, domótica e controlos de acesso.", "A marca nasceu no digital e quer ser rápida, precisa e tecnológica: escolher, comprar e receber sem complicações. Daí o slogan «Click & Done»."], abtV: [["Rapidez", "Do clique à entrega em 48 h."], ["Precisão", "Equipamento certo para cada espaço."], ["Tecnologia", "Soluções atuais e simples de usar."]], abtCta: "Ver produtos",
+      chkH: "Finalizar compra", chkEmpty: "O carrinho está vazio.", fAddr: "Morada", fZip: "Código postal", fCity: "Localidade", fShip: "Entrega", ship48: "Entrega em 48 h", fPay: "Pagamento", pay: ["Cartão", "MB Way", "Referência Multibanco"], payN: "Exemplo: não são pedidos dados de pagamento.", sumH: "Resumo", ports: "Portes", portsV: "a definir", chkSend: "Confirmar encomenda (exemplo)", chkOk: "Encomenda de exemplo registada", chkOkT: "Não foi feito nenhum pagamento nem encomenda: é só uma demonstração.", errA: "Preenche o nome, o email e a morada.", outlet: "Outlet" },
+    en: { pgBack: "Back", supH: "Technical support", supS: "Help to choose, install and solve questions. Example texts.", supC: [["truck", "Delivery in 48 h", "Choose, buy, receive: the lead time announced in the store."], ["help", "Installation help", "Questions about installation or compatibility? Talk to the team."], ["shield", "Repairs", "Request a repair for your equipment with a simple form."]], supTalk: "Talk to the team", supRep: "Request a repair",
+      faqH: "Frequently asked questions", faq: [["How do I choose the right equipment?", "Start from the space you want to protect (home, shop, garage) and what you need: see, alert or control entrances. If in doubt, talk to the team."], ["How long does delivery take?", "The announced lead time is 48 h after you choose and buy."], ["Can I return a product?", "Example text: the return conditions will be stated here, in line with the law in force."], ["Do I need help installing?", "You can ask for help through the contact form and describe what you want to install."], ["What if the equipment breaks down?", "Use the repair request and the team will get in touch."]],
+      conH: "Contact", conS: "Write to us and we will reply as soon as possible. Contact details to be defined.", conI: [["Email", "to be defined"], ["Phone", "to be defined"], ["Hours", "to be defined"]], fName: "Name", fMail: "Email", fSubj: "Subject", fMsg: "Message", subj: ["Question about a product", "Order", "Technical support", "Other"], send: "Send message", errF: "Enter your name and a valid email.", errM: "Write a message.",
+      repH: "Repairs", repS: "Request a repair for your equipment.", repSt: [["1", "Request", "Fill in the form."], ["2", "Diagnosis", "The team analyses the problem."], ["3", "Repair", "You get the equipment fixed."]], fProd: "Type of equipment", fModel: "Brand and model", fProb: "What is happening?", repSend: "Send request",
+      okH: "Example request received", okT: "Nothing was sent: this store is only a mockup in development.", okBack: "Back to home", outH: "Outlet", outS: "Example reduced prices on selected equipment.", outTag: "−20%",
+      abtH: "About SwifTech", abtP: ["SwifTech is an online store by GroupTech, in development, selling video surveillance, video door phones, alarms, home automation and access control.", "The brand was born digital and wants to be fast, precise and technological: choose, buy and receive without hassle. Hence the slogan «Click & Done»."], abtV: [["Speed", "From click to delivery in 48 h."], ["Precision", "The right equipment for every space."], ["Technology", "Current, easy-to-use solutions."]], abtCta: "See products",
+      chkH: "Checkout", chkEmpty: "Your cart is empty.", fAddr: "Address", fZip: "Postcode", fCity: "City", fShip: "Delivery", ship48: "Delivery in 48 h", fPay: "Payment", pay: ["Card", "MB Way", "Multibanco reference"], payN: "Example: no payment details are requested.", sumH: "Summary", ports: "Shipping", portsV: "to be defined", chkSend: "Confirm order (example)", chkOk: "Example order registered", chkOkT: "No payment or order was made: this is only a demonstration.", errA: "Enter your name, email and address.", outlet: "Outlet" }
+  };
   var SHC = [
     { id: "video", n: ["Videovigilância", "CCTV"], i: "cam" },
     { id: "door", n: ["Videoporteiros", "Video door phones"], i: "door" },
@@ -2479,21 +2545,28 @@
       '<div class="shop-frame"><div class="shop-chrome" aria-hidden="true"><span></span><span></span><span></span><em>' + esc(s.urlx) + '</em></div><div class="sh-app" data-shapp></div></div></div>';
   }
   function initShop(root) {
-    var L = LANG === "en" ? 1 : 0, s = SHT[LANG];
+    var L = LANG === "en" ? 1 : 0, s = Object.assign({}, SHT[LANG], SHX[LANG]);
     var app = root.querySelector("[data-shapp]"), cart = {}, view = { n: "home" }, slide = 0, timer = 0, toastT = 0, menuOpen = false, drawer = false, query = "", sort = "a";
     function cat(id) { return SHC.filter(function (c) { return c.id === id; })[0]; }
-    function prod(id) { return SHP.filter(function (p) { return p.id === id; })[0]; }
+    function prod(id) {
+      var o = id.indexOf("o_") === 0, b = SHP.filter(function (p) { return p.id === (o ? id.slice(2) : id); })[0];
+      if (!o) return b;
+      return { id: id, c: b.c, n: [b.n[0] + " (outlet)", b.n[1] + " (outlet)"], p: Math.round(b.p * 0.8 * 100) / 100, old: b.p, s: b.s, b: [s.outTag, s.outTag] };
+    }
+    var fv = {}, ferr = "", fdone = null;
+    function ff(k) { return esc(fv[k] || ""); }
+    function sync() { [].forEach.call(app.querySelectorAll("[data-shf]"), function (e) { if (e.type === "radio") { if (e.checked) fv[e.name] = e.value; } else fv[e.name] = e.value; }); }
     function count() { var n = 0; for (var k in cart) n += cart[k]; return n; }
     function card(p) {
       var c = cat(p.c);
       return '<article class="sh-card"><button type="button" class="sh-ph" data-sh="prod" data-id="' + p.id + '" aria-label="' + esc(p.n[L]) + '">' + shIco(c.i, "ic") + (p.b ? '<span class="sh-tag">' + esc(p.b[L]) + '</span>' : '') + '</button>' +
         '<div class="sh-ci"><span class="sh-cc">' + esc(c.n[L]) + '</span><h3><button type="button" data-sh="prod" data-id="' + p.id + '">' + esc(p.n[L]) + '</button></h3>' +
-        '<div class="sh-pr"><strong>' + shMoney(p.p) + '</strong><button type="button" class="sh-add" data-sh="add" data-id="' + p.id + '">' + esc(s.add) + '</button></div></div></article>';
+        '<div class="sh-pr"><strong>' + (p.old ? '<s class="sh-old">' + shMoney(p.old) + '</s> ' : '') + shMoney(p.p) + '</strong><button type="button" class="sh-add" data-sh="add" data-id="' + p.id + '">' + esc(s.add) + '</button></div></div></article>';
     }
     function head() {
       var nav = '<button type="button" data-sh="home"' + (view.n === "home" ? ' aria-current="page"' : '') + '>' + esc(s.home) + '</button>' +
         '<div class="sh-dd"><button type="button" data-sh="ddt" aria-haspopup="true">' + esc(s.cats) + ' ▾</button><div class="sh-ddm">' + SHC.map(function (c) { return '<button type="button" data-sh="cat" data-id="' + c.id + '">' + esc(c.n[L]) + '</button>'; }).join("") + '<button type="button" data-sh="cat" data-id="all">' + esc(s.all) + '</button></div></div>' +
-        '<button type="button" data-sh="soon">' + esc(s.sup) + '</button><button type="button" data-sh="soon">' + esc(s.con) + '</button>';
+        '<button type="button" data-sh="pg" data-id="out"' + (view.n === "out" ? ' aria-current="page"' : '') + '>' + esc(s.outlet) + '</button><button type="button" data-sh="pg" data-id="rep"' + (view.n === "rep" ? ' aria-current="page"' : '') + '>' + esc(s.repH) + '</button><button type="button" data-sh="pg" data-id="sup"' + (view.n === "sup" ? ' aria-current="page"' : '') + '>' + esc(s.sup) + '</button><button type="button" data-sh="pg" data-id="con"' + (view.n === "con" ? ' aria-current="page"' : '') + '>' + esc(s.con) + '</button>';
       return '<header class="sh-head"><button type="button" class="sh-mb" data-sh="menu" aria-label="' + esc(s.menu) + '" aria-expanded="' + menuOpen + '">' + shIco("menu") + '</button>' +
         '<button type="button" class="sh-logo" data-sh="home" aria-label="SwifTech"><img src="' + SHOP_LOGO + '" alt="SwifTech" width="120" height="41"></button>' +
         '<nav class="sh-nav' + (menuOpen ? ' open' : '') + '" aria-label="' + esc(s.menu) + '">' + nav + '</nav>' +
@@ -2514,7 +2587,7 @@
       return slides() + '<ul class="sh-perks">' + perks + '</ul>' +
         '<section class="sh-sec"><h2>' + esc(s.browse) + '</h2><ul class="sh-cats">' + cats + '</ul></section>' +
         '<section class="sh-sec"><div class="sh-sh"><h2>' + esc(s.feat) + '</h2><button type="button" class="sh-lk" data-sh="cat" data-id="all">' + esc(s.seeAll) + ' →</button></div><div class="sh-grid">' + feat + '</div></section>' +
-        '<section class="sh-sec sh-mini"><button type="button" data-sh="soon">' + imgTag(252, s.rep, false) + '</button><button type="button" data-sh="soon">' + imgTag(253, "Outlet", false) + '</button></section>';
+        '<section class="sh-sec sh-mini"><button type="button" data-sh="pg" data-id="rep">' + imgTag(252, s.rep, false) + '</button><button type="button" data-sh="pg" data-id="out">' + imgTag(253, "Outlet", false) + '</button></section>';
     }
     function listV(title, list, sub) {
       var l = list.slice();
@@ -2545,8 +2618,45 @@
         '<h2 class="sh-rh">' + esc(s.related) + '</h2><div class="sh-grid">' + rel + '</div></section>';
     }
     function foot() {
-      return '<footer class="sh-foot"><div><b>' + esc(s.sup2) + '</b><button type="button" data-sh="soon">' + esc(s.about) + '</button><button type="button" data-sh="soon">' + esc(s.con) + '</button><button type="button" data-sh="soon">' + esc(s.rep) + '</button></div>' +
+      return '<footer class="sh-foot"><div><b>' + esc(s.sup2) + '</b><button type="button" data-sh="pg" data-id="abt">' + esc(s.about) + '</button><button type="button" data-sh="pg" data-id="sup">' + esc(s.sup) + '</button><button type="button" data-sh="pg" data-id="con">' + esc(s.con) + '</button><button type="button" data-sh="pg" data-id="rep">' + esc(s.rep) + '</button></div>' +
         '<div><b>' + esc(s.cats) + '</b>' + SHC.map(function (c) { return '<button type="button" data-sh="cat" data-id="' + c.id + '">' + esc(c.n[L]) + '</button>'; }).join("") + '</div><p>' + esc(s.foot) + '</p></footer>';
+    }
+    function pgHead(t, sub) { return '<button type="button" class="sh-lk" data-sh="home">← ' + esc(s.pgBack) + '</button><h2 class="sh-ph2">' + esc(t) + '</h2>' + (sub ? '<p class="sh-sub">' + esc(sub) + '</p>' : ''); }
+    function field(k, lab, type, area) { return '<label>' + esc(lab) + (area ? '<textarea data-shf name="' + k + '" rows="4">' + ff(k) + '</textarea>' : '<input data-shf name="' + k + '" type="' + (type || "text") + '" value="' + ff(k) + '">') + '</label>'; }
+    function sel(k, lab, opts) { return '<label>' + esc(lab) + '<select data-shf name="' + k + '">' + opts.map(function (o, i) { return '<option value="' + esc(o) + '"' + ((fv[k] || opts[0]) === o ? " selected" : "") + '>' + esc(o) + '</option>'; }).join("") + '</select></label>'; }
+    function errP() { return ferr ? '<p class="sh-err" role="alert">' + esc(ferr) + '</p>' : ''; }
+    function okV(h, t) { return '<section class="sh-sec sh-page"><div class="sh-okb" role="status"><span class="sh-oki">' + shIco("shield") + '</span><h2>' + esc(h) + '</h2><p>' + esc(t) + '</p><button type="button" class="sh-add big" data-sh="home">' + esc(s.okBack) + '</button></div></section>'; }
+    function supV() {
+      return '<section class="sh-sec sh-page">' + pgHead(s.supH, s.supS) + '<ul class="sh-info">' + s.supC.map(function (x) { return '<li><span class="sh-cic">' + shIco(x[0], "ic") + '</span><b>' + esc(x[1]) + '</b><p>' + esc(x[2]) + '</p></li>'; }).join("") + '</ul>' +
+        '<div class="sh-row"><button type="button" class="sh-add" data-sh="pg" data-id="con">' + esc(s.supTalk) + '</button><button type="button" class="sh-add alt" data-sh="pg" data-id="rep">' + esc(s.supRep) + '</button></div>' +
+        '<h3 class="sh-h3">' + esc(s.faqH) + '</h3><div class="sh-faq">' + s.faq.map(function (x) { return '<details><summary>' + esc(x[0]) + '</summary><p>' + esc(x[1]) + '</p></details>'; }).join("") + '</div></section>';
+    }
+    function conV() {
+      if (fdone === "con") return okV(s.okH, s.okT);
+      return '<section class="sh-sec sh-page">' + pgHead(s.conH, s.conS) + '<div class="sh-two"><ul class="sh-ci2">' + s.conI.map(function (x) { return '<li><b>' + esc(x[0]) + '</b><span>' + esc(x[1]) + '</span></li>'; }).join("") + '</ul>' +
+        '<form class="sh-form" data-shform="con" novalidate>' + field("name", s.fName) + field("mail", s.fMail, "email") + sel("subj", s.fSubj, s.subj) + field("msg", s.fMsg, "", 1) + errP() + '<button type="submit" class="sh-add big">' + esc(s.send) + '</button></form></div></section>';
+    }
+    function repV() {
+      if (fdone === "rep") return okV(s.okH, s.okT);
+      return '<section class="sh-sec sh-page">' + pgHead(s.repH, s.repS) + '<ol class="sh-stp">' + s.repSt.map(function (x) { return '<li><b>' + x[0] + '</b><span><strong>' + esc(x[1]) + '</strong>' + esc(x[2]) + '</span></li>'; }).join("") + '</ol>' +
+        '<form class="sh-form wide" data-shform="rep" novalidate>' + sel("prod", s.fProd, SHC.map(function (c) { return c.n[L]; })) + field("model", s.fModel) + field("msg", s.fProb, "", 1) + '<div class="sh-f2">' + field("name", s.fName) + field("mail", s.fMail, "email") + '</div>' + errP() + '<button type="submit" class="sh-add big">' + esc(s.repSend) + '</button></form></section>';
+    }
+    function outV() {
+      var l = ["v3", "d2", "a2", "a3", "h2", "h3", "c2", "c3"].map(function (i) { return prod("o_" + i); });
+      return '<section class="sh-sec sh-page">' + pgHead(s.outH, s.outS) + '<div class="sh-grid">' + l.map(card).join("") + '</div></section>';
+    }
+    function abtV() {
+      return '<section class="sh-sec sh-page">' + pgHead(s.abtH) + '<div class="sh-abt"><div>' + s.abtP.map(function (t) { return '<p>' + esc(t) + '</p>'; }).join("") + '<span class="sh-slg">Click &amp; Done</span></div><ul class="sh-info">' + s.abtV.map(function (x, i) { return '<li><span class="sh-cic">' + shIco(["truck", "shield", "help"][i], "ic") + '</span><b>' + esc(x[0]) + '</b><p>' + esc(x[1]) + '</p></li>'; }).join("") + '</ul></div><button type="button" class="sh-add" data-sh="cat" data-id="all">' + esc(s.abtCta) + '</button></section>';
+    }
+    function chkV() {
+      if (fdone === "chk") return okV(s.chkOk, s.chkOkT);
+      var ids = Object.keys(cart), tot = 0;
+      if (!ids.length) return '<section class="sh-sec sh-page">' + pgHead(s.chkH) + '<p class="sh-none">' + esc(s.chkEmpty) + '</p><button type="button" class="sh-add" data-sh="cat" data-id="all">' + esc(s.keep) + '</button></section>';
+      var rows = ids.map(function (id) { var p = prod(id), q = cart[id]; tot += p.p * q; return '<li><span>' + q + ' × ' + esc(p.n[L]) + '</span><b>' + shMoney(p.p * q) + '</b></li>'; }).join("");
+      var radios = function (k, arr) { return arr.map(function (x, i) { return '<label class="sh-rd"><input data-shf type="radio" name="' + k + '" value="' + esc(x) + '"' + ((fv[k] || arr[0]) === x ? " checked" : "") + '>' + esc(x) + '</label>'; }).join(""); };
+      return '<section class="sh-sec sh-page">' + pgHead(s.chkH) + '<div class="sh-two ck"><form class="sh-form" data-shform="chk" novalidate>' + field("name", s.fName) + field("mail", s.fMail, "email") + field("addr", s.fAddr) + '<div class="sh-f2">' + field("zip", s.fZip) + field("city", s.fCity) + '</div>' +
+        '<fieldset><legend>' + esc(s.fShip) + '</legend>' + radios("ship", [s.ship48]) + '</fieldset><fieldset><legend>' + esc(s.fPay) + '</legend>' + radios("pay", s.pay) + '<small>' + esc(s.payN) + '</small></fieldset>' + errP() + '<button type="submit" class="sh-add big">' + esc(s.chkSend) + '</button></form>' +
+        '<aside class="sh-sum"><h3>' + esc(s.sumH) + '</h3><ul>' + rows + '</ul><p><span>' + esc(s.ports) + '</span><span>' + esc(s.portsV) + '</span></p><p class="t"><span>' + esc(s.total) + '</span><strong>' + shMoney(tot) + '</strong></p></aside></div></section>';
     }
     function drawerV() {
       var ids = Object.keys(cart), tot = 0;
@@ -2561,7 +2671,7 @@
     var scroller = null;
     function render(keepScroll) {
       var st = scroller ? scroller.scrollTop : 0, qf = document.activeElement && document.activeElement.hasAttribute && document.activeElement.hasAttribute("data-shq");
-      var body = view.n === "home" ? homeV() : view.n === "cat" ? catV(view.id) : view.n === "search" ? searchV() : prodV(view.id);
+      var body = view.n === "home" ? homeV() : view.n === "cat" ? catV(view.id) : view.n === "search" ? searchV() : view.n === "sup" ? supV() : view.n === "con" ? conV() : view.n === "rep" ? repV() : view.n === "out" ? outV() : view.n === "abt" ? abtV() : view.n === "chk" ? chkV() : prodV(view.id);
       app.innerHTML = '<div class="sh-scroll" data-shscroll>' + head() + '<main>' + body + '</main>' + foot() + '</div>' + drawerV() + '<div class="sh-toast" role="status" aria-live="polite" data-shtoast></div>';
       scroller = app.querySelector("[data-shscroll]");
       scroller.scrollTop = keepScroll ? st : 0;
@@ -2585,7 +2695,7 @@
       var b = e.target.closest("[data-sh]"); if (!b) { if (!e.target.closest(".sh-dd") && app.querySelector(".sh-dd.open")) app.querySelector(".sh-dd").classList.remove("open"); return; }
       var a = b.dataset.sh, id = b.dataset.id;
       if (a !== "ddt" && app.querySelector(".sh-dd.open")) app.querySelector(".sh-dd").classList.remove("open");
-      if (a === "home") { query = ""; go({ n: "home" }); }
+      if (a === "home") { query = ""; fdone = null; ferr = ""; go({ n: "home" }); }
       else if (a === "cat") { query = ""; sort = "a"; go({ n: "cat", id: id }); }
       else if (a === "prod") go({ n: "prod", id: id });
       else if (a === "ddt") { b.parentNode.classList.toggle("open"); }
@@ -2596,11 +2706,21 @@
       else if (a === "inc") { cart[id]++; render(true); }
       else if (a === "dec") { cart[id]--; if (cart[id] < 1) delete cart[id]; render(true); }
       else if (a === "rm") { delete cart[id]; render(true); }
-      else if (a === "chk") toast(s.chk);
+      else if (a === "chk") { drawer = false; ferr = ""; fdone = null; go({ n: "chk" }); }
+      else if (a === "pg") { sync(); ferr = ""; fdone = null; query = ""; go({ n: id }); }
       else if (a === "soon") toast(s.soon);
       else if (a === "prev") { show(slide - 1); restart(); }
       else if (a === "next") { show(slide + 1); restart(); }
       else if (a === "dot") { show(+id); restart(); }
+    });
+    root.addEventListener("submit", function (e) {
+      var f = e.target.closest("[data-shform]"); if (!f) return; e.preventDefault(); sync();
+      var k = f.dataset.shform, okM = /^\S+@\S+\.\S+$/.test((fv.mail || "").trim()), err = "";
+      if (!(fv.name || "").trim() || !okM) err = s.errF;
+      else if (k === "chk" && !(fv.addr || "").trim()) err = s.errA;
+      else if ((k === "con" || k === "rep") && !(fv.msg || "").trim()) err = s.errM;
+      if (err) { ferr = err; render(true); var fi = app.querySelector("[data-shf]"); if (fi) fi.focus(); return; }
+      ferr = ""; fdone = k; if (k === "chk") { cart = {}; } fv = {}; render(false);
     });
     root.addEventListener("input", function (e) {
       if (e.target.hasAttribute("data-shq")) { query = e.target.value; if (query.trim()) { view = { n: "search" }; render(false); } else { view = { n: "home" }; render(false); } }
