@@ -3500,11 +3500,23 @@
     sc.src = "https://gc.zgo.at/count.js"; sc.onload = gcFlush; document.head.appendChild(sc);
   }
 
+  // Seta para voltar ao topo nas páginas que não são projetos (home, CV, recomendação).
+  function addTop(host, vars) {
+    if (!host || host.querySelector(".to-top")) return;
+    var up = document.createElement("button"); up.type = "button"; up.className = "to-top"; if (vars) up.setAttribute("style", vars); up.setAttribute("aria-label", t("toTop")); up.title = t("toTop");
+    up.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    up.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); });
+    host.appendChild(up);
+    var tick = false;
+    function upd() { tick = false; up.classList.toggle("show", scrollY > 700); }
+    on(window, "scroll", function () { if (!tick) { tick = true; requestAnimationFrame(upd); } }, { passive: true });
+    upd();
+  }
   function route(nav) {
     cleanups.forEach(function (f) { f(); }); cleanups = [];
     var id = (location.hash || "").replace("#", "");
     var i = PROJECTS.findIndex(function (p) { return p.id === id; });
-    if (i >= 0) { project(i); initProject(); } else if (id === "recomendacao") { recommendation(); initRec(); } else if (id === "cv") { cvPage(); } else { home(); initHome(); }
+    if (i >= 0) { project(i); initProject(); } else if (id === "recomendacao") { recommendation(); initRec(); addTop(document.querySelector(".stage") || app, ""); } else if (id === "cv") { cvPage(); addTop(app, "--ink:#fff;--c1:#0b0b12;"); } else { home(); initHome(); addTop(app, "--ink:#fff;--c1:#0b0b12;"); }
     window.scrollTo(0, 0);
     closeMenus();
     track("/" + (id || "inicio"), document.title);
