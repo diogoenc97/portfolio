@@ -1955,14 +1955,15 @@
   function fmt(s) {
     return esc(s).split("\n").map(function (l) { return '<span class="ln">' + l.replace(/^(Objetivo|Ação|Resultado|Goal|Action|Result):/, "<b>$1:</b>") + '</span>'; }).join("");
   }
-  var GTMAP = { FalconTech: "falcontech", SwifTech: "swifttech", LojaTech: "lojatech", TerraTech: "terratech", GroupTech: "grouptech" };
+  var GTMAP = { FalconTech: "falcontech", SwifTech: "swifttech", LojaTech: "lojatech", TerraTech: "terratech", GroupTech: "grouptech", Arfit: "arfit", "SPR Auto": "spr-auto", "Special Casa": "special-casa", BTBC: "btbc", "Studio 33": "studio-33", "Studio33": "studio-33", "Eletro Avintes": "eletro-avintes", "RAR Açúcar": "rar-acucar", "Eva Explica": "eva-explica", "Essence Beauty": "essence-beauty", "Spoon Eyes": "spoon-eyes" };
+  var GTRE = new RegExp("(^|[^\\w])(" + Object.keys(GTMAP).sort(function (a, b) { return b.length - a.length; }).join("|") + ")(?![\\w])", "g");
   // Liga os nomes das marcas do GroupTech às respetivas páginas (menos o nome do próprio projeto e o que já é ligação).
   function swl(h, p) {
     var self = p ? p.id : "", depth = 0;
     return String(h).split(/(<[^>]+>)/).map(function (seg) {
       if (seg.charAt(0) === "<") { if (/^<a[\s>]/i.test(seg)) depth++; else if (/^<\/a>/i.test(seg)) depth--; return seg; }
       if (depth > 0) return seg;
-      return seg.replace(/\b(FalconTech|SwifTech|LojaTech|TerraTech|GroupTech)\b/g, function (m) { return GTMAP[m] === self ? m : '<a class="inl" href="#' + GTMAP[m] + '">' + m + '</a>'; });
+      return seg.replace(GTRE, function (all, pre, m) { return GTMAP[m] === self ? all : pre + '<a class="inl" href="#' + GTMAP[m] + '">' + m + '</a>'; });
     }).join("");
   }
   var GTMEM = ["falcontech", "lojatech", "swifttech", "terratech"];
@@ -2247,8 +2248,8 @@
         '<a class="srv-talk" href="mailto:' + esc(CONTACT.email) + '?subject=' + encodeURIComponent((LANG === "en" ? "Enquiry: " : "Pedido: ") + s.t) + '" data-track="servico">' + t("srvTalk") + ' →</a></div></div>';
     }).join("");
     var st = STATEMENT[LANG].split(" ").map(function (w) { return '<span class="w">' + esc(w) + '</span>'; }).join(" ");
-    var exp = EXP[LANG].map(function (e) { return '<li><b>' + esc(e[0]) + '</b><span class="yr">' + esc(e[2]) + '</span><span>' + esc(e[1]) + '</span></li>'; }).join("");
-    var nums = NUMS[LANG].map(function (n) { return '<div><span class="hm-num" data-to="' + n.to + '" data-pre="' + n.pre + '" data-suf="' + n.suf + '">' + n.pre + n.to + n.suf + '</span><span class="hm-nl">' + esc(n.l) + '</span></div>'; }).join("");
+    var exp = EXP[LANG].map(function (e) { return '<li><b>' + esc(e[0]) + '</b><span class="yr">' + esc(e[2]) + '</span><span>' + swl(esc(e[1])) + '</span></li>'; }).join("");
+    var nums = NUMS[LANG].map(function (n) { return '<div><span class="hm-num" data-to="' + n.to + '" data-pre="' + n.pre + '" data-suf="' + n.suf + '">' + n.pre + n.to + n.suf + '</span><span class="hm-nl">' + swl(esc(n.l)) + '</span></div>'; }).join("");
     var tools = TOOLS.map(li).join("");
     var skills = t("skills").map(li).join("");
     var edu = t("edu").map(function (e) { return '<li><b>' + esc(e[0]) + '</b> <span>' + esc(e[1]) + '</span></li>'; }).join("");
@@ -2272,7 +2273,7 @@
       '<section class="wide hm-sec" id="recomendacao-sec"><p class="hm-k">' + esc(REC[LANG].k) + '</p><blockquote class="hm-quote">“' + esc(REC[LANG].quote) + '”</blockquote>' +
       '<p class="hm-qby"><strong>' + esc(REC[LANG].by) + '</strong>, ' + esc(REC[LANG].role) + '</p><a class="hm-ln hm-more" href="#recomendacao">' + esc(REC[LANG].teaser) + ' →</a></section>' +
       '<section class="wide hm-sec" id="sobre"><p class="hm-k">' + t("aboutK") + '</p><p class="hm-st">' + st + '</p>' +
-      '<div class="hm-two"><div><figure class="hm-me">' + imgTag(124, "Diogo Encarnação", false) + '<figcaption><strong>Diogo Encarnação</strong><span>' + t("meRole") + ' · Vila Nova de Gaia</span></figcaption></figure><p>' + esc(t("p1")) + '</p><p>' + swl(esc(t("p2"))) + '</p><p>' + esc(t("p3")) + '</p><p class="hm-cvb"><a class="mini cv-b" href="#cv">CV</a></p></div>' +
+      '<div class="hm-two"><div><figure class="hm-me">' + imgTag(124, "Diogo Encarnação", false) + '<figcaption><strong>Diogo Encarnação</strong><span>' + t("meRole") + ' · Vila Nova de Gaia</span></figcaption></figure><p>' + swl(esc(t("p1"))) + '</p><p>' + swl(esc(t("p2"))) + '</p><p>' + swl(esc(t("p3"))) + '</p><p class="hm-cvb"><a class="mini cv-b" href="#cv">CV</a></p></div>' +
       '<div><p class="hm-k" style="margin-bottom:10px">' + t("expK") + '</p><ul class="hm-exp">' + exp + '</ul></div></div>' +
       highlights() +
       '<div class="hm-nums">' + nums + '</div>' +
