@@ -395,6 +395,8 @@
   .module.split .body { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px; align-items: center; }
   .module.split p.txt { margin: 0; }
   .module p.txt.solo { margin-top: 0; }
+  .mlink-w { margin: 16px 0 0; }
+  .mlink { padding: 10px 18px; font-size: .95rem; }
   .module p.txt .ln { display: block; }
   .module p.txt .ln + .ln { margin-top: .7em; }
   .module p.txt b { font-weight: 700; }
@@ -1370,8 +1372,8 @@
             { group: "Flyers", title: "Flyer Be On. Be Smart.", imgs: [135], caps: ["Flyer A5, «Esteja dois passos à frente: Be On. Be Smart.»"] },
             { group: "Flyers", title: "Flyer de recrutamento", imgs: [132, 133, 134], grid: { from: 1, gap: 18 }, caps: ["Flyer de recrutamento, «Ser parte da solução Arfit»", "Exterior: capa e contracapa", "Interior: a equipa e a organização"] },
             { group: "Flyers", title: "Flyer Automação em Edifícios", imgs: [136, 137, 138], grid: { from: 1, gap: 18 }, caps: ["Flyer dobrável, «Automação em Edifícios, Soluções SACE»", "Exterior: capa e contracapa", "Interior: soluções e valores acrescentados"] },
-            { group: "Catálogo", title: "Catálogo técnico 2025", imgs: [142, 143, 144], grid: { from: 1, gap: 18 }, caps: ["Capa do Catálogo Técnico 2025", "Versão portuguesa: páginas interiores", "Versão espanhola: páginas interiores"] },
-            { group: "Catálogo", title: "Tabela de preços 2025", imgs: [139, 140, 141], grid: { from: 1, gap: 18 }, caps: ["Capa da Tabela de Preços 2025", "Páginas de Ventilação: modelos, referências e acessórios", "Página de Recuperação: recuperadores de duplo fluxo"] },
+            { group: "Catálogo", title: "Catálogo técnico 2025", imgs: [142, 143, 144], link: ["https://arfit.pt/wp-content/uploads/2025/10/Catalogo-Tecnico-ARFIT-2025.pdf", "Ver o catálogo técnico no site da Arfit (PDF)", "View the technical catalogue on Arfit's website (PDF)"], grid: { from: 1, gap: 18 }, caps: ["Capa do Catálogo Técnico 2025", "Versão portuguesa: páginas interiores", "Versão espanhola: páginas interiores"] },
+            { group: "Catálogo", title: "Tabela de preços 2025", imgs: [139, 140, 141], link: ["https://arfit.pt/wp-content/uploads/2025/10/Tabela-de-Precos-ARFIT-2025.pdf", "Ver a tabela de preços no site da Arfit (PDF)", "View the price list on Arfit's website (PDF)"], grid: { from: 1, gap: 18 }, caps: ["Capa da Tabela de Preços 2025", "Páginas de Ventilação: modelos, referências e acessórios", "Página de Recuperação: recuperadores de duplo fluxo"] },
             { group: "Publicidade", title: "Anúncios em revistas", imgs: [150, 151, 152, 169], grid: { from: 1, gap: 18 }, caps: ["Anúncios Be Smart para revistas do setor", "Revista «Edifícios e Energia»", "Revista «O Instalador»", "Revista «PICLIMA»: parabéns pelos 20 anos"] },
             { group: "Eventos", title: "Credenciais do Open Day", imgs: [178, 179], grid: { from: 0, gap: 18 }, caps: ["Credencial de convidado, 19 de fevereiro de 2025", "Credencial de convidado, outro exemplar"] },
             { group: "Eventos", title: "Crachás de colaboradores", imgs: [180], caps: ["Mockup dos crachás de identificação dos colaboradores"] },
@@ -3402,6 +3404,7 @@
       } else shots = m.imgs.map(function (n, j) { return shot(n, j); }).join("");
       var inner = shots ? '<div class="shots">' + shots + '</div>' : '';
       var txt = m.text ? '<p class="txt' + (shots || m.custom ? '' : ' solo') + '">' + swl(fmt(m.text), p) + '</p>' : '';
+      if (m.link) txt += '<p class="mlink-w"><a class="ghost mlink" href="' + esc(m.link[0]) + '" target="_blank" rel="noopener">' + esc(m.link[LANG === "en" ? 2 : 1]) + ' ↗</a></p>';
       var reelsHtml = m.reels ? '<div class="reels' + (m.wide ? ' wide' : '') + '">' + m.reels.map(function (rl, j) {
         var c = caps[j] || "";
         return '<a class="reel" href="' + rl[1] + '" target="_blank" rel="noopener" aria-label="' + esc(t(m.wide === "yt" ? "videoGo" : "reelGo") + ": " + c) + '">' + imgTag(rl[0], p.name + " · " + c) + '<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="reel-cap">' + esc(c) + '</span></a>';
