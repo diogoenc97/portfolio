@@ -256,6 +256,9 @@
 
   /* O que faço */
   .hm-srv-list { margin-top: clamp(24px, 3vw, 40px); border-bottom: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
+  .hm-srv { scroll-margin-top: 90px; }
+  .hm-srv.flash h3 { animation: srvflash 1.6s ease .5s; }
+  @keyframes srvflash { 0%, 100% { color: inherit; padding-left: 0; } 25%, 70% { color: var(--accent); padding-left: 14px; } }
   .hm-srv { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 12px 48px; padding-block: 28px; border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent); }
   .hm-srv h3 { font-family: var(--font-poster); font-weight: 400; text-transform: uppercase; font-size: clamp(1.9rem, 3.8vw, 3rem); line-height: 1; margin: 0; }
   .hm-srv p { margin: 0 0 12px; max-width: 52ch; font-size: 1.05rem; color: var(--muted); }
@@ -647,7 +650,7 @@
   .hm-srv p { font-size: 1.12rem; line-height: 1.6; max-width: 58ch; color: color-mix(in srgb, var(--fg) 84%, var(--bg)); }
   .srv-talk { display: inline-block; margin-top: 14px; font-weight: 600; color: var(--fg); text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
   .srv-talk:hover, .srv-talk:focus-visible { color: var(--accent); }
-  @media (prefers-reduced-motion: reduce) { .hm-avail .dot { animation: none; } }
+  @media (prefers-reduced-motion: reduce) { .hm-avail .dot, .hm-srv.flash h3 { animation: none; } }
 /* ---- Mockup da loja SwifTech ---- */
 .shopw{--g:#91DF36;--gd:#162918;--gk:#0F1A10;--gl:#eef7e3;margin:6px 0 0;font-family:"Exo 2",system-ui,sans-serif}
 .shop-bar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;margin-bottom:14px}
@@ -2138,8 +2141,8 @@
     var strip2 = PROJECTS.map(function (p) {
       return '<a class="hm-cv" href="#' + p.id + '" tabindex="-1" aria-hidden="true">' + imgTag(p.cover, "", false) + '</a>';
     }).join("");
-    var svcs = SERVICES[LANG].map(function (s) {
-      return '<div class="hm-srv"><h3>' + esc(s.t) + '</h3><div><p>' + swl(esc(s.d)) + '</p><div class="lk">' +
+    var svcs = SERVICES[LANG].map(function (s, n) {
+      return '<div class="hm-srv" id="srv-' + n + '"><h3>' + esc(s.t) + '</h3><div><p>' + swl(esc(s.d)) + '</p><div class="lk">' +
         s.p.map(function (id) { var q = byId(id); return '<a href="#' + id + '">' + esc(q.short || q.name) + '</a>'; }).join("") + '</div>' +
         '<a class="srv-talk" href="mailto:' + esc(CONTACT.email) + '?subject=' + encodeURIComponent((LANG === "en" ? "Enquiry: " : "Pedido: ") + s.t) + '" data-track="servico">' + t("srvTalk") + ' →</a></div></div>';
     }).join("");
@@ -2150,7 +2153,7 @@
     var skills = t("skills").map(li).join("");
     var edu = t("edu").map(function (e) { return '<li><b>' + esc(e[0]) + '</b> <span>' + esc(e[1]) + '</span></li>'; }).join("");
     var langs = t("langs").map(function (e) { return '<li><b>' + esc(e[0]) + '</b> <span>' + esc(e[1]) + '</span></li>'; }).join("");
-    var idx = t("kws").map(function (w, n) { return '<li style="--i:' + n + '"><button type="button" data-jump="servicos"><span class="i">0' + (n + 1) + '</span><span class="w">' + esc(w) + '</span><span class="a" aria-hidden="true">↗</span></button></li>'; }).join("");
+    var idx = t("kws").map(function (w, n) { return '<li style="--i:' + n + '"><button type="button" data-jump="srv-' + n + '"><span class="i">0' + (n + 1) + '</span><span class="w">' + esc(w) + '</span><span class="a" aria-hidden="true">↗</span></button></li>'; }).join("");
 
     app.innerHTML = topbar() +
       '<section class="wide hm-hero"><div class="hm-meta hm-k"><span>' + esc(t("metaK")) + '</span><span>Vila Nova de Gaia, Portugal</span></div>' +
@@ -3277,7 +3280,7 @@
     var hj = t.closest("[data-pj]"); if (hj) pendingJump = hj.dataset.pj;
     if (t.closest("[data-print]")) { track("cv-pdf", "CV em PDF", true); window.print(); return; }
     var j = t.closest("[data-jump]");
-    if (j) { var el = document.getElementById(j.dataset.jump); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+    if (j) { var el = document.getElementById(j.dataset.jump); if (el) { el.scrollIntoView({ behavior: "smooth", block: "start" }); if (el.classList.contains("hm-srv")) { Array.prototype.forEach.call(document.querySelectorAll(".hm-srv.flash"), function (x) { x.classList.remove("flash"); }); void el.offsetWidth; el.classList.add("flash"); } } return; }
     var b = t.closest(".shot-btn"); if (b) openLb(+b.dataset.n);
   });
   document.addEventListener("keydown", function (e) {
