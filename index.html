@@ -589,7 +589,9 @@
     .brand .b1 { font-size: .62rem; }
     .menu-b { width: 34px; height: 34px; }
     .lang button { padding: 3px 6px; font-size: .68rem; }
-    .top .cta { padding: 8px 10px; font-size: .78rem; }
+    .top .cta { padding: 8px 9px; font-size: .74rem; white-space: nowrap; }
+    .top .brand { min-width: 0; }
+    .top .brand .b1, .top .brand .b2 { white-space: nowrap; }
   }
   @media (hover: none), (max-width: 700px) {
     .hm-peek { display: none; }
@@ -1119,7 +1121,7 @@
       srvK: "Serviços", srvH: "Design, branding, marketing, vídeo e projetos",
       aboutK: "Sobre mim",
       p1: "Trabalho na junção entre estratégia e criatividade: do branding e do design gráfico ao vídeo, da gestão de redes sociais ao marketing digital e ao UX/UI. Como gestor de projetos, o que me move é transformar uma ideia em execução estruturada e em resultados que se conseguem medir.",
-      p2: "Sou Responsável de Marketing na FalconTech, onde criei o departamento de raiz: defini processos, ferramentas e estratégia, desenvolvi a identidade visual e as brand guidelines, implementei o CRM (HubSpot) e a gestão de projetos (Asana e Trello) e, como é uma startup, faço também o recrutamento e seleção. Em 2026, os seguidores subiram 54% no Instagram e 171% no LinkedIn. No GroupTech, o mesmo grupo, criei ainda a identidade visual da LojaTech e da SwifTech, a loja online em Shopify.",
+      p2: "Sou Responsável de Marketing na FalconTech, onde criei o departamento de raiz: defini processos, ferramentas e estratégia, desenvolvi a identidade visual e as brand guidelines, implementei o CRM (HubSpot) e a gestão de projetos (Asana e Trello) e, como é uma startup, faço também o recrutamento e seleção. Em 2026, os seguidores subiram 54% no Instagram e 171% no LinkedIn. No GroupTech, o mesmo grupo, criei ainda a identidade visual da LojaTech e da SwifTech (a loja online em Shopify), os logótipos da TerraTech e do próprio GroupTech.",
       p3: "Antes disso, na Arfit Climatização, geri a comunicação visual da marca, criei materiais comerciais e a interface de um software interno e giri o website em backoffice. Na SPR Auto, como técnico de marketing, planeei sete campanhas e o conteúdo visual que criei para as redes sociais ajudou a aumentar o número de seguidores em 35%. Como freelancer, durante mais de seis anos, criei identidades visuais e geri redes sociais para vários clientes. Comecei em 2017 como estagiário na agência de multimédia Spoon Eyes, onde fui videógrafo e editor de vídeo até 2020.",
       expK: "Experiência", toolsK: "Ferramentas", skillsK: "Competências", eduK: "Formação", langsK: "Línguas",
       skills: ["Gestão de marketing", "Branding", "Design gráfico", "UX/UI e wireframing", "Marketing digital", "Gestão de redes sociais", "Edição de vídeo", "Gestão de projetos", "CRM (HubSpot)", "Recrutamento e seleção", "Liderança de equipa", "Comunicação", "Pensamento criativo", "Autonomia e iniciativa"],
@@ -1143,7 +1145,7 @@
       srvK: "Services", srvH: "Design, branding, marketing, video and projects",
       aboutK: "About me",
       p1: "I work where strategy meets creativity: from branding and graphic design to video, from social media management to digital marketing and UX/UI. As a project manager, what drives me is turning an idea into structured execution and results you can measure.",
-      p2: "I am the Marketing Manager at FalconTech, where I built the department from scratch: I defined processes, tools and strategy, developed the visual identity and brand guidelines, implemented the CRM (HubSpot) and project management (Asana and Trello) and, since it is a startup, I also handle recruitment and selection. In 2026, followers grew 54% on Instagram and 171% on LinkedIn. At GroupTech, the same group, I also created the visual identity of LojaTech and SwifTech, the Shopify online store.",
+      p2: "I am the Marketing Manager at FalconTech, where I built the department from scratch: I defined processes, tools and strategy, developed the visual identity and brand guidelines, implemented the CRM (HubSpot) and project management (Asana and Trello) and, since it is a startup, I also handle recruitment and selection. In 2026, followers grew 54% on Instagram and 171% on LinkedIn. At GroupTech, the same group, I also created the visual identity of LojaTech and SwifTech (the Shopify online store), and the logos of TerraTech and GroupTech itself.",
       p3: "Before that, at Arfit Climatização, I managed the brand's visual communication, created sales materials and the interface of an internal software tool, and managed the website through its back office. At SPR Auto, as a marketing technician, I planned seven campaigns and the visual content I created for social media helped grow the follower count by 35%. As a freelancer, for more than six years, I created brand identities and managed social media for a range of clients. I started in 2017 as an intern at the multimedia agency Spoon Eyes, where I was a videographer and video editor until 2020.",
       expK: "Experience", toolsK: "Tools", skillsK: "Skills", eduK: "Education", langsK: "Languages",
       skills: ["Marketing management", "Branding", "Graphic design", "UX/UI and wireframing", "Digital marketing", "Social media management", "Video editing", "Project management", "CRM (HubSpot)", "Recruitment and selection", "Team leadership", "Communication", "Creative thinking", "Autonomy and initiative"],
@@ -1348,7 +1350,7 @@
 
   // Ordem de apresentação: primeiro os projetos que melhor mostram o perfil híbrido (gestão de marketing + design, branding e UX/UI).
   (function () {
-    var ORDER = ["falcontech", "arfit", "spr-auto", "swifttech", "terratech", "grouptech", "special-casa", "btbc", "lojatech", "spoon-eyes", "essence-beauty", "eva-explica", "eletro-avintes", "rar-acucar", "studio-33"];
+    var ORDER = ["falcontech", "arfit", "spr-auto", "swifttech", "grouptech", "terratech", "special-casa", "btbc", "lojatech", "spoon-eyes", "essence-beauty", "eva-explica", "eletro-avintes", "rar-acucar", "studio-33"];
     PROJECTS.sort(function (a, b) { var x = ORDER.indexOf(a.id), y = ORDER.indexOf(b.id); return (x < 0 ? 99 : x) - (y < 0 ? 99 : y); });
   })();
 
@@ -1922,7 +1924,7 @@
   var SERVICES = {
     pt: [
       { t: "Design gráfico", d: "Do conceito ao ficheiro final: campanhas, banners, flyers, cartazes, catálogos, tabelas de preços, anúncios, newsletters, cartões e conteúdos para redes sociais, pensados para comunicar com clareza e para vender. Trabalho em Illustrator, Photoshop e InDesign, sempre a partir da identidade da marca, para que cada peça se reconheça como sua. Apresento também o resultado em mockups e maquetes 3D.", p: ["arfit", "falcontech", "spr-auto", "btbc", "special-casa", "rar-acucar", "studio-33", "eletro-avintes", "essence-beauty"] },
-      { t: "Branding", d: "Crio e estruturo identidades visuais completas: logótipo, paleta, tipografia e regras de aplicação reunidas em manuais de identidade gráfica, como os da FalconTech, da LojaTech e da SwifTech. O objetivo é que a marca se reconheça e se mantenha coerente em todos os pontos de contacto, do digital ao impresso, mesmo quando é outra pessoa a aplicá-la.", p: ["falcontech", "swifttech", "lojatech", "btbc", "essence-beauty", "eva-explica", "eletro-avintes"] },
+      { t: "Branding", d: "Crio e estruturo identidades visuais completas: logótipo, paleta, tipografia e regras de aplicação reunidas em manuais de identidade gráfica, como os da FalconTech, da LojaTech e da SwifTech, e os logótipos da TerraTech e do GroupTech. O objetivo é que a marca se reconheça e se mantenha coerente em todos os pontos de contacto, do digital ao impresso, mesmo quando é outra pessoa a aplicá-la.", p: ["falcontech", "swifttech", "grouptech", "terratech", "lojatech", "btbc", "essence-beauty", "eva-explica", "eletro-avintes"] },
       { t: "Marketing digital e redes sociais", d: "Defino a estratégia e acompanho a execução: planeamento e gestão de redes sociais, publicações e reels, campanhas promocionais, anúncios no Meta, CRM (HubSpot) e análise de desempenho. Na FalconTech criei o departamento de raiz e, na SPR Auto, as campanhas e o conteúdo ajudaram a aumentar os seguidores em 35%.", p: ["falcontech", "arfit", "spr-auto", "special-casa", "btbc"] },
       { t: "Vídeo", d: "Da captação à edição final em Premiere e After Effects: reels para redes sociais, vídeos institucionais e de produto e vídeo de casamento. Comecei neste ofício em 2017, como videógrafo e editor na Spoon Eyes, e hoje aplico-o ao marketing das marcas com que trabalho.", p: ["spoon-eyes", "falcontech", "arfit", "spr-auto"] },
       { t: "UX/UI e web", d: "Interfaces e experiências digitais com a identidade da marca: o software de seleção de produto ArfitSelect, a loja online da SwifTech em Shopify, o template do website da LojaTech e a gestão de conteúdos de um website em backoffice. Trabalho em Figma, com wireframing e prototipagem.", p: ["arfit", "swifttech", "lojatech"] },
@@ -1930,7 +1932,7 @@
     ],
     en: [
       { t: "Graphic design", d: "From concept to final file: campaigns, banners, flyers, posters, catalogues, price lists, ads, newsletters, cards and social media content, designed to communicate clearly and to sell. I work in Illustrator, Photoshop and InDesign, always starting from the brand's identity, so every piece is recognisably its own. I also present the result in mockups and 3D models.", p: ["arfit", "falcontech", "spr-auto", "btbc", "special-casa", "rar-acucar", "studio-33", "eletro-avintes", "essence-beauty"] },
-      { t: "Branding", d: "I create and structure complete visual identities: logo, palette, typography and application rules gathered in graphic identity manuals, like those for FalconTech, LojaTech and SwifTech. The goal is for the brand to be recognisable and stay consistent at every touchpoint, from digital to print, even when someone else applies it.", p: ["falcontech", "swifttech", "lojatech", "btbc", "essence-beauty", "eva-explica", "eletro-avintes"] },
+      { t: "Branding", d: "I create and structure complete visual identities: logo, palette, typography and application rules gathered in graphic identity manuals, like those for FalconTech, LojaTech and SwifTech, and the logos for TerraTech and GroupTech. The goal is for the brand to be recognisable and stay consistent at every touchpoint, from digital to print, even when someone else applies it.", p: ["falcontech", "swifttech", "grouptech", "terratech", "lojatech", "btbc", "essence-beauty", "eva-explica", "eletro-avintes"] },
       { t: "Digital marketing and social media", d: "I define the strategy and follow the execution: social media planning and management, posts and reels, promotional campaigns, Meta ads, CRM (HubSpot) and performance analysis. At FalconTech I built the department from scratch and, at SPR Auto, the campaigns and content helped grow followers by 35%.", p: ["falcontech", "arfit", "spr-auto", "special-casa", "btbc"] },
       { t: "Video", d: "From filming to the final edit in Premiere and After Effects: reels for social media, corporate and product videos, and wedding video. I started in this craft in 2017, as a videographer and editor at Spoon Eyes, and today I apply it to the marketing of the brands I work with.", p: ["spoon-eyes", "falcontech", "arfit", "spr-auto"] },
       { t: "UX/UI and web", d: "Digital interfaces and experiences carrying the brand's identity: the ArfitSelect product selection software, the SwifTech online store in Shopify, the LojaTech website template and the management of a website's content through its back office. I work in Figma, with wireframing and prototyping.", p: ["arfit", "swifttech", "lojatech"] },
@@ -1976,8 +1978,8 @@
     ]
   };
   var HL = {
-    pt: { k: "Em destaque", h: "Projetos que falam por mim", sub: "Dez peças que resumem o meu percurso, do branding ao vídeo. Clica numa para ir direto ao material.", go: "Ver mais" },
-    en: { k: "Featured", h: "Projects that speak for themselves", sub: "Ten pieces that sum up my journey, from branding to video. Click one to go straight to the material.", go: "See more" }
+    pt: { k: "Em destaque", h: "Projetos que falam por mim", sub: "Doze peças que resumem o meu percurso, do branding ao vídeo. Clica numa para ir direto ao material.", go: "Ver mais" },
+    en: { k: "Featured", h: "Projects that speak for themselves", sub: "Twelve pieces that sum up my journey, from branding to video. Click one to go straight to the material.", go: "See more" }
   };
   var HLI = [
     { id: "falcontech", m: "Versão principal", tag: ["Branding", "Branding"], t: ["Manual de identidade gráfica da FalconTech", "FalconTech graphic identity manual"], d: ["Cinco capítulos, seis cores com equivalências Pantone, CMYK, RGB, HEX e RAL e a marca aplicada em oito tipos de materiais.", "Five chapters, six colours with Pantone, CMYK, RGB, HEX and RAL equivalents, and the brand applied across eight types of material."] },
@@ -1987,6 +1989,8 @@
     { id: "falcontech", m: "Publicações de 2026", tag: ["Redes sociais", "Social media"], t: ["Publicações e reels da FalconTech", "FalconTech posts and reels"], d: ["Conteúdos para o Instagram da FalconTech, com os templates definidos no manual.", "Content for FalconTech's Instagram, using the templates set in the manual."] },
     { id: "spr-auto", m: "Blue Monday", tag: ["Marketing", "Marketing"], t: ["Sete campanhas na SPR Auto", "Seven campaigns at SPR Auto"], d: ["Cada campanha com um mecanismo diferente, num período em que os seguidores cresceram 35%.", "Each campaign with a different mechanism, in a period when followers grew 35%."] },
     { id: "swifttech", m: "Versão principal", fit: 1, tag: ["Branding & web", "Branding & web"], t: ["SwifTech, marca e loja online", "SwifTech, brand and online store"], d: ["Identidade visual, manual de identidade gráfica e loja online em Shopify.", "Visual identity, graphic identity manual and Shopify online store."] },
+    { id: "grouptech", m: "Resultado final", tag: ["Branding", "Branding"], t: ["GroupTech, do esboço ao logótipo", "GroupTech, from sketch to logo"], d: ["Pesquisa de letras, esboços, duas rondas de propostas e afinação final do logótipo do grupo.", "Lettering research, sketches, two rounds of proposals and final refinement of the group's logo."] },
+    { id: "terratech", m: "Testes de fundo e cor", cv: 1, tag: ["Branding", "Branding"], t: ["TerraTech, marca em conceito", "TerraTech, a brand at concept stage"], d: ["Logótipo e conceito de tecnologia para o setor agrícola, com estudos de nome, slogan, tipografia e cor.", "Logo and concept for agricultural technology, with studies of name, slogan, typography and colour."] },
     { id: "spoon-eyes", m: "Vídeos de casamento", tag: ["Vídeo", "Video"], t: ["Vídeos de casamento na Spoon Eyes", "Wedding videos at Spoon Eyes"], d: ["Captação e edição em Premiere e After Effects, de 2017 a 2020.", "Filming and editing in Premiere and After Effects, from 2017 to 2020."] },
     { id: "essence-beauty", m: "Branding", tag: ["Branding", "Branding"], t: ["Essence Beauty", "Essence Beauty"], d: ["Logótipo com as iniciais da cliente, cartão de visita e dois flyers, em mockups.", "Logo combining the client's initials, business card and two flyers, shown as mockups."] },
     { id: "eva-explica", m: "Design exterior", tag: ["Design exterior", "Exterior design"], t: ["Eva Explica, da marca à fachada", "Eva Explica, from brand to shopfront"], d: ["Identidade preto e amarelo aplicada às vitrines, com maquete 3D.", "Black-and-yellow identity applied to the shop windows, with a 3D mockup."] }
@@ -1996,7 +2000,7 @@
     var cards = HLI.map(function (it) {
       var p = byId(it.id), k = -1;
       p.modules.forEach(function (m, n) { if (k < 0 && m.title === it.m) k = n; });
-      var mod = p.modules[k] || {}, img = (mod.imgs && mod.imgs[0]) || (mod.reels && mod.reels[0][0]) || p.cover;
+      var mod = p.modules[k] || {}, img = it.cv ? p.cover : (mod.imgs && mod.imgs[0]) || (mod.reels && mod.reels[0][0]) || p.cover;
       return '<a class="hl" href="#' + it.id + '" data-pj="m' + k + '"><span class="hl-img' + (it.fit ? ' fit' : '') + '">' + imgTag(img, it.t[i], false) + '</span>' +
         '<span class="hl-b"><span class="hl-tag">' + esc(it.tag[i]) + ' · ' + esc(loc(p).year) + '</span><strong>' + esc(it.t[i]) + '</strong><span class="hl-d">' + esc(it.d[i]) + '</span><span class="hl-go">' + esc(d.go) + ' →</span></span></a>';
     }).join("");
@@ -2135,7 +2139,7 @@
       return '<a class="hm-cv" href="#' + p.id + '" tabindex="-1" aria-hidden="true">' + imgTag(p.cover, "", false) + '</a>';
     }).join("");
     var svcs = SERVICES[LANG].map(function (s) {
-      return '<div class="hm-srv"><h3>' + esc(s.t) + '</h3><div><p>' + esc(s.d) + '</p><div class="lk">' +
+      return '<div class="hm-srv"><h3>' + esc(s.t) + '</h3><div><p>' + swl(esc(s.d)) + '</p><div class="lk">' +
         s.p.map(function (id) { var q = byId(id); return '<a href="#' + id + '">' + esc(q.short || q.name) + '</a>'; }).join("") + '</div>' +
         '<a class="srv-talk" href="mailto:' + esc(CONTACT.email) + '?subject=' + encodeURIComponent((LANG === "en" ? "Enquiry: " : "Pedido: ") + s.t) + '" data-track="servico">' + t("srvTalk") + ' →</a></div></div>';
     }).join("");
@@ -2165,7 +2169,7 @@
       '<section class="wide hm-sec" id="recomendacao-sec"><p class="hm-k">' + esc(REC[LANG].k) + '</p><blockquote class="hm-quote">“' + esc(REC[LANG].quote) + '”</blockquote>' +
       '<p class="hm-qby"><strong>' + esc(REC[LANG].by) + '</strong>, ' + esc(REC[LANG].role) + '</p><a class="hm-ln hm-more" href="#recomendacao">' + esc(REC[LANG].teaser) + ' →</a></section>' +
       '<section class="wide hm-sec" id="sobre"><p class="hm-k">' + t("aboutK") + '</p><p class="hm-st">' + st + '</p>' +
-      '<div class="hm-two"><div><figure class="hm-me">' + imgTag(124, "Diogo Encarnação", false) + '<figcaption><strong>Diogo Encarnação</strong><span>' + t("meRole") + ' · Vila Nova de Gaia</span></figcaption></figure><p>' + esc(t("p1")) + '</p><p>' + esc(t("p2")) + '</p><p>' + esc(t("p3")) + '</p><p class="hm-cvb"><a class="mini cv-b" href="#cv">CV</a></p></div>' +
+      '<div class="hm-two"><div><figure class="hm-me">' + imgTag(124, "Diogo Encarnação", false) + '<figcaption><strong>Diogo Encarnação</strong><span>' + t("meRole") + ' · Vila Nova de Gaia</span></figcaption></figure><p>' + esc(t("p1")) + '</p><p>' + swl(esc(t("p2"))) + '</p><p>' + esc(t("p3")) + '</p><p class="hm-cvb"><a class="mini cv-b" href="#cv">CV</a></p></div>' +
       '<div><p class="hm-k" style="margin-bottom:10px">' + t("expK") + '</p><ul class="hm-exp">' + exp + '</ul></div></div>' +
       highlights() +
       '<div class="hm-nums">' + nums + '</div>' +
