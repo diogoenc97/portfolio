@@ -350,7 +350,8 @@
   .cvd-hd > div:last-child { padding-bottom: clamp(18px, 3.6cqi, 32px); }
   .cvd-ph { background: var(--dk); color: #fff; min-height: clamp(104px, 21cqi, 176px); display: flex; align-items: center; justify-content: center; }
   .cvd-ph .mono { width: 66%; height: 52%; }
-  .cvd h1 { margin: clamp(14px, 3.4cqi, 32px) 0 0; font-weight: 300; text-transform: uppercase; letter-spacing: .16em; font-size: clamp(1.6rem, 6.2cqi, 3.1rem); line-height: 1.12; }
+  .cvd h1 { margin: clamp(14px, 3.4cqi, 32px) 0 0; font-family: var(--font-display); font-weight: 800; letter-spacing: -.04em; font-size: clamp(2.3rem, 9.4cqi, 4.7rem); line-height: .92; font-variation-settings: "opsz" 96; }
+  .cvd h1 span { display: block; font-weight: 600; letter-spacing: -.03em; color: var(--mu); }
   .cvd-role { margin: clamp(8px, 1.8cqi, 16px) 0 0; font-size: clamp(.6rem, 1.5cqi, .8rem); letter-spacing: .22em; text-transform: uppercase; color: var(--mu); line-height: 1.5; }
   .cvd .cvd-ct { background: var(--g2); display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 0; padding: clamp(9px, 1.8cqi, 14px) 12px; font-size: clamp(.56rem, 1.2cqi, .72rem); white-space: nowrap; line-height: 1.4; }
   .cvd .cvd-ct li { padding: 0 clamp(6px, 1.1cqi, 10px); }
@@ -416,7 +417,7 @@
     .cv a { text-decoration: none; color: inherit; }
     .cvd { box-shadow: none; font-size: 9pt; container-type: normal; --lw: 38mm; overflow: visible; }
     .cvd-ed li span { font-size: 6.8pt; } .cvd-ft, .cvd-nm, .cvd-cols { break-inside: avoid; } .cvd-ft { margin-bottom: 0; }
-    .cvd-hd { grid-template-columns: 36mm minmax(0, 1fr); min-height: 36mm; gap: 0 8mm; } .cvd-ph { min-height: 36mm; } .cvd-hd > div:last-child { padding-bottom: 6mm; } .cvd h1 { font-size: 22pt; margin-top: 7mm; } .cvd-role { font-size: 7pt; margin-top: 3mm; }
+    .cvd-hd { grid-template-columns: 36mm minmax(0, 1fr); min-height: 36mm; gap: 0 8mm; } .cvd-ph { min-height: 36mm; } .cvd-hd > div:last-child { padding-bottom: 6mm; } .cvd h1 { font-size: 30pt; margin-top: 6mm; } .cvd-role { font-size: 7pt; margin-top: 3mm; }
     .cvd .cvd-ct { font-size: 6.5pt; padding: 2.6mm 3mm; } .cvd .cvd-ct li { padding: 0 2.2mm; }
     .cvd-exp { grid-template-columns: 11mm minmax(0, 1fr); padding: 8mm 9mm 6mm; } .cvd-vl { font-size: 13pt; }
     .cvd-job { margin-bottom: 5mm; } .cvd-jt { font-size: 8.4pt; } .cvd-bd { font-size: 6.4pt; } .cvd-co h3 { font-size: 7.8pt; } .cvd-co ul li { font-size: 7.8pt; line-height: 1.38; margin: 1px 0; }
@@ -2356,7 +2357,7 @@
     var ed = d.edu.map(function (e) { return '<li><b>' + esc(e[0]) + '</b><span>' + esc(e[1]) + '</span>' + (e[2] ? '<span class="cvd-bd">' + esc(e[2].replace(/ – /, " — ")) + '</span>' : '') + '</li>'; }).join("");
     var lg = t("langs").map(function (e) { return '<li><b>' + esc(e[0]) + '</b><span>' + esc(e[1]) + '</span></li>'; }).join("");
     var design = '<article class="cvd" lang="' + LANG + '">' +
-      '<header class="cvd-hd"><div class="cvd-ph" role="img" aria-label="Diogo Encarnação"><span class="mono" aria-hidden="true"></span></div><div><h1>Diogo<br>Encarnação</h1><p class="cvd-role">' + esc(d.role) + '</p></div></header>' +
+      '<header class="cvd-hd"><div class="cvd-ph" role="img" aria-label="Diogo Encarnação"><span class="mono" aria-hidden="true"></span></div><div><h1><span>Diogo</span>Encarnação</h1><p class="cvd-role">' + esc(d.role) + '</p></div></header>' +
       '<ul class="cvd-ct" aria-label="' + esc(d.contact) + '"><li>' + esc(d.wh) + '</li><li><a href="tel:' + esc(CONTACT.phone.replace(/\\s/g, "")) + '">' + esc(CONTACT.phone) + '</a></li><li><a href="mailto:' + esc(CONTACT.email) + '">' + esc(CONTACT.email) + '</a></li><li><a href="' + esc(CONTACT.linkedin) + '" target="_blank" rel="noopener">linkedin.com/in/diogoenc</a></li><li><a href="' + esc(CONTACT.site) + '">' + esc(site) + '</a></li></ul>' +
       '<section class="cvd-exp"><h2 class="cvd-vl">' + esc(d.expK) + '</h2><ol class="cvd-tl">' + jobs + '</ol></section>' +
       '<ul class="cvd-nm" aria-label="' + esc(d.numK) + '">' + dn + '</ul>' +
