@@ -346,8 +346,9 @@
   .cvd * { box-sizing: border-box; }
   .cvd a { color: inherit; text-underline-offset: 3px; }
   .cvd ul, .cvd ol { list-style: none; margin: 0; padding: 0; }
-  .cvd-hd { display: grid; grid-template-columns: clamp(96px, 20cqi, 176px) minmax(0, 1fr); align-items: start; gap: 0 clamp(16px, 4cqi, 36px); min-height: clamp(104px, 21cqi, 176px); }
-  .cvd-ph { background: var(--dk); color: #fff; height: clamp(104px, 21cqi, 176px); display: flex; align-items: center; justify-content: center; }
+  .cvd-hd { display: grid; grid-template-columns: clamp(96px, 20cqi, 176px) minmax(0, 1fr); align-items: stretch; gap: 0 clamp(16px, 4cqi, 36px); min-height: clamp(104px, 21cqi, 176px); }
+  .cvd-hd > div:last-child { padding-bottom: clamp(18px, 3.6cqi, 32px); }
+  .cvd-ph { background: var(--dk); color: #fff; min-height: clamp(104px, 21cqi, 176px); display: flex; align-items: center; justify-content: center; }
   .cvd-ph .mono { width: 66%; height: 52%; }
   .cvd h1 { margin: clamp(14px, 3.4cqi, 32px) 0 0; font-weight: 300; text-transform: uppercase; letter-spacing: .16em; font-size: clamp(1.6rem, 6.2cqi, 3.1rem); line-height: 1.12; }
   .cvd-role { margin: clamp(8px, 1.8cqi, 16px) 0 0; font-size: clamp(.6rem, 1.5cqi, .8rem); letter-spacing: .22em; text-transform: uppercase; color: var(--mu); line-height: 1.5; }
@@ -415,7 +416,7 @@
     .cv a { text-decoration: none; color: inherit; }
     .cvd { box-shadow: none; font-size: 9pt; container-type: normal; --lw: 38mm; overflow: visible; }
     .cvd-ed li span { font-size: 6.8pt; } .cvd-ft, .cvd-nm, .cvd-cols { break-inside: avoid; } .cvd-ft { margin-bottom: 0; }
-    .cvd-hd { grid-template-columns: 36mm minmax(0, 1fr); min-height: 36mm; gap: 0 8mm; } .cvd-ph { height: 36mm; } .cvd h1 { font-size: 22pt; margin-top: 7mm; } .cvd-role { font-size: 7pt; margin-top: 3mm; }
+    .cvd-hd { grid-template-columns: 36mm minmax(0, 1fr); min-height: 36mm; gap: 0 8mm; } .cvd-ph { min-height: 36mm; } .cvd-hd > div:last-child { padding-bottom: 6mm; } .cvd h1 { font-size: 22pt; margin-top: 7mm; } .cvd-role { font-size: 7pt; margin-top: 3mm; }
     .cvd .cvd-ct { font-size: 6.5pt; padding: 2.6mm 3mm; } .cvd .cvd-ct li { padding: 0 2.2mm; }
     .cvd-exp { grid-template-columns: 11mm minmax(0, 1fr); padding: 8mm 9mm 6mm; } .cvd-vl { font-size: 13pt; }
     .cvd-job { margin-bottom: 5mm; } .cvd-jt { font-size: 8.4pt; } .cvd-bd { font-size: 6.4pt; } .cvd-co h3 { font-size: 7.8pt; } .cvd-co ul li { font-size: 7.8pt; line-height: 1.38; margin: 1px 0; }
