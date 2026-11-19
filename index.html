@@ -149,11 +149,11 @@
   :root[data-theme="light"][data-view="home"] #servicos, :root[data-theme="light"][data-view="home"] #sobre { background: var(--cream); box-shadow: 0 0 0 100vmax var(--cream); clip-path: inset(0 -100vmax); position: relative; }
   :root[data-theme="light"][data-view="home"] .hm-srv { border-top: 3px solid var(--accent); }
   :root[data-theme="light"][data-view="home"] .hm-idx .i { color: var(--accent); font-weight: 700; }
-  :root[data-theme="light"][data-view="home"] .hm-rt::before { content: ""; display: inline-block; width: .15em; height: .15em; margin-right: .28em; border-radius: 50%; background: var(--accent); vertical-align: .2em; }
-  :root[data-theme="light"][data-view="home"] .hm-ry { color: var(--navy); font-weight: 600; }
-  :root[data-theme="light"][data-view="home"] .hl { border-top: 4px solid var(--accent); background: var(--cream); }
-  :root[data-theme="light"][data-view="home"] .hl-tag { color: var(--navy); }
-  :root[data-theme="light"][data-view="home"] .hl-go { color: var(--accent); }
+  :root[data-theme="light"][data-view="home"] .hm-rt::before { content: ""; display: inline-block; width: .15em; height: .15em; margin-right: .28em; border-radius: 50%; background: var(--rc); vertical-align: .2em; }
+  :root[data-theme="light"][data-view="home"] .hm-ry { color: color-mix(in srgb, var(--rc) 75%, #000); font-weight: 600; }
+  :root[data-theme="light"][data-view="home"] .hl { border-top: 4px solid var(--rc); background: color-mix(in srgb, var(--rc) 7%, #fff); }
+  :root[data-theme="light"][data-view="home"] .hl-tag { color: color-mix(in srgb, var(--rc) 70%, #000); }
+  :root[data-theme="light"][data-view="home"] .hl-go { color: color-mix(in srgb, var(--rc) 70%, #000); }
   :root[data-theme="light"][data-view="home"] .hm-hero { position: relative; }
   :root[data-theme="light"][data-view="home"] .hm-hero::before { content: ""; position: absolute; inset: -80px 0 auto auto; width: min(60vw, 780px); height: 560px; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 15%, transparent), transparent); pointer-events: none; z-index: -1; }
   .theme-b { display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0; border-radius: 50%; border: 1px solid color-mix(in srgb, currentColor 28%, transparent); background: transparent; color: inherit; cursor: pointer; flex: none; transition: background .2s, transform .2s; }
