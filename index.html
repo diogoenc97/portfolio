@@ -144,36 +144,18 @@
   :root[data-theme="light"] .stage:not(.rec) .facts b { color: var(--acd); }
   :root[data-theme="light"] .stage:not(.rec) .facts li { border-top-color: var(--ac); border-top-width: 3px; }
   :root[data-theme="light"] .stage:not(.rec) .b-row > :first-child { color: var(--acd); font-weight: 700; opacity: 1; }
-  /* Tema claro: cor discreta na página inicial */
-  :root[data-theme="light"] .hm-sec#servicos,
-  :root[data-theme="light"] .hm-sec#recomendacao-sec,
-  :root[data-theme="light"] .hm-sec#sobre { position: relative; }
-  :root[data-theme="light"] #servicos { background: color-mix(in srgb, var(--accent) 7%, var(--bg)); box-shadow: 0 0 0 100vmax color-mix(in srgb, var(--accent) 7%, var(--bg)); clip-path: inset(0 -100vmax); }
-  :root[data-theme="light"] #recomendacao-sec { background: color-mix(in srgb, #0b7f8c 8%, var(--bg)); box-shadow: 0 0 0 100vmax color-mix(in srgb, #0b7f8c 8%, var(--bg)); clip-path: inset(0 -100vmax); }
-  :root[data-theme="light"] #sobre { background: color-mix(in srgb, #df8b31 6%, var(--bg)); box-shadow: 0 0 0 100vmax color-mix(in srgb, #df8b31 6%, var(--bg)); clip-path: inset(0 -100vmax); }
-  :root[data-theme="light"] .hm-srv:nth-child(1), :root[data-theme="light"] .hm-idx li:nth-child(1) { --sc: #0b7f8c; }
-  :root[data-theme="light"] .hm-srv:nth-child(2), :root[data-theme="light"] .hm-idx li:nth-child(2) { --sc: #253d97; }
-  :root[data-theme="light"] .hm-srv:nth-child(3), :root[data-theme="light"] .hm-idx li:nth-child(3) { --sc: #df8b31; }
-  :root[data-theme="light"] .hm-srv:nth-child(4), :root[data-theme="light"] .hm-idx li:nth-child(4) { --sc: #e0252b; }
-  :root[data-theme="light"] .hm-srv:nth-child(5), :root[data-theme="light"] .hm-idx li:nth-child(5) { --sc: #1f9a45; }
-  :root[data-theme="light"] .hm-srv:nth-child(6), :root[data-theme="light"] .hm-idx li:nth-child(6) { --sc: #7a3fb0; }
-  :root[data-theme="light"] .hm-srv { border-top: 3px solid var(--sc); }
-  :root[data-theme="light"] .hm-srv .lk a { color: color-mix(in srgb, var(--sc) 78%, #000); }
-  :root[data-theme="light"] .hm-srv h3::before { content: ""; display: inline-block; width: .3em; height: .3em; margin-right: .22em; border-radius: 50%; background: var(--sc); vertical-align: .08em; }
-  :root[data-theme="light"] .hm-idx .i { color: var(--sc); font-weight: 700; }
-  :root[data-theme="light"] .hm-rt::before { content: ""; display: inline-block; width: .15em; height: .15em; margin-right: .28em; border-radius: 50%; background: var(--rc); vertical-align: .2em; }
-  :root[data-theme="light"] .hm-ry { color: color-mix(in srgb, var(--rc) 75%, #000); font-weight: 600; }
-  :root[data-theme="light"] .hl { border-top: 4px solid var(--rc); background: color-mix(in srgb, var(--rc) 7%, #fff); }
-  :root[data-theme="light"] .hl-tag { color: color-mix(in srgb, var(--rc) 70%, #000); }
-  :root[data-theme="light"] .hl-go { color: color-mix(in srgb, var(--rc) 70%, #000); }
-  :root[data-theme="light"] .hm-nums > div:nth-child(6n+1) .hm-num { color: #253d97; }
-  :root[data-theme="light"] .hm-nums > div:nth-child(6n+2) .hm-num { color: #0b7f8c; }
-  :root[data-theme="light"] .hm-nums > div:nth-child(6n+3) .hm-num { color: #7a3fb0; }
-  :root[data-theme="light"] .hm-nums > div:nth-child(6n+4) .hm-num { color: #c26a12; }
-  :root[data-theme="light"] .hm-nums > div:nth-child(6n+5) .hm-num { color: #1f9a45; }
-  :root[data-theme="light"] .hm-nums > div:nth-child(6n+6) .hm-num { color: #0a6fb0; }
-  :root[data-theme="light"] .hm-hero { position: relative; }
-  :root[data-theme="light"] .hm-hero::before { content: ""; position: absolute; inset: -80px 0 auto auto; width: min(60vw, 780px); height: 560px; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 16%, transparent), transparent); pointer-events: none; z-index: -1; }
+  /* Tema claro, página inicial: laranja como cor principal, neutros quentes e azul-marinho de apoio */
+  :root[data-theme="light"][data-view="home"] { --accent: #d4540a; --accent-ink: #ffffff; --cream: #fbf3ea; --navy: #13294b; --line: #eadfd2; }
+  :root[data-theme="light"][data-view="home"] #servicos, :root[data-theme="light"][data-view="home"] #sobre { background: var(--cream); box-shadow: 0 0 0 100vmax var(--cream); clip-path: inset(0 -100vmax); position: relative; }
+  :root[data-theme="light"][data-view="home"] .hm-srv { border-top: 3px solid var(--accent); }
+  :root[data-theme="light"][data-view="home"] .hm-idx .i { color: var(--accent); font-weight: 700; }
+  :root[data-theme="light"][data-view="home"] .hm-rt::before { content: ""; display: inline-block; width: .15em; height: .15em; margin-right: .28em; border-radius: 50%; background: var(--accent); vertical-align: .2em; }
+  :root[data-theme="light"][data-view="home"] .hm-ry { color: var(--navy); font-weight: 600; }
+  :root[data-theme="light"][data-view="home"] .hl { border-top: 4px solid var(--accent); background: var(--cream); }
+  :root[data-theme="light"][data-view="home"] .hl-tag { color: var(--navy); }
+  :root[data-theme="light"][data-view="home"] .hl-go { color: var(--accent); }
+  :root[data-theme="light"][data-view="home"] .hm-hero { position: relative; }
+  :root[data-theme="light"][data-view="home"] .hm-hero::before { content: ""; position: absolute; inset: -80px 0 auto auto; width: min(60vw, 780px); height: 560px; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 15%, transparent), transparent); pointer-events: none; z-index: -1; }
   .theme-b { display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0; border-radius: 50%; border: 1px solid color-mix(in srgb, currentColor 28%, transparent); background: transparent; color: inherit; cursor: pointer; flex: none; transition: background .2s, transform .2s; }
   .theme-b svg { width: 18px; height: 18px; display: block; }
   .theme-b:hover { background: color-mix(in srgb, currentColor 14%, transparent); }
@@ -3901,6 +3883,7 @@
     cleanups.forEach(function (f) { f(); }); cleanups = [];
     var id = (location.hash || "").replace("#", "");
     var i = PROJECTS.findIndex(function (p) { return p.id === id; });
+    document.documentElement.setAttribute("data-view", (i < 0 && id !== "cv" && id !== "recomendacao") ? "home" : "other");
     if (i >= 0) { project(i); initProject(); } else if (id === "recomendacao") { recommendation(); initRec(); addTop(document.querySelector(".stage") || app, ""); } else if (id === "cv") { cvPage(); addTop(app, "--ink:var(--fg);--c1:var(--bg);"); } else { home(); initHome(); addTop(app, "--ink:var(--fg);--c1:var(--bg);"); }
     window.scrollTo(0, 0);
     closeMenus();
