@@ -2464,7 +2464,11 @@
         '<a class="srv-talk" href="mailto:' + esc(CONTACT.email) + '?subject=' + encodeURIComponent((LANG === "en" ? "Enquiry: " : "Pedido: ") + s.t) + '" data-track="servico">' + t("srvTalk") + ' →</a></div></div>';
     }).join("");
     var st = STATEMENT[LANG].split(" ").map(function (w) { return '<span class="w">' + esc(w) + '</span>'; }).join(" ");
-    var exp = EXP[LANG].map(function (e) { return '<li><b>' + esc(e[0]) + '</b><span class="yr">' + esc(e[2]) + '</span><span>' + swl(esc(e[1])) + '</span></li>'; }).join("");
+    var FLP = ["special-casa", "btbc", "eva-explica", "essence-beauty", "studio-33", "eletro-avintes", "rar-acucar"];
+    var exp = EXP[LANG].map(function (e) {
+      var who = e[1] === "Freelancer" ? "Freelancer: " + FLP.map(function (id) { var q = byId(id); return '<a class="inl" href="#' + id + '">' + esc(q.short || q.name) + '</a>'; }).join(", ") : swl(esc(e[1]));
+      return '<li><b>' + esc(e[0]) + '</b><span class="yr">' + esc(e[2]) + '</span><span>' + who + '</span></li>';
+    }).join("");
     var nums = NUMS[LANG].map(function (n) { return '<div><span class="hm-num" data-to="' + n.to + '" data-pre="' + n.pre + '" data-suf="' + n.suf + '">' + n.pre + n.to + n.suf + '</span><span class="hm-nl">' + swl(esc(n.l)) + '</span></div>'; }).join("");
     var tools = TOOLS.map(li).join("");
     var skills = t("skills").map(li).join("");
