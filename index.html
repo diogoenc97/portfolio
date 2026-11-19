@@ -144,6 +144,17 @@
   :root[data-theme="light"] .stage:not(.rec) .facts b { color: var(--acd); }
   :root[data-theme="light"] .stage:not(.rec) .facts li { border-top-color: var(--ac); border-top-width: 3px; }
   :root[data-theme="light"] .stage:not(.rec) .b-row > :first-child { color: var(--acd); font-weight: 700; opacity: 1; }
+  /* Tema escuro, página inicial: mesma lógica do claro (laranja principal, neutros quentes, cor própria nos projetos) */
+  :root[data-theme="dark"][data-view="home"] { --accent: #ff7a1f; --accent-ink: #1a0d03; --warm: #17120d; --line: #2d261f; }
+  :root[data-theme="dark"][data-view="home"] #servicos, :root[data-theme="dark"][data-view="home"] #sobre { background: var(--warm); box-shadow: 0 0 0 100vmax var(--warm); clip-path: inset(0 -100vmax); position: relative; }
+  :root[data-theme="dark"][data-view="home"] .hm-srv { border-top: 3px solid var(--accent); }
+  :root[data-theme="dark"][data-view="home"] .hm-idx .i { color: var(--accent); font-weight: 700; }
+  :root[data-theme="dark"][data-view="home"] .hm-rt::before { content: ""; display: inline-block; width: .15em; height: .15em; margin-right: .28em; border-radius: 50%; background: var(--rc); vertical-align: .2em; }
+  :root[data-theme="dark"][data-view="home"] .hm-ry { color: color-mix(in srgb, var(--rc) 60%, #fff); font-weight: 600; }
+  :root[data-theme="dark"][data-view="home"] .hl { border-top: 4px solid var(--rc); background: color-mix(in srgb, var(--rc) 14%, var(--surface)); }
+  :root[data-theme="dark"][data-view="home"] .hl-tag, :root[data-theme="dark"][data-view="home"] .hl-go { color: color-mix(in srgb, var(--rc) 55%, #fff); }
+  :root[data-theme="dark"][data-view="home"] .hm-hero { position: relative; }
+  :root[data-theme="dark"][data-view="home"] .hm-hero::before { content: ""; position: absolute; inset: -80px 0 auto auto; width: min(60vw, 780px); height: 560px; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 18%, transparent), transparent); pointer-events: none; z-index: -1; }
   /* Tema claro, página inicial: laranja como cor principal, neutros quentes e azul-marinho de apoio */
   :root[data-theme="light"][data-view="home"] { --accent: #d4540a; --accent-ink: #ffffff; --cream: #fbf3ea; --navy: #13294b; --line: #eadfd2; }
   :root[data-theme="light"][data-view="home"] #servicos, :root[data-theme="light"][data-view="home"] #sobre { background: var(--cream); box-shadow: 0 0 0 100vmax var(--cream); clip-path: inset(0 -100vmax); position: relative; }
