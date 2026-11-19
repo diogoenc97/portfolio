@@ -121,6 +121,29 @@
   .lang { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border-radius: 999px; border: 1px solid color-mix(in srgb, currentColor 28%, transparent); }
   .lang button { background: transparent; border: 0; color: inherit; cursor: pointer; font: inherit; font-size: .78rem; font-weight: 600; letter-spacing: .08em; padding: 5px 10px; border-radius: 999px; opacity: .65; }
   .lang button:hover { opacity: 1; }
+  /* Tema claro: páginas de projeto com a cor da capa (--ac) */
+  :root[data-theme="light"] .stage:not(.rec) { --acd: color-mix(in srgb, var(--ac) 70%, #000); background: linear-gradient(180deg, color-mix(in srgb, var(--ac) 24%, #fff) 0, color-mix(in srgb, var(--ac) 7%, #fafafa) 680px); }
+  :root[data-theme="light"] .stage:not(.rec) .aside,
+  :root[data-theme="light"] .stage:not(.rec) .rec-call,
+  :root[data-theme="light"] .stage:not(.rec) .feat article { background: color-mix(in srgb, var(--ac) 15%, #fff); border-color: color-mix(in srgb, var(--ac) 45%, #fff); box-shadow: 0 10px 28px color-mix(in srgb, var(--ac) 18%, transparent); }
+  :root[data-theme="light"] .stage:not(.rec) .sum { border-left-color: var(--ac); background: linear-gradient(90deg, color-mix(in srgb, var(--ac) 16%, transparent), transparent 70%); padding-block: 14px; }
+  :root[data-theme="light"] .stage:not(.rec) .sum-k,
+  :root[data-theme="light"] .stage:not(.rec) .group-label,
+  :root[data-theme="light"] .stage:not(.rec) .feat .fn,
+  :root[data-theme="light"] .stage:not(.rec) .feat .fl-k { color: var(--acd); opacity: 1; }
+  :root[data-theme="light"] .stage:not(.rec) .module > h2::after { background: var(--ac); opacity: 1; }
+  :root[data-theme="light"] .stage:not(.rec) .hero-img .shot-btn { box-shadow: 0 22px 48px color-mix(in srgb, var(--ac) 38%, transparent); }
+  :root[data-theme="light"] .stage:not(.rec) .cta { background: var(--ac); color: var(--acink); }
+  :root[data-theme="light"] .stage:not(.rec) .back { border-color: var(--ac); }
+  :root[data-theme="light"] .stage:not(.rec) .back:hover { background: var(--ac); color: var(--acink); }
+  :root[data-theme="light"] .stage:not(.rec) .tools li { background: color-mix(in srgb, var(--ac) 20%, #fff); border-color: color-mix(in srgb, var(--ac) 50%, #fff); }
+  :root[data-theme="light"] .stage:not(.rec) .pcta { border-top-color: var(--ac); }
+  :root[data-theme="light"] .stage:not(.rec) .gt-l a { border-color: var(--ac); }
+  :root[data-theme="light"] .stage:not(.rec) .gt-l a:hover, :root[data-theme="light"] .stage:not(.rec) .feat .fl button:hover { background: var(--ac); color: var(--acink); }
+  :root[data-theme="light"] .stage:not(.rec) .feat .fl button { border-color: color-mix(in srgb, var(--ac) 60%, transparent); }
+  :root[data-theme="light"] .stage:not(.rec) .facts b { color: var(--acd); }
+  :root[data-theme="light"] .stage:not(.rec) .facts li { border-top-color: var(--ac); border-top-width: 3px; }
+  :root[data-theme="light"] .stage:not(.rec) .b-row > :first-child { color: var(--acd); font-weight: 700; opacity: 1; }
   .theme-b { display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0; border-radius: 50%; border: 1px solid color-mix(in srgb, currentColor 28%, transparent); background: transparent; color: inherit; cursor: pointer; flex: none; transition: background .2s, transform .2s; }
   .theme-b svg { width: 18px; height: 18px; display: block; }
   .theme-b:hover { background: color-mix(in srgb, currentColor 14%, transparent); }
@@ -2137,7 +2160,9 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function isLight() { return document.documentElement.getAttribute("data-theme") === "light"; }
   function pgc(c) { return isLight() ? "color-mix(in srgb, " + c + " 8%, #fafafa)" : c; }
-  function stageVars(p) { var c = pgc(p.pg); return "--c1:" + c + ";--c2:" + c + ";--ink:" + (isLight() ? "#0b0c0e" : p.pgInk) + ";"; }
+  function lumOf(h) { var n = parseInt(h.slice(1), 16), r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255; return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255; }
+  function accOf(p) { var a = p.c1; return lumOf(a) > 0.93 ? p.pg : a; }
+  function stageVars(p) { var c = pgc(p.pg), a = accOf(p); return "--c1:" + c + ";--c2:" + c + ";--ink:" + (isLight() ? "#0b0c0e" : p.pgInk) + ";--ac:" + a + ";--acink:" + (lumOf(a) > 0.55 ? "#0b0c0e" : "#ffffff") + ";"; }
   function vars(p) { return "--c1:" + p.c1 + ";--c2:" + p.c2 + ";--ink:" + p.ink + ";"; }
   function pageCount(p) { return p.modules.reduce(function (a, m) { return a + m.imgs.length; }, 1); }
 
@@ -3714,7 +3739,7 @@
   function project(i) {
     var p = loc(PROJECTS[i]);
     document.title = p.name + " · Diogo Encarnação";
-    setBg(pgc(p.pg));
+    setBg(isLight() ? "color-mix(in srgb, " + accOf(p) + " 7%, #fafafa)" : p.pg);
     current = [p.cover];
     var mods = p.modules.map(function (m, k) {
       var caps = m.caps || [];
