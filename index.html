@@ -155,8 +155,8 @@
   :root[data-theme="dark"][data-view="home"] .hl-tag, :root[data-theme="dark"][data-view="home"] .hl-go { color: color-mix(in srgb, var(--rc) 55%, #fff); }
   :root[data-theme="dark"][data-view="home"] .hm-hero { position: relative; }
   :root[data-theme="dark"][data-view="home"] .hm-hero::before { content: ""; position: absolute; inset: -80px 0 auto auto; width: min(60vw, 780px); height: 560px; background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 18%, transparent), transparent); pointer-events: none; z-index: -1; }
-  :root[data-theme="dark"][data-view="cv"] { --accent: #ff7a1f; --accent-ink: #1a0d03; }
-  :root[data-theme="light"][data-view="cv"] { --accent: #d4540a; --accent-ink: #ffffff; }
+  :root[data-theme="dark"][data-view="cv"] { --accent: #ff7a1f; --accent-ink: #1a0d03; --muted: #a79d92; --line: #2d261f; }
+  :root[data-theme="light"][data-view="cv"] { --accent: #d4540a; --accent-ink: #ffffff; --bg: #f7f3ee; --muted: #6b6258; --line: #e6ddd2; }
   /* Tema claro, página inicial: laranja como cor principal, neutros quentes e azul-marinho de apoio */
   :root[data-theme="light"][data-view="home"] { --accent: #d4540a; --accent-ink: #ffffff; --cream: #fbf3ea; --navy: #13294b; --line: #eadfd2; }
   :root[data-theme="light"][data-view="home"] #servicos, :root[data-theme="light"][data-view="home"] #sobre { position: relative; isolation: isolate; --band: var(--cream); }
@@ -464,8 +464,8 @@
     .hdr, .mpanel, footer, .cv-actions, .cv-hint, .cv-note { display: none !important; } .cv-wrap { overflow: visible; }
     .cv-wrap { padding: 0; max-width: none; }
     .cv { box-shadow: none; border: 0; border-radius: 0; padding: 0; max-width: none; color: #000; background: #fff; font-size: 9pt; }
-    .cv h1 { font-size: 26pt; } .cv-role { font-size: 11pt; color: #0a6fb0; } .cv-contact { font-size: 9pt; margin-top: 8px; }
-    .cv section { margin-top: 9px; } .cv h2 { font-size: 8.5pt; letter-spacing: 0; margin-bottom: 4px; color: #0a6fb0; }
+    .cv h1 { font-size: 26pt; } .cv-role { font-size: 11pt; color: #d4540a; } .cv-contact { font-size: 9pt; margin-top: 8px; }
+    .cv section { margin-top: 9px; } .cv h2 { font-size: 8.5pt; letter-spacing: 0; margin-bottom: 4px; color: #d4540a; }
     .cv p, .cv-job li { line-height: 1.32; } .cv-job { margin-top: 7px; } .cv-job li { margin: 1px 0; } .cv-head { padding-bottom: 10px; }
     .cv-nums strong { font-size: 15pt; } .cv-nums { gap: 6px 14px; } .cv-jh h3 { font-size: 10.5pt; }
     .cv-tags li { padding: 1px 8px; font-size: 8.4pt; } .cv-cols { gap: 0 24px; }
