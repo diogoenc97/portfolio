@@ -6,7 +6,8 @@
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Portefólio Diogo Encarnação</title>
 <meta name="description" content="Diogo Encarnação, designer gráfico e gestor de marketing em Vila Nova de Gaia. Design gráfico, branding, marketing e gestão de projetos.">
-<meta name="theme-color" content="#f3f4f5">
+<meta name="theme-color" content="#0b0c0e">
+<script>try{var _t=localStorage.getItem("theme");document.documentElement.setAttribute("data-theme",_t==="light"?"light":"dark")}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
 <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAEDUlEQVR42u2bz28bVRDHvzP71o7t0CS1k7RAKOKHekNBbWnSiqhF8B/kFqRW6QFy6CmqoCABV5BQDlQFIVEEKlZAwBXEtQGpQG4VhxYUodQRDW1tBymJ47fvcUh2G8frem2v1cb7RlrZWu+v+ez3zbx58hACWM+jvRq70IpLBap3DHWi442AoE52PAgIjorztXzjqDhfy0eOkvN+vjIibhy1t79TBZFXAEXx7d83DRoABoABYAAYAAaAAWAAGAAGgAEQCRNBDrq18A+Y2WdBsXpJUaOyttJaQymNYrGIG39dxw8//YjLs5dRXCmCiEBEUEohk87g9MQpvPzSK3jmqafR09MDW9hNO6aUwt6hdDjVYP7mXRBRaNSv/3kDk1OTuPbHNQDAoeFDuPTxZzjwxIHQ7hEqgLuLd3wVIKWsP8aYwczQWm+pQUEIgcWbizgydgSWEJifm8e+gUGUZRkWWxXKUEo1B0ArDDw5GM4QqHmyCHa61tpziplRlmUMPT6EEy+eQCwe95zfLnmttQfvgccAPyttlPDV11mU1tdBRND6npCICMSM9N40jo8cw/59+z0IbuzQWmP06Chs2978bVs8cY9d+HsBV36+gnwhD6UaW7fZ/jyhAnAfbnV1FdPnp+veqK+3D99nv8Pwc8NQSoGZPTUMDgyCt0keABzHATPj1/nfMD4xjpX/Vh7ONEhEyKQzEELAFjaEEFVbVzyOfCGPL7JfemO68hrVEncBX/z0YtudbzkGSCkhpawaAjtB3b5z2/seJGgCwMgLI0gmk77ggip19tvZ9gII8hDuFliSWwBeP/Nay/d/4ABaMcdxGgJXdb5y2j8E2mmWZbV0Pjm0O2oBNy6Ene+DXi+QAqQjwYq9uT6BAs0C6wW+VDKJN955EzMXZuAox7e2aDr+IMR5QMyOVe3LpDOw7c30RyDfG1psoeSUakZxy7KQW8oht5R7uKvB6fPTVfvWSyUs/7t8f+VAImbHkEwk/BWQSu2Ocri7+5EqKe/ZA7z31ru+Enf39Wf6cfDZg8h+k60Yl+7n4ecP4/NPLuHW8jLW1tYgHXlvKg2CbW9Nsmzbm0E2kkXOvX0unGqwkMu3RHly6gwufPgREolEqGV1Pet9rC8cBWyUN8DETeViN35c/f0qTo6drCh5tdZ183WzgVE6Ic4DhCWaSlOsNmV7+tVTeH/mA4wePYaueLxiqLSr3A01De4sL2vN0PyOkY7E2PExzP0yh/GJcZydOouBTD9SqW50xeOIxWJe8WSx5a0BUItgnKBp2vxBAmZZ3AAwAAwAA8AAMAAMAAPAADAAogggSGtZp1pxqUBGAUEbDDu1hc4ooJE2005soORGe207rXuUm2k47qTWWdM8jYi3z/8PJ1qMLycXLZQAAAAASUVORK5CYII=">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Diogo Encarnação">
@@ -120,6 +121,10 @@
   .lang { display: inline-flex; align-items: center; gap: 2px; padding: 3px; border-radius: 999px; border: 1px solid color-mix(in srgb, currentColor 28%, transparent); }
   .lang button { background: transparent; border: 0; color: inherit; cursor: pointer; font: inherit; font-size: .78rem; font-weight: 600; letter-spacing: .08em; padding: 5px 10px; border-radius: 999px; opacity: .65; }
   .lang button:hover { opacity: 1; }
+  .theme-b { display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0; border-radius: 50%; border: 1px solid color-mix(in srgb, currentColor 28%, transparent); background: transparent; color: inherit; cursor: pointer; flex: none; transition: background .2s, transform .2s; }
+  .theme-b svg { width: 18px; height: 18px; display: block; }
+  .theme-b:hover { background: color-mix(in srgb, currentColor 14%, transparent); }
+  .theme-b:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
   .lang button[aria-pressed="true"] { opacity: 1; background: color-mix(in srgb, currentColor 16%, transparent); }
   .top-right .tag { opacity: .7; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
 
@@ -660,6 +665,14 @@
     .hm-fwrap { align-items: flex-start; }
     .hm-name { font-size: clamp(2.4rem, 12.5vw, 5.5rem); }
     .hm-name .n + .n { margin-left: 8vw; }
+  }
+  @media (max-width: 480px) {
+    .theme-b { width: 30px; height: 30px; } .theme-b svg { width: 16px; height: 16px; }
+    .brand .b1 { display: none; }
+  }
+  @media (max-width: 440px) {
+    .brand .bt { display: none; }
+    .brand .mono { height: 1.3em; width: 3em; }
   }
   @media (max-width: 400px) {
     .top { gap: 6px; }
@@ -1333,7 +1346,7 @@
   try { var sv = localStorage.getItem("lang"); if (sv === "en" || sv === "pt") LANG = sv; } catch (e) {}
   var UI = {
     pt: {
-      proj: "Projetos", meRole: "Marketing, branding e design", allProj: "Ver todos os projetos", menuL: "Menu", brandA: "Portefólio de", brandB: "Diogo Encarnação", about: "Sobre", contact: "Contactar", tag: "Design gráfico &amp; marketing", sections: "Secções",
+      proj: "Projetos", meRole: "Marketing, branding e design", allProj: "Ver todos os projetos", menuL: "Menu", themeL: "Alternar tema claro/escuro", brandA: "Portefólio de", brandB: "Diogo Encarnação", about: "Sobre", contact: "Contactar", tag: "Design gráfico &amp; marketing", sections: "Secções",
       metaK: "Portefólio · 2026/27",
       avail: "Disponível para novas oportunidades", cvBtn: "Ver CV", sumK: "Em resumo", sumR: "Resultado:", ctaH: "Gostou deste projeto?", ctaP: "Vamos falar sobre o próximo.", srvTalk: "Entrar em contacto", shareL: "Copiar link do projeto", shareC: "Link copiado", skipL: "Saltar para o conteúdo", lbAlt: "Imagem ampliada",
       lead: "Branding, design gráfico, vídeo e marketing há mais de 8 anos. Hoje lidero o marketing da FalconTech, onde criei o departamento de raiz.",
@@ -1357,7 +1370,7 @@
       docHome: "Diogo Encarnação · Design gráfico, branding, marketing e gestão de projetos"
     },
     en: {
-      proj: "Projects", meRole: "Marketing, branding and design", allProj: "See all projects", menuL: "Menu", brandA: "Portfolio of", brandB: "Diogo Encarnação", about: "About", contact: "Contact me", tag: "Graphic design &amp; marketing", sections: "Sections",
+      proj: "Projects", meRole: "Marketing, branding and design", allProj: "See all projects", menuL: "Menu", themeL: "Switch light/dark theme", brandA: "Portfolio of", brandB: "Diogo Encarnação", about: "About", contact: "Contact me", tag: "Graphic design &amp; marketing", sections: "Sections",
       metaK: "Portfolio · 2026/27",
       avail: "Open to new opportunities", cvBtn: "View CV", sumK: "At a glance", sumR: "Result:", ctaH: "Like this project?", ctaP: "Let's talk about the next one.", srvTalk: "Get in touch", shareL: "Copy project link", shareC: "Link copied", skipL: "Skip to content", lbAlt: "Enlarged image",
       lead: "Branding, graphic design, video and marketing for over 8 years. I now lead marketing at FalconTech, where I built the department from scratch.",
@@ -2122,7 +2135,9 @@
   }
   function hl(s) { return esc(s); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function stageVars(p) { return "--c1:" + p.pg + ";--c2:" + p.pg + ";--ink:" + p.pgInk + ";"; }
+  function isLight() { return document.documentElement.getAttribute("data-theme") === "light"; }
+  function pgc(c) { return isLight() ? "color-mix(in srgb, " + c + " 8%, #fafafa)" : c; }
+  function stageVars(p) { var c = pgc(p.pg); return "--c1:" + c + ";--c2:" + c + ";--ink:" + (isLight() ? "#0b0c0e" : p.pgInk) + ";"; }
   function vars(p) { return "--c1:" + p.c1 + ";--c2:" + p.c2 + ";--ink:" + p.ink + ";"; }
   function pageCount(p) { return p.modules.reduce(function (a, m) { return a + m.imgs.length; }, 1); }
 
@@ -2143,6 +2158,7 @@
       '<div class="top-right">' +
       '<nav class="nav" aria-label="' + t("sections") + '"><div class="dd"><button class="dd-b" type="button" aria-haspopup="true" aria-expanded="false" data-dd>' + t("proj") + '</button><div class="dd-m" role="menu"><div class="dd-in">' + plist + all + '</div></div></div>' + srv + about + rec + cvl + '</nav>' +
       '<div class="lang" role="group" aria-label="Language"><button type="button" data-lang="pt" aria-pressed="' + (LANG === "pt") + '">PT</button><button type="button" data-lang="en" aria-pressed="' + (LANG === "en") + '">EN</button></div>' +
+      '<button class="theme-b" type="button" data-theme-toggle aria-label="' + t("themeL") + '" title="' + t("themeL") + '">' + (isLight() ? '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg>' : '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>') + '</button>' +
       '<button class="cta" type="button" data-contact>' + t("contact") + '</button>' +
       '<button class="menu-b" type="button" data-menu aria-expanded="false" aria-label="' + t("menuL") + '"><span></span></button></div></header>' +
       '<div class="mpanel" hidden><p class="mk">' + t("proj") + '</p>' + plist + all + '<hr>' + srv + about + rec + cvl + '</div></div>';
@@ -3664,10 +3680,10 @@
   function recommendation() {
     var d = REC[LANG], r = REC2[LANG];
     document.title = d.nav + " · Diogo Encarnação";
-    setBg("#12202c");
+    setBg(pgc("#12202c"));
     current = [122, 123];
     var paras = d.paras.map(function (p) { return '<p>' + md(p) + '</p>'; }).join("");
-    app.innerHTML = '<div class="stage rec" style="--c1:#12202c;--c2:#12202c;--ink:#ffffff;">' + topbar() +
+    app.innerHTML = '<div class="stage rec" style="--c1:' + pgc("#12202c") + ';--c2:' + pgc("#12202c") + ';--ink:' + (isLight() ? "#0b0c0e" : "#ffffff") + ';">' + topbar() +
       '<div class="in"><a class="back" href="#inicio">' + t("back") + '</a>' +
       '<section class="proj-head"><p class="group-label">' + esc(d.k) + '</p><h1>' + esc(d.h) + '</h1><p class="sub">' + esc(d.sub) + '</p></section>' +
       '<div class="rec-by"><div><span class="rk">' + esc(d.byK) + '</span><strong>' + esc(d.by) + '</strong><span>' + esc(d.role) + '</span></div>' +
@@ -3698,7 +3714,7 @@
   function project(i) {
     var p = loc(PROJECTS[i]);
     document.title = p.name + " · Diogo Encarnação";
-    setBg(p.pg);
+    setBg(pgc(p.pg));
     current = [p.cover];
     var mods = p.modules.map(function (m, k) {
       var caps = m.caps || [];
@@ -3830,7 +3846,7 @@
     cleanups.forEach(function (f) { f(); }); cleanups = [];
     var id = (location.hash || "").replace("#", "");
     var i = PROJECTS.findIndex(function (p) { return p.id === id; });
-    if (i >= 0) { project(i); initProject(); } else if (id === "recomendacao") { recommendation(); initRec(); addTop(document.querySelector(".stage") || app, ""); } else if (id === "cv") { cvPage(); addTop(app, "--ink:#fff;--c1:#0b0b12;"); } else { home(); initHome(); addTop(app, "--ink:#fff;--c1:#0b0b12;"); }
+    if (i >= 0) { project(i); initProject(); } else if (id === "recomendacao") { recommendation(); initRec(); addTop(document.querySelector(".stage") || app, ""); } else if (id === "cv") { cvPage(); addTop(app, "--ink:var(--fg);--c1:var(--bg);"); } else { home(); initHome(); addTop(app, "--ink:var(--fg);--c1:var(--bg);"); }
     window.scrollTo(0, 0);
     closeMenus();
     track("/" + (id || "inicio"), document.title);
@@ -3896,6 +3912,14 @@
     var md = document.querySelector('meta[name="description"]');
     if (md) md.setAttribute("content", LANG === "en" ? "Diogo Encarnação, graphic designer and marketing manager in Vila Nova de Gaia. Graphic design, branding, marketing and project management." : "Diogo Encarnação, designer gráfico e gestor de marketing em Vila Nova de Gaia. Design gráfico, branding, marketing e gestão de projetos.");
   }
+  function setTheme(m) {
+    document.documentElement.setAttribute("data-theme", m);
+    try { localStorage.setItem("theme", m); } catch (e) {}
+    try { var mt = document.querySelector('meta[name="theme-color"]'); if (mt) mt.setAttribute("content", m === "light" ? "#f3f4f5" : "#0b0c0e"); } catch (e) {}
+    var y = window.scrollY;
+    route();
+    window.scrollTo(0, y);
+  }
   function setLang(l) {
     if (l === LANG) return;
     LANG = l;
@@ -3921,6 +3945,7 @@
   document.addEventListener("click", function (e) {
     var t = e.target;
     var lg = t.closest("[data-lang]"); if (lg) { setLang(lg.dataset.lang); return; }
+    if (t.closest("[data-theme-toggle]")) { setTheme(isLight() ? "dark" : "light"); return; }
     var dd = t.closest("[data-dd]");
     if (dd) { var box = dd.parentNode, was = box.classList.contains("open"); closeMenus(); if (!was) { box.classList.add("open"); dd.setAttribute("aria-expanded", "true"); } return; }
     var mb = t.closest("[data-menu]");
@@ -3943,7 +3968,7 @@
     var rj = t.closest("[data-rec]"); if (rj) pendingJump = rj.dataset.rec;
     var hj = t.closest("[data-pj]"); if (hj) pendingJump = hj.dataset.pj;
     var cvm = t.closest("[data-cvm]");
-    if (cvm) { try { sessionStorage.setItem("cvmode", cvm.getAttribute("data-cvm")); } catch (e) {} var y = window.scrollY; cvPage(); addTop(app, "--ink:#fff;--c1:#0b0b12;"); window.scrollTo(0, y); var nb = app.querySelector('[data-cvm="' + cvm.getAttribute("data-cvm") + '"]'); if (nb) nb.focus(); return; }
+    if (cvm) { try { sessionStorage.setItem("cvmode", cvm.getAttribute("data-cvm")); } catch (e) {} var y = window.scrollY; cvPage(); addTop(app, "--ink:var(--fg);--c1:var(--bg);"); window.scrollTo(0, y); var nb = app.querySelector('[data-cvm="' + cvm.getAttribute("data-cvm") + '"]'); if (nb) nb.focus(); return; }
     if (t.closest("[data-print]")) { track("cv-pdf", "CV em PDF", true); window.print(); return; }
     var j = t.closest("[data-jump]");
     if (j) { var el = document.getElementById(j.dataset.jump); if (el) { el.scrollIntoView({ behavior: "smooth", block: "start" }); if (el.classList.contains("hm-srv")) { Array.prototype.forEach.call(document.querySelectorAll(".hm-srv.flash"), function (x) { x.classList.remove("flash"); }); void el.offsetWidth; el.classList.add("flash"); } } return; }
